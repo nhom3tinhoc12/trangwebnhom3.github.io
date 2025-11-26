@@ -8,21 +8,22 @@
     <style>
         body {
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #eef3f8;
+            background: #ffe6f0;
             margin: 0;
         }
 
         header {
-            background: linear-gradient(90deg, #0066ff, #00bbff);
+            background: linear-gradient(90deg, #ff66b2, #ff99cc);
             color: white;
             text-align: center;
-            padding: 40px 10px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            padding: 50px 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
         }
 
         header h1 {
             margin: 0;
             font-size: 36px;
+            font-weight: 700;
         }
 
         header p {
@@ -38,17 +39,24 @@
         }
 
         .intro-box, .member-box {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            background: #fff0f5;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .intro-box:hover, .member-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
         .member-box h1 {
-            color: #0066cc;
+            color: #ff3399;
             font-size: 28px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .member {
@@ -56,42 +64,65 @@
             align-items: center;
             gap: 20px;
             padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ffcce6;
+            transition: 0.2s;
         }
 
         .member:last-child {
             border-bottom: none;
         }
 
+        .member:hover {
+            background: #ffe6f5;
+            transform: translateX(5px);
+        }
+
         .member img {
-            width: 90px;
-            height: 90px;
-            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             object-fit: cover;
+            border: 3px solid #ff66b2;
         }
 
         .member-details h2 {
             margin: 0;
-            font-size: 24px;
-            color: #333;
+            font-size: 22px;
+            color: #ff0066;
         }
 
         .member-details p {
             margin: 5px 0;
+            color: #333;
+        }
+
+        .member-details a {
+            color: #ff3399;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .member-details a:hover {
+            text-decoration: underline;
         }
 
         .card {
-            background: white;
+            background: #fff0f5;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 15px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: 0.2s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            color: #ff3399;
         }
 
         .card a {
@@ -99,15 +130,32 @@
             margin-top: 10px;
             text-decoration: none;
             font-weight: bold;
-            color: #0066ff;
+            color: #ff0066;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
         }
 
         footer {
-            background: #dfe6ee;
+            background: #ffd9eb;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             margin-top: 30px;
             font-size: 14px;
+            color: #ff0066;
+            font-weight: 500;
+        }
+
+        @media(max-width: 768px) {
+            .member {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .member img {
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
