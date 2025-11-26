@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhóm 3- 12 Anh</title> 
+    <title>Nhóm 3 - 12 Anh</title>
 
     <style>
         body {
@@ -45,21 +45,39 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        .member-box h2 {
+        .member-box h1 {
             color: #0066cc;
             font-size: 28px;
             margin-bottom: 20px;
         }
 
         .member {
-            font-size: 24px;
-            font-weight: bold;
-            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 0;
             border-bottom: 1px solid #eee;
         }
 
         .member:last-child {
             border-bottom: none;
+        }
+
+        .member img {
+            width: 90px;
+            height: 90px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .member-details h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .member-details p {
+            margin: 5px 0;
         }
 
         .card {
@@ -97,76 +115,91 @@
 <body>
 
     <header>
-        <h1>Nhóm 3– Lớp 12 Anh</h1> 
+        <h1>Nhóm 3 – Lớp 12 Anh</h1>
         <p>Trang web tổng hợp các bài tập và bài thuyết trình của nhóm</p>
     </header>
 
     <div class="container">
 
-        <!-- Hi --> 
         <div class="intro-box">
-            <h2>👋 Hi!</h2> 
-            <p>Chào mừng bạn đến với trang web chính thức của <b>Nhóm 3 – 12 Anh</b>. Đây là nơi tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm.</p> 
+            <h2>👋 Xin chào!</h2>
+            <p>Chào mừng bạn đến với trang web chính thức của <b>Nhóm 3 – 12 Anh</b>. Đây là nơi tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm.</p>
         </div>
 
-        <!-- Giới thiệu thành viên -->
         <div class="member-box">
-            <h2>👥 Thành viên nhóm</h2>
+            <h1>Thông Tin Các Thành Viên</h1>
 
             <div class="member">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Shiba_Inu_-_wikipedia.jpg" class="member-img">
-                Tuyết Hạnh
+                <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/con-meo-hinh-ve-cute-de-thuong-1.png" alt="Ảnh Mỹ Anh">
+                <div class="member-details">
+                    <h2>Mỹ Anh</h2>
+                    <p>Lớp: 12A</p>
+                    <p><a href="https://www.facebook.com/username1" target="_blank">Facebook</a></p>
+                </div>
             </div>
 
             <div class="member">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Shiba_Inu_-_wikipedia.jpg" class="member-img">
-                Hải Yến
+                <img src="https://kenh14cdn.com/2017/photo-6-1509256567632.jpg" alt="Ảnh Hải Yến">
+                <div class="member-details">
+                    <h2>Hải Yến</h2>
+                    <p>Lớp: 12A</p>
+                    <p><a href="https://www.facebook.com/username2" target="_blank">Facebook</a></p>
+                </div>
             </div>
 
             <div class="member">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Shiba_Inu_-_wikipedia.jpg" class="member-img">
-                Mỹ Anh
+                <img src="https://topanh.com/wp-content/uploads/2025/05/hinh-con-vat-cute-1-768x1365.jpg" alt="Ảnh Tuyết Hạnh">
+                <div class="member-details">
+                    <h2>Tuyết Hạnh</h2>
+                    <p>Lớp: 12A</p>
+                    <p><a href="https://www.facebook.com/username3" target="_blank">Facebook</a></p>
+                </div>
             </div>
 
             <div class="member">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Shiba_Inu_-_wikipedia.jpg" class="member-img">
-                Thảo Uyên
+                <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/hinh-dong-vat-cute-de-thuong-3.png" alt="Ảnh Hải Vy">
+                <div class="member-details">
+                    <h2>Hải Vy</h2>
+                    <p>Lớp: 12A</p>
+                    <p><a href="https://www.facebook.com/username4" target="_blank">Facebook</a></p>
+                </div>
             </div>
 
             <div class="member">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Shiba_Inu_-_wikipedia.jpg" class="member-img">
-                Hải Vy
-            </div> 
+                <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/tranh-ve-dong-vat-cute.png" alt="Ảnh Thảo Uyên">
+                <div class="member-details">
+                    <h2>Thảo Uyên</h2>
+                    <p>Lớp: 12A</p>
+                    <p><a href="https://www.facebook.com/username5" target="_blank">Facebook</a></p>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Danh sách bài tập -->
         <h2>📚 Danh sách bài tập</h2>
 
         <div class="card">
             <h3>Bài tập 1: (Nhập tiêu đề bài tập)</h3>
             <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="#" target="_blank">Xem bài làm</a>
+            <a href="#">Xem bài làm</a>
         </div>
 
         <div class="card">
-            <h3>Bài tập 2: (Nhập tiêu đề bài tập)</h3>
+            <h3>Bài 8: (Nhập tiêu đề bài tập)</h3>
             <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="#" target="_blank">Xem bài làm</a>
+            <a href="#">Xem bài làm</a>
         </div>
 
-        <!-- Bài thuyết trình -->
-        <h2>🎤 Bài thuyết trình</h2>
-
         <div class="card">
-            <h3>Thuyết trình: (Tên chủ đề)</h3>
-            <p>Mô tả: (Thông tin ngắn về bài thuyết trình)</p>
-            <a href="https://www.canva.com/design/DAGz2i45OB8/UU2sHwnZwc0QJoMU2tDsMQ/edit?utm_content=DAGz2i45OB8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Xem bài thuyết trình</a>
+            <h3>Bài 9: (Nhập tiêu đề bài tập)</h3>
+            <p>Mô tả: (Nhập mô tả bài tập)</p>
+            <a href="#">Xem bài làm</a>
         </div>
 
     </div>
 
     <footer>
-        © 2025 - Nhóm 3 | Lớp 12 Anh 
+        © 2025 - Nhóm 3 | Lớp 12 Anh
     </footer>
 
 </body>
