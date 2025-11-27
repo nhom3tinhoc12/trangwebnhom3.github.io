@@ -18,7 +18,6 @@
             color: white;
             text-align: center;
             padding: 100px 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
             position: relative;
             overflow: hidden;
         }
@@ -26,11 +25,9 @@
         header::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 102, 178, 0.5);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(255,102,178,0.5);
             z-index: 1;
         }
 
@@ -41,37 +38,10 @@
             opacity: 0;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-            font-weight: 700;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-            opacity: 0.95;
-        }
+        header h1 { margin: 0; font-size: 36px; font-weight: 700; }
+        header p { margin-top: 10px; font-size: 18px; opacity: 0.95; }
 
         @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .banner img, .footer-image {
-            width: 80%;
-            max-width: 800px;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-            margin: 20px auto;
-            border-radius: 15px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 1.5s ease forwards;
-        }
-
-        @keyframes fadeUp {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
@@ -96,12 +66,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .member-box h1 {
-            color: #ff3399;
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+        .member-box h1 { color: #ff3399; font-size: 28px; margin-bottom: 20px; text-align: center; }
 
         .member {
             display: flex;
@@ -112,60 +77,30 @@
             transition: 0.2s;
         }
 
-        .member:last-child {
-            border-bottom: none;
-        }
-
-        .member:hover {
-            background: #ffe6f5;
-            transform: translateX(5px);
-        }
+        .member:last-child { border-bottom: none; }
+        .member:hover { background: #ffe6f5; transform: translateX(5px); }
 
         .member img {
-            width: 100px;
-            height: 100px;
+            width: 100px; height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #ff66b2;
         }
 
-        .member-details h2 {
-            margin: 0;
-            font-size: 22px;
-            color: #ff0066;
-        }
-
-        .member-details p {
-            margin: 5px 0;
-            color: #333;
-        }
-
-        .member-details a {
-            color: #ff3399;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .member-details a:hover {
-            text-decoration: underline;
-        }
+        .member-details h2 { margin: 0; font-size: 22px; color: #ff0066; }
+        .member-details p { margin: 5px 0; color: #333; }
+        .member-details a { color: #ff3399; font-weight: bold; text-decoration: none; transition: 0.2s; }
+        .member-details a:hover { text-decoration: underline; }
 
         .profile-btn {
-            display: inline-block;
-            margin-top: 8px;
+            display: inline-block; margin-top: 8px;
             padding: 8px 15px;
-            background: #ff66b2;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
+            background: #ff66b2; color: white;
+            border-radius: 8px; text-decoration: none;
+            font-weight: bold; transition: 0.2s;
         }
 
-        .profile-btn:hover {
-            background: #ff3385;
-        }
+        .profile-btn:hover { background: #ff3385; }
 
         .card {
             background: #fff0f5;
@@ -176,47 +111,47 @@
             transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .card h3 {
-            color: #ff3399;
-        }
-
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #ff0066;
-        }
-
-        .card a:hover {
-            text-decoration: underline;
-        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .card h3 { color: #ff3399; }
+        .card a { display: inline-block; margin-top: 10px; text-decoration: none; font-weight: bold; color: #ff0066; }
+        .card a:hover { text-decoration: underline; }
 
         footer {
-            background: #ffd9eb;
+            position: relative;
             text-align: center;
-            padding: 20px;
             margin-top: 30px;
             font-size: 14px;
             color: #ff0066;
             font-weight: 500;
         }
 
-        @media(max-width: 768px) {
-            .member {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .member img {
-                margin-bottom: 10px;
-            }
+        footer .footer-image {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            display: block;
+            margin: auto;
         }
+
+        footer .footer-text {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            animation: fadeInUp 2s ease forwards;
+        }
+
+        @media(max-width: 768px) {
+            .member { flex-direction: column; text-align: center; }
+            .member img { margin-bottom: 10px; }
+            footer .footer-text { font-size: 16px; }
+        }
+
     </style>
 </head>
 
@@ -226,10 +161,6 @@
         <h1>Nhóm 3 – Lớp 12 Anh</h1>
         <p>Trang web tổng hợp các bài tập và bài thuyết trình của nhóm</p>
     </header>
-
-    <div class="banner">
-        <img src="https://upload.wikimedia.org/wikipedia/vi/c/c6/BenTreHighSchool.jpg">
-    </div>
 
     <div class="container">
 
@@ -298,28 +229,27 @@
         <div class="card">
             <h3>Bài tập 1: </h3>
             <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="https://www.canva.com/design/DAGz2i45OB8/UU2sHwnZwc0QJoMU2tDsMQ/edit?utm_content=DAGz2i45OB8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Xem bài làm</a>
+            <a href="#">Xem bài làm</a>
         </div>
 
         <div class="card">
             <h3>Bài 8: </h3>
             <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="https://www.canva.com/design/DAG5zTMoVLQ/F7F_aE1Kb9nlYccP_dbrow/edit?utm_content=DAG5zTMoVLQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Xem bài làm</a>
+            <a href="#">Xem bài làm</a>
         </div>
 
         <div class="card">
             <h3>Bài 9: </h3>
             <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="https://www.canva.com/design/DAG5ytng9vo/1oWxm0hf_kZ9BU634bZhBg/edit?utm_content=DAG5ytng9vo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Xem bài làm</a>
+            <a href="#">Xem bài làm</a>
         </div>
 
     </div>
 
-
-  <footer>
-    <img src="https://microsoftoffice.vn/wp-content/uploads/2022/05/image011.png" alt="Hình footer" class="footer-image">
-    <div class="footer-text">© 2025 Nhóm 3 - 12 Anh</div>
-  </footer>
+    <footer>
+        <img src="https://microsoftoffice.vn/wp-content/uploads/2022/05/image011.png" alt="Hình footer" class="footer-image">
+        <div class="footer-text">© 2025 Nhóm 3 - 12 Anh</div>
+    </footer>
 
 </body>
 </html>
