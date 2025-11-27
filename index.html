@@ -13,11 +13,32 @@
         }
 
         header {
-            background: linear-gradient(90deg, #ff66b2, #ff99cc);
+            background: url('https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-summer-refreshing-banner-background-claritycandycute-backgroundsummer-image_52755.jpg') no-repeat center center;
+            background-size: cover;
             color: white;
             text-align: center;
-            padding: 50px 10px;
+            padding: 100px 10px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 102, 178, 0.5);
+            z-index: 1;
+        }
+
+        header h1, header p {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.5s ease forwards;
+            opacity: 0;
         }
 
         header h1 {
@@ -32,10 +53,27 @@
             opacity: 0.95;
         }
 
-        .banner img {
-            width: 100%;
-            height: auto;
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .banner img, .footer-image {
+            width: 80%;
+            max-width: 800px;
+            height: 300px;
+            object-fit: cover;
             display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1.5s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .container {
@@ -279,7 +317,7 @@
 
   <footer>
     <p>© 2025 Nhóm 3 - 12 Anh</p>
-    <img src="https://i.pinimg.com/originals/c6/54/62/c654622919bc26d05726715da1bba6ee.jpg" alt="Hình dưới footer" class="footer-image">
+    <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190619/ourmid/pngtree-pink-cute-background-banner-image_131910.jpg" alt="Hình dưới footer" class="footer-image">
   </footer>
 
 </body>
