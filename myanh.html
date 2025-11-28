@@ -6,19 +6,35 @@
   <style>
     body {
       font-family: "Be Vietnam Pro";
-      background: #ffe2ed;
       margin: 0;
-      padding: 30px;
-      animation: fade 0.8s ease;
+      padding: 0;
       overflow: hidden; /* Đảm bảo không xuất hiện thanh cuộn */
+      position: relative;
+      background: #ffe2ed;
     }
-    
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+
+    /* Nền ô caro chuyển động */
+    .checkerboard {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, #ff4f9c 25%, transparent 25%, transparent 50%, #ff4f9c 50%, #ff4f9c 75%, transparent 75%, transparent);
+      animation: moveBackground 3s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 100px 100px;
+      }
     }
 
     .box {
+      position: relative;
       background: #fff;
       padding: 25px;
       border-radius: 18px;
@@ -26,6 +42,7 @@
       margin: auto;
       text-align: center;
       box-shadow: 0 6px 20px rgba(255, 105, 180, 0.18);
+      z-index: 10; /* Đảm bảo nội dung không bị che bởi nền */
     }
 
     img {
@@ -57,7 +74,7 @@
       font-size: 30px;
       color: #ff4f9c;
       opacity: 0;
-      animation: fall 4s infinite;
+      animation: fall 4s ease-in-out infinite;
     }
 
     @keyframes fall {
@@ -70,9 +87,31 @@
         transform: translateY(100vh);
       }
     }
+
+    /* Thêm phần cho các mục giới thiệu */
+    .section-title {
+      font-size: 22px;
+      color: #ff2e78;
+      margin-top: 20px;
+    }
+
+    .section-content {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .section-content b {
+      color: #ff4f9c;
+    }
   </style>
 </head>
 <body>
+  <!-- Nền ô caro chuyển động -->
+  <div class="checkerboard"></div>
+
+  <!-- Nội dung trang cá nhân -->
   <div class="box">
     <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/con-meo-hinh-ve-cute-de-thuong-1.png" alt="Mỹ Anh">
     <h1>Mỹ Anh</h1>
@@ -80,6 +119,36 @@
     <p><b>Sở thích:</b> Đọc truyện, livestream, chụp ảnh</p>
     <br>
     <a href="index.html">⬅ Quay lại</a>
+    
+    <!-- Lời giới thiệu -->
+    <div class="section-title">Lời giới thiệu</div>
+    <div class="section-content">
+      Chào các bạn! Tôi là Mỹ Anh, một cô gái yêu thích sự sáng tạo và luôn tìm kiếm những điều mới mẻ trong cuộc sống. Tôi thích chia sẻ những câu chuyện và cảm xúc qua các buổi livestream và chụp ảnh. Trong tương lai, tôi hy vọng có thể phát triển khả năng sáng tạo của mình và tạo ra những sản phẩm mang tính nghệ thuật cao.
+    </div>
+
+    <!-- Sở thích -->
+    <div class="section-title">Sở thích</div>
+    <div class="section-content">
+      Tôi rất đam mê đọc sách, đặc biệt là các thể loại tiểu thuyết tình cảm và huyền bí. Bên cạnh đó, tôi còn yêu thích việc livestream để kết nối và chia sẻ cuộc sống của mình với mọi người. Chụp ảnh cũng là một sở thích lớn, tôi thích ghi lại những khoảnh khắc đáng nhớ trong cuộc sống.
+    </div>
+
+    <!-- Mục tiêu -->
+    <div class="section-title">Mục tiêu</div>
+    <div class="section-content">
+      Mục tiêu của tôi trong tương lai là trở thành một người sáng tạo nội dung chuyên nghiệp, với khả năng tạo ra các sản phẩm không chỉ đẹp mà còn mang tính cảm xúc, kết nối với mọi người. Tôi cũng muốn phát triển sự nghiệp trong ngành truyền thông và nghệ thuật, để có thể thể hiện bản thân qua các dự án sáng tạo.
+    </div>
+
+    <!-- Định hướng nghề nghiệp -->
+    <div class="section-title">Định hướng nghề nghiệp</div>
+    <div class="section-content">
+      Trong thời gian tới, tôi dự định sẽ theo học ngành truyền thông hoặc thiết kế đồ họa để có thể phát triển kỹ năng sáng tạo. Ngoài ra, tôi cũng muốn học hỏi thêm về các kỹ năng quay phim, biên tập video, vì đây là những lĩnh vực mà tôi cảm thấy rất đam mê.
+    </div>
+
+    <!-- Châm ngôn -->
+    <div class="section-title">Châm ngôn sống</div>
+    <div class="section-content">
+      "Hãy sống như bạn đang sống lần cuối, nhưng hãy làm việc như bạn sẽ sống mãi mãi." - Mahatma Gandhi
+    </div>
   </div>
 
   <script>
@@ -91,7 +160,7 @@
 
       // Đặt vị trí ngẫu nhiên cho tim
       heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Thời gian rơi ngẫu nhiên từ 2s đến 5s
+      heart.style.animationDuration = (Math.random() * 4 + 3) + 's'; // Thời gian rơi ngẫu nhiên từ 3s đến 7s
       heart.style.animationDelay = Math.random() * 2 + 's'; // Độ trễ ngẫu nhiên
 
       document.body.appendChild(heart);
@@ -102,8 +171,8 @@
       });
     }
 
-    // Tạo tim mỗi 300ms
-    setInterval(createHeart, 300);
+    // Tạo tim mỗi 500ms
+    setInterval(createHeart, 500);
   </script>
 </body>
 </html>
