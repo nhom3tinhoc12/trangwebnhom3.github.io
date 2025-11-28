@@ -82,7 +82,6 @@ a { color: #ff4d88; font-weight: bold; text-decoration: none; }
     align-items: center;
     flex-direction: column;
     z-index: 9999;
-    animation: overlayFade 0.6s ease;
 }
 
 #introOverlay h2 {
@@ -101,6 +100,7 @@ a { color: #ff4d88; font-weight: bold; text-decoration: none; }
     cursor: pointer;
     transition: 0.3s;
 }
+
 #enterBtn:hover { background: #ff2e72; }
 
 .fadeOut {
@@ -109,7 +109,7 @@ a { color: #ff4d88; font-weight: bold; text-decoration: none; }
 
 @keyframes fadeOut {
     from { opacity: 1; }
-    to { opacity: 0; visibility: hidden; }
+    to { opacity: 0; }
 }
 </style>
 </head>
@@ -122,7 +122,9 @@ a { color: #ff4d88; font-weight: bold; text-decoration: none; }
 
 <script>
 document.getElementById("enterBtn").onclick = function() {
-    document.getElementById("introOverlay").classList.add("fadeOut");
+    const overlay = document.getElementById("introOverlay");
+    overlay.classList.add("fadeOut");
+    setTimeout(() => { overlay.style.display = "none"; }, 800);
 };
 
 for (let i = 0; i < 25; i++) {
@@ -131,11 +133,9 @@ for (let i = 0; i < 25; i++) {
     leaf.style.left = Math.random() * 100 + "vw";
     leaf.style.animationDuration = (5 + Math.random() * 5) + "s";
     leaf.style.animationDelay = Math.random() * 5 + "s";
-
     const size = 20 + Math.random() * 20;
     leaf.style.width = size + "px";
     leaf.style.height = size + "px";
-
     document.body.appendChild(leaf);
 }
 </script>
