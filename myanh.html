@@ -23,4 +23,87 @@
       padding: 25px;
       border-radius: 18px;
       width: 450px;
-      margin: au
+      margin: auto;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.18);
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff5fa2;
+    }
+
+    h1 {
+      color: #ff2e78;
+    }
+
+    p {
+      color: #333;
+      font-size: 16px;
+    }
+
+    a {
+      color: #ff4f9c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Hiệu ứng tim */
+    .heart {
+      position: absolute;
+      font-size: 30px;
+      color: #ff4f9c;
+      opacity: 0;
+      animation: fall 4s infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        opacity: 1;
+        transform: translateY(-100px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/con-meo-hinh-ve-cute-de-thuong-1.png" alt="Mỹ Anh">
+    <h1>Mỹ Anh</h1>
+    <p><b>Ngày sinh:</b> 06/02/2008</p>
+    <p><b>Sở thích:</b> Đọc truyện, livestream, chụp ảnh</p>
+    <br>
+    <a href="index.html">⬅ Quay lại</a>
+  </div>
+
+  <script>
+    // Hàm tạo tim ngẫu nhiên
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '&#10084;'; // Ký tự trái tim
+
+      // Đặt vị trí ngẫu nhiên cho tim
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Thời gian rơi ngẫu nhiên từ 2s đến 5s
+      heart.style.animationDelay = Math.random() * 2 + 's'; // Độ trễ ngẫu nhiên
+
+      document.body.appendChild(heart);
+
+      // Xóa tim khi hoàn thành animation
+      heart.addEventListener('animationend', () => {
+        heart.remove();
+      });
+    }
+
+    // Tạo tim mỗi 300ms
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
