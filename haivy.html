@@ -5,7 +5,7 @@
 <title>Trang cá nhân - Hải Vy</title>
 <style>
 body {
-    font-family: "Be Vietnam Pro";
+    font-family: "Be Vietnam Pro", sans-serif;
     background: linear-gradient(120deg, #ffd1e8, #ffeaf3, #ffc7dc);
     background-size: 400% 400%;
     animation: bgMove 12s ease infinite;
@@ -42,17 +42,21 @@ h1 { color: #ff3377; }
 p { color: #333; font-size: 16px; }
 a { color: #ff4d88; font-weight: bold; text-decoration: none; }
 
-.leaf {
+.leaf, .leaf2 {
     position: fixed;
     top: -60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: fall linear infinite;
+    transform-style: preserve-3d;
+}
+
+.leaf {
     width: 30px;
     height: 30px;
     background-image: url('https://cdn-icons-png.flaticon.com/512/7650/7650466.png');
-    background-size: cover;
-    opacity: 0.9;
-    animation: fall linear infinite, spin 3s ease-in-out infinite;
-    pointer-events: none;
-    transform-style: preserve-3d;
 }
 
 @keyframes fall {
@@ -148,6 +152,7 @@ document.getElementById("enterBtn").onclick = function() {
     }, 800);
 };
 
+// Lá rơi cơ bản
 for (let i = 0; i < 35; i++) {
     let leaf = document.createElement("div");
     leaf.classList.add("leaf");
@@ -160,6 +165,28 @@ for (let i = 0; i < 35; i++) {
     document.body.appendChild(leaf);
 }
 
+// Lá rơi nâng cấp (nhiều loại lá)
+const leafImages = [
+    "https://cdn-icons-png.flaticon.com/512/7650/7650466.png",
+    "https://cdn-icons-png.flaticon.com/512/4151/4151022.png",
+    "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
+    "https://cdn-icons-png.flaticon.com/512/7650/7650472.png"
+];
+
+for (let i = 0; i < 40; i++) {
+    let leaf = document.createElement("div");
+    leaf.classList.add("leaf2");
+    leaf.style.backgroundImage = `url('${leafImages[Math.floor(Math.random() * leafImages.length)]}')`;
+    const size = 25 + Math.random() * 35;
+    leaf.style.width = size + "px";
+    leaf.style.height = size + "px";
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.animationDuration = (6 + Math.random() * 6) + "s";
+    leaf.style.animationDelay = Math.random() * 4 + "s";
+    document.body.appendChild(leaf);
+}
+
+// Particles background
 for (let i = 0; i < 40; i++) {
     let p = document.createElement("div");
     p.classList.add("particle");
