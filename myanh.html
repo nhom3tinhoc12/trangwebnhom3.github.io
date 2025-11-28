@@ -77,17 +77,17 @@
       font-size: 30px;
       color: #ff4f9c;
       opacity: 0;
-      animation: fall 4s ease-in-out infinite;
+      animation: fall 5s ease-in-out infinite; /* Điều chỉnh thời gian để tim rơi chậm */
     }
 
     @keyframes fall {
       0% {
         opacity: 1;
-        transform: translateY(-100px);
+        transform: translateY(-100px); /* Bắt đầu từ trên cùng */
       }
       100% {
         opacity: 0;
-        transform: translateY(100vh);
+        transform: translateY(100vh); /* Kết thúc ở dưới cùng */
       }
     }
 
@@ -154,28 +154,4 @@
     </div>
   </div>
 
-  <script>
-    // Hàm tạo tim ngẫu nhiên
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.innerHTML = '&#10084;'; // Ký tự trái tim
-
-      // Đặt vị trí ngẫu nhiên cho tim
-      heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.animationDuration = (Math.random() * 4 + 3) + 's'; // Thời gian rơi ngẫu nhiên từ 3s đến 7s
-      heart.style.animationDelay = Math.random() * 2 + 's'; // Độ trễ ngẫu nhiên
-
-      document.body.appendChild(heart);
-
-      // Xóa tim khi hoàn thành animation
-      heart.addEventListener('animationend', () => {
-        heart.remove();
-      });
-    }
-
-    // Tạo tim mỗi 500ms
-    setInterval(createHeart, 500);
-  </script>
-</body>
-</html>
+  <scri
