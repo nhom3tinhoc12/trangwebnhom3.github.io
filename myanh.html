@@ -10,9 +10,11 @@
       padding: 0;
       overflow: hidden; /* Đảm bảo không xuất hiện thanh cuộn */
       position: relative;
-      background-image: url('https://your-image-link.com/background.jpg'); /* Thêm hình ảnh nền */
-      background-size: cover; /* Lấp đầy toàn bộ màn hình */
-      background-position: center; /* Căn giữa hình ảnh */
+      
+      /* Nền chấm bi (polka dots) */
+      background: radial-gradient(circle, #ff4f9c 10%, transparent 10%) 0 0,
+                  radial-gradient(circle, #ff4f9c 10%, transparent 10%) 50px 50px;
+      background-size: 100px 100px; /* Kích thước của các chấm bi */
       background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
     }
 
@@ -38,120 +40,4 @@
 
     .box {
       position: relative;
-      background: rgba(255, 255, 255, 0.9); /* Nền mờ cho box */
-      padding: 25px;
-      border-radius: 18px;
-      width: 450px;
-      margin: auto;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.18);
-      z-index: 10; /* Đảm bảo nội dung không bị che bởi nền */
-    }
-
-    img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #ff5fa2;
-    }
-
-    h1 {
-      color: #ff2e78;
-    }
-
-    p {
-      color: #333;
-      font-size: 16px;
-    }
-
-    a {
-      color: #ff4f9c;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* Hiệu ứng tim */
-    .heart {
-      position: absolute;
-      font-size: 30px;
-      color: #ff4f9c;
-      opacity: 0;
-      animation: fall 5s ease-in-out infinite; /* Điều chỉnh thời gian để tim rơi chậm */
-    }
-
-    @keyframes fall {
-      0% {
-        opacity: 1;
-        transform: translateY(-100px); /* Bắt đầu từ trên cùng */
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(100vh); /* Kết thúc ở dưới cùng */
-      }
-    }
-
-    /* Thêm phần cho các mục giới thiệu */
-    .section-title {
-      font-size: 22px;
-      color: #ff2e78;
-      margin-top: 20px;
-    }
-
-    .section-content {
-      color: #333;
-      font-size: 16px;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    .section-content b {
-      color: #ff4f9c;
-    }
-  </style>
-</head>
-<body>
-  <!-- Nền ô caro chuyển động -->
-  <div class="checkerboard"></div>
-
-  <!-- Nội dung trang cá nhân -->
-  <div class="box">
-    <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/con-meo-hinh-ve-cute-de-thuong-1.png" alt="Mỹ Anh">
-    <h1>Mỹ Anh</h1>
-    <p><b>Ngày sinh:</b> 06/02/2008</p>
-    <p><b>Sở thích:</b> Đọc truyện, livestream, chụp ảnh</p>
-    <br>
-    <a href="index.html">⬅ Quay lại</a>
-    
-    <!-- Lời giới thiệu -->
-    <div class="section-title">Lời giới thiệu</div>
-    <div class="section-content">
-      Chào các bạn! Tôi là Mỹ Anh, một cô gái yêu thích sự sáng tạo và luôn tìm kiếm những điều mới mẻ trong cuộc sống. Tôi thích chia sẻ những câu chuyện và cảm xúc qua các buổi livestream và chụp ảnh. Trong tương lai, tôi hy vọng có thể phát triển khả năng sáng tạo của mình và tạo ra những sản phẩm mang tính nghệ thuật cao.
-    </div>
-
-    <!-- Sở thích -->
-    <div class="section-title">Sở thích</div>
-    <div class="section-content">
-      Tôi rất đam mê đọc sách, đặc biệt là các thể loại tiểu thuyết tình cảm và huyền bí. Bên cạnh đó, tôi còn yêu thích việc livestream để kết nối và chia sẻ cuộc sống của mình với mọi người. Chụp ảnh cũng là một sở thích lớn, tôi thích ghi lại những khoảnh khắc đáng nhớ trong cuộc sống.
-    </div>
-
-    <!-- Mục tiêu -->
-    <div class="section-title">Mục tiêu</div>
-    <div class="section-content">
-      Mục tiêu của tôi trong tương lai là trở thành một người sáng tạo nội dung chuyên nghiệp, với khả năng tạo ra các sản phẩm không chỉ đẹp mà còn mang tính cảm xúc, kết nối với mọi người. Tôi cũng muốn phát triển sự nghiệp trong ngành truyền thông và nghệ thuật, để có thể thể hiện bản thân qua các dự án sáng tạo.
-    </div>
-
-    <!-- Định hướng nghề nghiệp -->
-    <div class="section-title">Định hướng nghề nghiệp</div>
-    <div class="section-content">
-      Trong thời gian tới, tôi dự định sẽ theo học ngành truyền thông hoặc thiết kế đồ họa để có thể phát triển kỹ năng sáng tạo. Ngoài ra, tôi cũng muốn học hỏi thêm về các kỹ năng quay phim, biên tập video, vì đây là những lĩnh vực mà tôi cảm thấy rất đam mê.
-    </div>
-
-    <!-- Châm ngôn -->
-    <div class="section-title">Châm ngôn sống</div>
-    <div class="section-content">
-      "Hãy sống như bạn đang sống lần cuối, nhưng hãy làm việc như bạn sẽ sống mãi mãi." - Mahatma Gandhi
-    </div>
-  </div>
-
-  <scri
+      background: rgba(255, 255, 255, 0.9)
