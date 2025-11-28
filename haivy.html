@@ -6,11 +6,19 @@
 <style>
 body {
     font-family: "Be Vietnam Pro";
-    background: #ffe3ef;
+    background: linear-gradient(120deg, #ffd1e8, #ffeaf3, #ffc7dc);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
     margin: 0;
     padding: 30px;
-    animation: fade 0.8s ease;
     overflow-x: hidden;
+}
+
+/* Hiệu ứng nền chuyển động */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes fade {
@@ -26,6 +34,7 @@ body {
     margin: auto;
     text-align: center;
     box-shadow: 0 6px 20px rgba(255, 95, 130, 0.18);
+    animation: fade 1s ease;
 }
 
 img {
@@ -50,24 +59,29 @@ a { color: #ff4d88; font-weight: bold; text-decoration: none; }
     background-size: cover;
     opacity: 0.85;
     animation: fall linear infinite;
+    pointer-events: none;
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0.3;
-    }
+    0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.3; }
 }
 </style>
 </head>
 <body>
 
+<!-- 🎵 Nhạc nền -->
+<audio id="bgMusic" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/01/27/audio_3adbc49f86.mp3?filename=relaxing-music-lofi-133746.mp3" type="audio/mpeg">
+</audio>
 
 <script>
+// Tự động bật nhạc sau khi người dùng tương tác (do trình duyệt chặn autoplay)
+document.addEventListener("click", function () {
+    document.getElementById("bgMusic").play();
+}, { once: true });
+
+// Tạo hiệu ứng lá rơi
 for (let i = 0; i < 15; i++) {
     let leaf = document.createElement("div");
     leaf.classList.add("leaf");
@@ -83,20 +97,21 @@ for (let i = 0; i < 15; i++) {
 
     <h1>Hải Vy</h1>
 
-    <p><b>👋 Lời chào:</b><br> Chào bạn! Mình là Hải Vy — người thích khám phá, sáng tạo và luôn tìm cách trở nên tốt hơn mỗi ngày!</p>
+    <p><b>👋 Lời chào:</b><br>
+    Chào bạn! Mình là Hải Vy — người thích khám phá, sáng tạo và luôn tìm cách trở nên tốt hơn mỗi ngày!</p>
 
     <p><b>Ngày sinh:</b> 01/01/2008</p>
 
     <p><b>🎯 Định hướng nghề nghiệp:</b><br>
-    Muốn trở thành <b>kế toán</b> hoặc <b>huấn luyện viên thú cưng</b>, nơi có thể kết hợp sáng tạo và công nghệ.</p>
+    Muốn trở thành <b>kế toán</b> hoặc <b>huấn luyện viên thú cưng</b>, nơi có thể kết hợp sự tỉ mỉ và tình yêu với động vật.</p>
 
     <p><b>💖 Tính cách:</b><br>
     Hòa đồng, kiên nhẫn, thích học hỏi và luôn cởi mở với điều mới.</p>
 
     <p><b>🌟 Mục tiêu:</b><br>
-    - Nâng cao kỹ năng thiết kế và công nghệ<br>
-    - Tham gia các dự án cá nhân sáng tạo<br>
-    - Xây dựng portfolio chuyên nghiệp trước năm 20 tuổi</p>
+    - Phát triển kỹ năng chuyên môn<br>
+    - Xây dựng định hướng nghề nghiệp rõ ràng<br>
+    - Hoàn thiện bản thân từng ngày</p>
 
     <p><b>✨ Sở thích:</b> Nấu ăn, chơi game, đạp xe</p>
 
@@ -106,4 +121,3 @@ for (let i = 0; i < 15; i++) {
 
 </body>
 </html>
-
