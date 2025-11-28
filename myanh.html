@@ -10,7 +10,10 @@
       padding: 0;
       overflow: hidden; /* Đảm bảo không xuất hiện thanh cuộn */
       position: relative;
-      background: #ffe2ed;
+      background-image: url('https://your-image-link.com/background.jpg'); /* Thêm hình ảnh nền */
+      background-size: cover; /* Lấp đầy toàn bộ màn hình */
+      background-position: center; /* Căn giữa hình ảnh */
+      background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
     }
 
     /* Nền ô caro chuyển động */
@@ -35,7 +38,7 @@
 
     .box {
       position: relative;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.9); /* Nền mờ cho box */
       padding: 25px;
       border-radius: 18px;
       width: 450px;
@@ -176,4 +179,3 @@
   </script>
 </body>
 </html>
-
