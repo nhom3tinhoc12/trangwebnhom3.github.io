@@ -1,255 +1,226 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhóm 3 - 12 Anh</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhóm 3 - 12 Anh</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap');
 
-    <style>
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #ffe6f0;
-            margin: 0;
-        }
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #ff5fa1, #ff85c1, #ffcce6);
+    color: #fff;
+}
 
-        header {
-            background: url('https://thptchuyenbentre.edu.vn/themes/default/ogimage.png') no-repeat center center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 100px 10px;
-            position: relative;
-            overflow: hidden;
-        }
+header {
+    background: linear-gradient(rgba(255,0,102,0.6), rgba(255,77,166,0.6)), url('https://thptchuyenbentre.edu.vn/themes/default/ogimage.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 10px;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
 
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(255,102,178,0.5);
-            z-index: 1;
-        }
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+    animation: fadeSlideDown 1.5s ease forwards;
+}
 
-        header h1, header p {
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1.5s ease forwards;
-            opacity: 0;
-        }
+header p {
+    margin-top: 15px;
+    font-size: 20px;
+    opacity: 0.95;
+    animation: fadeSlideUp 1.5s ease forwards;
+}
 
-        header h1 { margin: 0; font-size: 36px; font-weight: 700; }
-        header p { margin-top: 10px; font-size: 18px; opacity: 0.95; }
+@keyframes fadeSlideDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-        .container {
-            width: 85%;
-            margin: auto;
-            padding: 30px 0;
-        }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: -80px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
 
-        .intro-box, .member-box {
-            background: #fff0f5;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+.intro-box, .member-box, .card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .intro-box:hover, .member-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
+.intro-box:hover, .member-box:hover, .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+}
 
-        .member-box h1 { color: #ff3399; font-size: 28px; margin-bottom: 20px; text-align: center; }
+.intro-box h2, .member-box h1, .card h3 {
+    color: #fff;
+}
 
-        .member {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 15px 0;
-            border-bottom: 1px solid #ffcce6;
-            transition: 0.2s;
-        }
+.member {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.2s, background 0.2s;
+}
 
-        .member:last-child { border-bottom: none; }
-        .member:hover { background: #ffe6f5; transform: translateX(5px); }
+.member:last-child { border-bottom: none; }
+.member:hover { transform: translateX(10px); background: rgba(255,255,255,0.05); }
 
-        .member img {
-            width: 100px; height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ff66b2;
-        }
+.member img {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff99c2;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.member img:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 8px 25px rgba(255,50,150,0.5); }
 
-        .member-details h2 { margin: 0; font-size: 22px; color: #ff0066; }
-        .member-details p { margin: 5px 0; color: #333; }
-        .member-details a { color: #ff3399; font-weight: bold; text-decoration: none; transition: 0.2s; }
-        .member-details a:hover { text-decoration: underline; }
+.member-details h2 { margin: 0; font-size: 22px; color: #ffebf2; }
+.member-details p, .member-details a { color: #ffe6f0; }
+.member-details a { text-decoration: none; font-weight: bold; }
+.member-details a:hover { text-decoration: underline; color: #fff; }
 
-        .profile-btn {
-            display: inline-block; margin-top: 8px;
-            padding: 8px 15px;
-            background: #ff66b2; color: white;
-            border-radius: 8px; text-decoration: none;
-            font-weight: bold; transition: 0.2s;
-        }
+.profile-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 20px;
+    background: #ff66b2;
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.profile-btn:hover { background: #ff3385; transform: translateY(-3px); }
 
-        .profile-btn:hover { background: #ff3385; }
+.card h3 { color: #fff; }
+.card a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.2s; }
+.card a:hover { text-decoration: underline; color: #ffccd9; }
 
-        .card {
-            background: #fff0f5;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 15px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px 0;
+    color: #fff;
+    font-weight: 500;
+    background: rgba(255,0,102,0.6);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: relative;
+    overflow: hidden;
+}
 
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .card h3 { color: #ff3399; }
-        .card a { display: inline-block; margin-top: 10px; text-decoration: none; font-weight: bold; color: #ff0066; }
-        .card a:hover { text-decoration: underline; }
+footer .footer-text {
+    font-size: 18px;
+    font-weight: 600;
+    animation: glow 2s ease-in-out infinite alternate;
+}
 
-        footer {
-            position: relative;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 14px;
-            color: #ff0066;
-            font-weight: 500;
-        }
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff99cc, 0 0 15px #ff3399; }
+    100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc, 0 0 25px #ff3399; }
+}
 
-        footer .footer-image {
-            width: 100%;
-            max-width: 800px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
-            display: block;
-            margin: auto;
-        }
-
-        footer .footer-text {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-            animation: fadeInUp 2s ease forwards;
-        }
-
-        @media(max-width: 768px) {
-            .member { flex-direction: column; text-align: center; }
-            .member img { margin-bottom: 10px; }
-            footer .footer-text { font-size: 16px; }
-        }
-
-    </style>
+@media(max-width: 768px) {
+    .member { flex-direction: column; text-align: center; }
+    .member img { margin-bottom: 10px; }
+}
+</style>
 </head>
-
 <body>
 
-    <header>
-        <h1>Nhóm 3 – Lớp 12 Anh</h1>
-        <p>Trang web tổng hợp các bài tập và bài thuyết trình của nhóm</p>
-    </header>
+<header>
+    <h1>Nhóm 3 – Lớp 12 Anh</h1>
+    <p>Trang web tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm</p>
+</header>
 
-    <div class="container">
+<div class="container">
+    <div class="intro-box">
+        <h2>👋 Xin chào!</h2>
+        <p>Chào mừng bạn đến với trang web chính thức của <b>Nhóm 3 – 12 Anh</b>. Đây là nơi tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm.</p>
+    </div>
 
-        <div class="intro-box">
-            <h2>👋 Xin chào!</h2>
-            <p>Chào mừng bạn đến với trang web chính thức của <b>Nhóm 3 – 12 Anh</b>. Đây là nơi tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm.</p>
+    <div class="member-box">
+        <h1>Thông Tin Các Thành Viên</h1>
+
+        <div class="member">
+            <img src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg" alt="Mỹ Anh">
+            <div class="member-details">
+                <h2>Mỹ Anh</h2>
+                <p>Lớp: 12A</p>
+                <p><a href="#" target="_blank">Facebook</a></p>
+                <a class="profile-btn" href="myanh.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
-        <div class="member-box">
-            <h1>Thông Tin Các Thành Viên</h1>
-
-            <div class="member">
-                <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/con-meo-hinh-ve-cute-de-thuong-1.png" alt="Ảnh Mỹ Anh">
-                <div class="member-details">
-                    <h2>Mỹ Anh</h2>
-                    <p>Lớp: 12A</p>
-                    <p><a href="https://www.facebook.com/username1" target="_blank">Facebook</a></p>
-                    <a class="profile-btn" href="myanh.html">Xem trang cá nhân</a>
-                </div>
+        <div class="member">
+            <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg" alt="Hải Yến">
+            <div class="member-details">
+                <h2>Hải Yến</h2>
+                <p>Lớp: 12A</p>
+                <p><a href="#" target="_blank">Facebook</a></p>
+                <a class="profile-btn" href="haiyen.html">Xem trang cá nhân</a>
             </div>
-
-            <div class="member">
-                <img src="https://kenh14cdn.com/2017/photo-6-1509256567632.jpg" alt="Ảnh Hải Yến">
-                <div class="member-details">
-                    <h2>Hải Yến</h2>
-                    <p>Lớp: 12A</p>
-                    <p><a href="https://www.facebook.com/username2" target="_blank">Facebook</a></p>
-                    <a class="profile-btn" href="haiyen.html">Xem trang cá nhân</a>
-                </div>
-            </div>
-
-            <div class="member">
-                <img src="https://topanh.com/wp-content/uploads/2025/05/hinh-con-vat-cute-1-768x1365.jpg" alt="Ảnh Tuyết Hạnh">
-                <div class="member-details">
-                    <h2>Tuyết Hạnh</h2>
-                    <p>Lớp: 12A</p>
-                    <p><a href="https://www.facebook.com/username3" target="_blank">Facebook</a></p>
-                    <a class="profile-btn" href="tuyethanh.html">Xem trang cá nhân</a>
-                </div>
-            </div>
-
-            <div class="member">
-                <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/hinh-dong-vat-cute-de-thuong-3.png" alt="Ảnh Hải Vy">
-                <div class="member-details">
-                    <h2>Hải Vy</h2>
-                    <p>Lớp: 12A</p>
-                    <p><a href="https://www.facebook.com/username4" target="_blank">Facebook</a></p>
-                    <a class="profile-btn" href="haivy.html">Xem trang cá nhân</a>
-                </div>
-            </div>
-
-            <div class="member">
-                <img src="https://mythuatbui.edu.vn/wp-content/uploads/2025/01/tranh-ve-dong-vat-cute.png" alt="Ảnh Thảo Uyên">
-                <div class="member-details">
-                    <h2>Thảo Uyên</h2>
-                    <p>Lớp: 12A</p>
-                    <p><a href="https://www.facebook.com/username5" target="_blank">Facebook</a></p>
-                    <a class="profile-btn" href="thaouyen.html">Xem trang cá nhân</a>
-                </div>
-            </div>
-
         </div>
 
-        <h2>📚 Danh sách bài tập</h2>
-
-        <div class="card">
-            <h3>Bài tập 1: </h3>
-            <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="#">Xem bài làm</a>
+        <div class="member">
+            <img src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg" alt="Tuyết Hạnh">
+            <div class="member-details">
+                <h2>Tuyết Hạnh</h2>
+                <p>Lớp: 12A</p>
+                <p><a href="#" target="_blank">Facebook</a></p>
+                <a class="profile-btn" href="tuyethanh.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Bài 8: </h3>
-            <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="#">Xem bài làm</a>
+        <div class="member">
+            <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-sieu-nhan-mau-do.jpg" alt="Hải Vy">
+            <div class="member-details">
+                <h2>Hải Vy</h2>
+                <p>Lớp: 12A</p>
+                <p><a href="#" target="_blank">Facebook</a></p>
+                <a class="profile-btn" href="haivy.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Bài 9: </h3>
-            <p>Mô tả: (Nhập mô tả bài tập)</p>
-            <a href="#">Xem bài làm</a>
+        <div class="member">
+            <img src="https://i.pinimg.com/564x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg" alt="Thảo Uyên">
+            <div class="member-details">
+                <h2>Thảo Uyên</h2>
+                <p>Lớp: 12A</p>
+                <p><a href="#" target="_blank">Facebook</a></p>
+                <a class="profile-btn" href="thaouyen.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
     </div>
+</div>
 
-    <footer>
-        <img src="https://microsoftoffice.vn/wp-content/uploads/2022/05/image011.png" alt="Hình footer" class="footer-image">
-        <div class="footer-text">© 2025 Nhóm 3 - 12 Anh</div>
-    </footer>
+<footer>
+    <div class="footer-text">© 2025 Nhóm 3 - 12 Anh</div>
+</footer>
 
 </body>
 </html>
