@@ -29,22 +29,14 @@ header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
 /* Profile Cards */
 .container-profiles {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     padding: 40px 20px;
-    overflow-x: auto;
-    flex-wrap: nowrap; /* giữ 1 hàng */
 }
-.container-profiles::-webkit-scrollbar {
-    height: 12px;
-}
-.container-profiles::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
-    border-radius: 6px;
-}
-.container-profiles::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-}
+.container-profiles::-webkit-scrollbar { height: 12px; }
+.container-profiles::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 6px; }
+.container-profiles::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
 
 .card {
     flex: 0 0 200px;
@@ -56,10 +48,7 @@ header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
 }
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
-}
+.card:hover { transform: translateY(-10px); box-shadow: 0 15px 45px rgba(0,0,0,0.35); }
 
 .card img {
     width: 100px; height: 100px;
@@ -86,44 +75,6 @@ header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
 }
 .profile-btn:hover { background: #ff3385; transform: translateY(-3px); }
 
-/* Presentation Cards */
-.container-presentation {
-    display: flex;
-    justify-content: flex-start;
-    padding: 40px 20px;
-    overflow-x: auto;
-    gap: 30px;
-}
-.container-presentation::-webkit-scrollbar {
-    height: 12px;
-}
-.container-presentation::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
-    border-radius: 6px;
-}
-.container-presentation::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-}
-
-.presentation-card {
-    flex: 0 0 600px;
-    background: linear-gradient(135deg, #ffcc33, #ffdd66, #ffee99);
-    color: #fff;
-    padding: 50px 30px;
-    border-radius: 25px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-    text-align: center;
-}
-.presentation-card h3 { font-size: 28px; margin-bottom: 15px; }
-.presentation-card p { font-size: 18px; margin-bottom: 20px; }
-.presentation-card .profile-btn {
-    background: #ffbb00;
-}
-.presentation-card .profile-btn:hover {
-    background: #ffaa00;
-    box-shadow: 0 6px 20px rgba(255,200,50,0.5);
-}
-
 /* Footer */
 footer {
     text-align: center;
@@ -137,12 +88,7 @@ footer {
     position: relative;
     overflow: hidden;
 }
-footer img {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-}
+footer img { width: 100%; max-width: 800px; border-radius: 20px; margin-bottom: 10px; }
 </style>
 </head>
 <body>
@@ -184,14 +130,32 @@ footer img {
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="thaouyen.html">Xem trang cá nhân</a>
     </div>
-</div>
 
-<!-- Presentation Card -->
-<div class="container-presentation">
-    <div class="presentation-card">
-        <h3>Bài Thuyết Trình Nhóm 3</h3>
-        <p>Nhấn vào nút dưới đây để xem bài thuyết trình đầy đủ trên Canva.</p>
-        <a class="profile-btn" href="LINK_CANVA_CỦA_MÀY" target="_blank">Xem Bài Thuyết Trình</a>
+    <!-- Thêm 5 card cho Bài 8 → Bài 12 -->
+    <div class="card">
+        <h3>Bài 8</h3>
+        <p>Nhấn nút để xem nội dung bài 8</p>
+        <a class="profile-btn" href="bai8.html">Xem Bài 8</a>
+    </div>
+    <div class="card">
+        <h3>Bài 9</h3>
+        <p>Nhấn nút để xem nội dung bài 9</p>
+        <a class="profile-btn" href="bai9.html">Xem Bài 9</a>
+    </div>
+    <div class="card">
+        <h3>Bài 10</h3>
+        <p>Nhấn nút để xem nội dung bài 10</p>
+        <a class="profile-btn" href="bai10.html">Xem Bài 10</a>
+    </div>
+    <div class="card">
+        <h3>Bài 11</h3>
+        <p>Nhấn nút để xem nội dung bài 11</p>
+        <a class="profile-btn" href="bai11.html">Xem Bài 11</a>
+    </div>
+    <div class="card">
+        <h3>Bài 12</h3>
+        <p>Nhấn nút để xem nội dung bài 12</p>
+        <a class="profile-btn" href="bai12.html">Xem Bài 12</a>
     </div>
 </div>
 
