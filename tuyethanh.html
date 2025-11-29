@@ -4,23 +4,39 @@
 <meta charset="UTF-8">
 <title>Trang cá nhân - Tuyết Hạnh</title>
 <style>
-body{font-family:"Be Vietnam Pro";background:#ffe8f5;margin:0;padding:30px;animation:fade 0.8s ease;}@keyframes fade{from{opacity:0;}to{opacity:1;}}
-.box{background:#fff;padding:25px;border-radius:18px;width:450px;margin:auto;text-align:center;box-shadow:0 6px 20px rgba(255,130,160,0.18);}
-img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #ff8ac8;}
-h1{color:#ff4da6;}
-p{color:#333;font-size:16px;}
-a{color:#ff66b2;font-weight:bold;text-decoration:none;}
+body { font-family:"Be Vietnam Pro",sans-serif; margin:0; padding:40px 0; display:flex; flex-direction:column; align-items:center; min-height:100vh; background:linear-gradient(135deg,#b6ffb3,#ccffcce6,#e0ffe0); background-size:300% 300%; animation:bgFlow 12s ease infinite;}
+@keyframes bgFlow {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.card{width:500px;background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);padding:40px;border-radius:30px;text-align:center;box-shadow:0 12px 40px rgba(0,153,51,0.3);animation:fadeIn 1s ease;margin-bottom:25px;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.avatar-container{position:relative;display:inline-block;animation:rotate 10s linear infinite;}
+.avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;border:6px solid rgba(0,153,51,0.6);box-shadow:0 0 35px rgba(0,153,51,0.8);}
+@keyframes rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+h1{color:#009933;font-size:34px;margin-top:20px;}
+.slogan-card{width:520px;background:rgba(255,255,255,0.25);backdrop-filter:blur(18px);padding:30px 40px;border-radius:32px;text-align:center;box-shadow:0 8px 30px rgba(0,153,51,0.4);font-size:22px;font-weight:bold;color:#009933;animation:glowFade 2s ease-in-out infinite alternate,fadeIn 1.5s ease;margin-top:25px;border:2px solid rgba(0,153,51,0.5);}
+@keyframes glowFade{0%{box-shadow:0 0 15px rgba(0,153,51,0.6);}100%{box-shadow:0 0 35px rgba(0,153,51,1);}}
+.section{margin:15px 0;font-size:18px;color:#1f4d1f;line-height:1.6;}
+.return{display:inline-block;margin-top:25px;padding:12px 28px;background:#33cc33;color:white;border-radius:14px;font-weight:bold;text-decoration:none;transition:0.3s;}
+.return:hover{background:#009933;transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,153,51,0.4);}
+.heart{position:fixed;top:-20px;color:#33cc33;font-size:22px;animation:fall 6s linear infinite;opacity:0.9;}
+@keyframes fall{0%{transform:translateY(-40px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(360deg);opacity:0;}}
 </style>
 </head>
 <body>
-<div class="box">
-<img src="https://topanh.com/wp-content/uploads/2025/05/hinh-con-vat-cute-1-768x1365.jpg">
-<h1>Tuyết Hạnh</h1>
-<p><b>Ngày sinh:</b> 16/01/2008</p>
-<p><b>Sở thích:</b> Xem phim, nấu ăn, nuôi mèo</p>
-<br>
-<a href="index.html">⬅ Quay lại</a>
+<script>
+for(let i=0;i<50;i++){let heart=document.createElement("div");heart.classList.add("heart");heart.innerHTML="❤";heart.style.left=Math.random()*100+"vw";heart.style.fontSize=(18+Math.random()*24)+"px";heart.style.animationDuration=(4+Math.random()*5)+"s";heart.style.animationDelay=Math.random()*5+"s";document.body.appendChild(heart);}
+</script>
+
+<div class="card"><div class="avatar-container"><img class="avatar" src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg"></div><h1>Tuyết Hạnh</h1></div>
+
+<div class="card">
+    <div class="section"><b>Ngày sinh:</b> 16/01/2008</div>
+    <div class="section"><b>Định hướng nghề nghiệp:</b> Thiết kế · Nghệ thuật · Sáng tạo nội dung</div>
+    <div class="section"><b>Tính cách:</b> Sáng tạo · Nhạy bén · Tận tâm</div>
+    <div class="section"><b>Mục tiêu:</b> Phát triển kỹ năng nghệ thuật · Hoàn thiện bản thân · Tích lũy kinh nghiệm</div>
+    <div class="section"><b>Sở thích:</b> Vẽ · Đọc sách · Âm nhạc</div>
+    <a class="return" href="index.html">⬅ Quay lại</a>
 </div>
+
+<div class="slogan-card">"Green spirit: Tươi mới và tràn đầy năng lượng!"</div>
 </body>
 </html>
-
