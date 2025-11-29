@@ -10,162 +10,172 @@
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #ff8fb1, #ffb3d9, #ffd6e8);
+    background: linear-gradient(135deg, #ff5fa1, #ff85c1, #ffcce6);
     color: #fff;
-    overflow-x: hidden;
 }
 
 header {
     background: linear-gradient(rgba(255,0,102,0.6), rgba(255,77,166,0.6)), url('https://thptchuyenbentre.edu.vn/themes/default/ogimage.png') no-repeat center center;
     background-size: cover;
     text-align: center;
-    padding: 80px 10px;
+    padding: 120px 10px;
+    position: relative;
+    overflow: hidden;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 
 header h1 {
     margin: 0;
     font-size: 42px;
     font-weight: 700;
-    text-shadow: 0 0 20px #ff66b2;
+    animation: fadeSlideDown 1.5s ease forwards;
 }
 
 header p {
-    margin-top: 10px;
-    font-size: 18px;
-    text-shadow: 0 0 10px #ffb3d9;
+    margin-top: 15px;
+    font-size: 20px;
+    opacity: 0.95;
+    animation: fadeSlideUp 1.5s ease forwards;
 }
 
-/* Container ngang auto scroll */
-.carousel-container {
+@keyframes fadeSlideDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: -80px auto 50px;
     display: flex;
-    overflow: hidden;
-    padding: 30px 0;
-    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-.carousel-track {
-    display: flex;
-    gap: 20px;
-    animation: scrollLeft 30s linear infinite;
-}
-
-@keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.card {
-    min-width: 300px;
-    flex: 0 0 auto;
+.intro-box, .member-box, .card, .presentation-card {
     background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(18px);
-    padding: 25px;
+    backdrop-filter: blur(15px);
+    padding: 30px;
     border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
-    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
-.card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+
+.intro-box:hover, .member-box:hover, .card:hover, .presentation-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
 }
 
-.card img {
-    width: 120px;
-    height: 120px;
+.intro-box h2, .member-box h1, .card h3, .presentation-card h3 {
+    color: #fff;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.member:last-child { border-bottom: none; }
+.member:hover { transform: translateX(10px); background: rgba(255,255,255,0.05); }
+
+.member img {
+    width: 100px; height: 100px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #ff99c2;
-    box-shadow: 0 4px 20px rgba(255,50,150,0.5);
     transition: transform 0.3s, box-shadow 0.3s;
 }
-.card img:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(255,50,150,0.7);
-}
+.member img:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 8px 25px rgba(255,50,150,0.5); }
 
-.card h2 {
-    margin: 15px 0 8px;
-    font-size: 22px;
-    color: #fff;
-    text-shadow: 0 0 6px #ff99c2;
-}
-
-.card p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #ffe6f0;
-}
+.member-details h2 { margin: 0; font-size: 22px; color: #ffebf2; }
+.member-details p, .member-details a { color: #ffe6f0; }
+.member-details a { text-decoration: none; font-weight: bold; }
+.member-details a:hover { text-decoration: underline; color: #fff; }
 
 .profile-btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
+    margin-top: 8px;
+    padding: 10px 20px;
     background: #ff66b2;
-    color: #fff;
+    color: white;
     border-radius: 12px;
-    font-weight: 600;
     text-decoration: none;
+    font-weight: 600;
     transition: 0.3s;
 }
 .profile-btn:hover { background: #ff3385; transform: translateY(-3px); }
 
+.card h3, .presentation-card h3 { color: #fff; }
+.card a, .presentation-card a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.2s; }
+.card a:hover, .presentation-card a:hover { text-decoration: underline; color: #ffccd9; }
+
 .presentation-card {
-    min-width: 350px;
-    flex: 0 0 auto;
-    background: linear-gradient(135deg, #ffeb3b, #ffd700);
-    color: #222;
-    font-weight: 600;
-    padding: 25px;
+    background: linear-gradient(135deg, #ffcc33, #ffdd66, #ffee99);
+    color: #fff;
+    padding: 30px;
     border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.presentation-card h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-.presentation-card p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(255, 200, 0, 0.4);
+    max-width: 500px;
 }
 .presentation-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(255, 220, 50, 0.6);
+}
+.presentation-card .profile-btn {
+    background: #ffbb00;
+    color: #fff;
+}
+.presentation-card .profile-btn:hover {
+    background: #ffaa00;
+    box-shadow: 0 6px 20px rgba(255,200,50,0.5);
 }
 
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 40px 0 20px;
+    margin-top: 50px;
+    padding: 60px 0 20px;
     color: #fff;
     font-weight: 500;
     background: rgba(255,0,102,0.6);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    position: relative;
+    overflow: hidden;
 }
+
+footer img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
 footer .footer-text {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px #fff;
-}
-footer img {
-    width: 180px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
-/* Responsive */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff99cc, 0 0 15px #ff3399; }
+    100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc, 0 0 25px #ff3399; }
+}
+
 @media(max-width: 768px) {
-    .card img { width: 100px; height: 100px; }
-    .card { min-width: 250px; }
-    .presentation-card { min-width: 300px; }
-    .carousel-track { animation: scrollLeft 50s linear infinite; }
+    .member { flex-direction: column; text-align: center; }
+    .member img { margin-bottom: 10px; }
 }
 </style>
 </head>
@@ -176,69 +186,72 @@ footer img {
     <p>Trang web tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm</p>
 </header>
 
-<div class="carousel-container">
-    <div class="carousel-track">
-        <!-- Thành viên -->
-        <div class="card">
+<div class="container">
+    <div class="intro-box">
+        <h2>👋 Xin chào!</h2>
+        <p>Chào mừng bạn đến với trang web chính thức của <b>Nhóm 3 – 12 Anh</b>. Đây là nơi tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm.</p>
+    </div>
+
+    <div class="member-box">
+        <h1>Thông Tin Các Thành Viên</h1>
+
+        <div class="member">
             <img src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg" alt="Mỹ Anh">
-            <h2>Mỹ Anh</h2>
-            <p>Lớp: 12A</p>
-            <a class="profile-btn" href="myanh.html">Xem trang cá nhân</a>
+            <div class="member-details">
+                <h2>Mỹ Anh</h2>
+                <p>Lớp: 12A</p>
+                <a class="profile-btn" href="myanh.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="member">
             <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg" alt="Hải Yến">
-            <h2>Hải Yến</h2>
-            <p>Lớp: 12A</p>
-            <a class="profile-btn" href="haiyen.html">Xem trang cá nhân</a>
+            <div class="member-details">
+                <h2>Hải Yến</h2>
+                <p>Lớp: 12A</p>
+                <a class="profile-btn" href="haiyen.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="member">
             <img src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg" alt="Tuyết Hạnh">
-            <h2>Tuyết Hạnh</h2>
-            <p>Lớp: 12A</p>
-            <a class="profile-btn" href="tuyethanh.html">Xem trang cá nhân</a>
+            <div class="member-details">
+                <h2>Tuyết Hạnh</h2>
+                <p>Lớp: 12A</p>
+                <a class="profile-btn" href="tuyethanh.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="member">
             <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-sieu-nhan-mau-do.jpg" alt="Hải Vy">
-            <h2>Hải Vy</h2>
-            <p>Lớp: 12A</p>
-            <a class="profile-btn" href="haivy.html">Xem trang cá nhân</a>
+            <div class="member-details">
+                <h2>Hải Vy</h2>
+                <p>Lớp: 12A</p>
+                <a class="profile-btn" href="haivy.html">Xem trang cá nhân</a>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="member">
             <img src="https://i.pinimg.com/564x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg" alt="Thảo Uyên">
-            <h2>Thảo Uyên</h2>
-            <p>Lớp: 12A</p>
-            <a class="profile-btn" href="thaouyen.html">Xem trang cá nhân</a>
+            <div class="member-details">
+                <h2>Thảo Uyên</h2>
+                <p>Lớp: 12A</p>
+                <a class="profile-btn" href="thaouyen.html">Xem trang cá nhân</a>
+            </div>
         </div>
+    </div>
 
-        <!-- Bài thuyết trình -->
-        <div class="presentation-card">
-            <h2>Bài Thuyết Trình Nhóm 3</h2>
-            <p>Bài thuyết trình tổng hợp toàn bộ dự án và sản phẩm học tập của nhóm. Từ bài tập môn Văn, Toán, đến các dự án sáng tạo, mọi thành viên đều góp phần xây dựng và hoàn thiện sản phẩm. Thể hiện tinh thần hợp tác, sáng tạo và học hỏi lẫn nhau.</p>
-        </div>
-
-        <!-- Lặp lại cho auto scroll smooth -->
-        <div class="card">
-            <img src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg" alt="Mỹ Anh">
-            <h2>Mỹ Anh</h2>
-            <p>Lớp: 12A</p>
-            <a class="profile-btn" href="myanh.html">Xem trang cá nhân</a>
-        </div>
-        <div class="card">
-            <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg" alt="Hải Yến">
-            <h2>Hải Yến</h2>
-            <p>Lớp: 12A</p>
-            <a class="profile-btn" href="haiyen.html">Xem trang cá nhân</a>
-        </div>
+    <!-- Card Bài Thuyết Trình -->
+    <div class="presentation-card">
+        <h3>Bài Thuyết Trình Nhóm 3</h3>
+        <p>Nhấn vào nút dưới đây để xem bài thuyết trình đầy đủ trên Canva.</p>
+        <a class="profile-btn" href="LINK_CANVA_CỦA_MÀY" target="_blank">Xem Bài Thuyết Trình</a>
     </div>
 </div>
 
 <footer>
+    <img src="https://www.anhnghethuatdulich.com/wp-content/uploads/2025/07/hinh-nen-powerpoint-cam-on-cute-mat-cuoi.jpg" alt="Footer Image">
     <div class="footer-text">© 2025 Nhóm 3 - 12 Anh</div>
-    <img src="https://www.anhnghethuatdulich.com/wp-content/uploads/2025/07/hinh-nen-powerpoint-cam-on-cute-mat-cuoi.jpg" alt="Hình nền footer">
 </footer>
 
 </body>
