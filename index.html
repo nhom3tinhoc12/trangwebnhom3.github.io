@@ -10,7 +10,7 @@
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     margin: 0;
-    background: linear-gradient(135deg, #ff5fa1, #ff85c1, #ffcce6);
+    background: linear-gradient(135deg, #ff8fb1, #ffb3d9, #ffd6e8);
     color: #fff;
 }
 
@@ -23,12 +23,14 @@ header {
     overflow: hidden;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 
 header h1 {
     margin: 0;
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 700;
+    text-shadow: 0 0 20px #ff66b2;
     animation: fadeSlideDown 1.5s ease forwards;
 }
 
@@ -37,13 +39,13 @@ header p {
     font-size: 20px;
     opacity: 0.95;
     animation: fadeSlideUp 1.5s ease forwards;
+    text-shadow: 0 0 10px #ffb3d9;
 }
 
 @keyframes fadeSlideDown {
     0% { opacity: 0; transform: translateY(-50px); }
     100% { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeSlideUp {
     0% { opacity: 0; transform: translateY(50px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -58,22 +60,23 @@ header p {
     gap: 30px;
 }
 
-.intro-box, .member-box, .card {
+.intro-box, .member-box, .card, .presentation-box {
     background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(18px);
     padding: 30px;
     border-radius: 25px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.intro-box:hover, .member-box:hover, .card:hover {
+.intro-box:hover, .member-box:hover, .card:hover, .presentation-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
 }
 
-.intro-box h2, .member-box h1, .card h3 {
+.intro-box h2, .member-box h1, .card h3, .presentation-box h2 {
     color: #fff;
+    text-shadow: 0 0 10px #ff66b2;
 }
 
 .member {
@@ -84,7 +87,6 @@ header p {
     border-bottom: 1px solid rgba(255,255,255,0.2);
     transition: transform 0.2s, background 0.2s;
 }
-
 .member:last-child { border-bottom: none; }
 .member:hover { transform: translateX(10px); background: rgba(255,255,255,0.05); }
 
@@ -97,7 +99,7 @@ header p {
 }
 .member img:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 8px 25px rgba(255,50,150,0.5); }
 
-.member-details h2 { margin: 0; font-size: 22px; color: #ffebf2; }
+.member-details h2 { margin: 0; font-size: 22px; color: #ffebf2; text-shadow: 0 0 6px #ff99c2; }
 .member-details p, .member-details a { color: #ffe6f0; }
 .member-details a { text-decoration: none; font-weight: bold; }
 .member-details a:hover { text-decoration: underline; color: #fff; }
@@ -115,10 +117,6 @@ header p {
 }
 .profile-btn:hover { background: #ff3385; transform: translateY(-3px); }
 
-.card h3 { color: #fff; }
-.card a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.2s; }
-.card a:hover { text-decoration: underline; color: #ffccd9; }
-
 footer {
     text-align: center;
     margin-top: 50px;
@@ -131,16 +129,46 @@ footer {
     position: relative;
     overflow: hidden;
 }
-
 footer .footer-text {
     font-size: 18px;
     font-weight: 600;
     animation: glow 2s ease-in-out infinite alternate;
 }
+footer img {
+    margin-top: 20px;
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
 
 @keyframes glow {
     0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff99cc, 0 0 15px #ff3399; }
     100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc, 0 0 25px #ff3399; }
+}
+
+.presentation-box {
+    background: linear-gradient(135deg, #ffeb3b, #ffd700);
+    color: #222;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+    border: 2px solid #ffc107;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.presentation-box h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-shadow: none;
+}
+.presentation-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.presentation-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
 }
 
 @media(max-width: 768px) {
@@ -176,7 +204,7 @@ footer .footer-text {
         </div>
 
         <div class="member">
-            <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg" alt="Hải Yến">
+            <img src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg" alt="Hải Yến">
             <div class="member-details">
                 <h2>Hải Yến</h2>
                 <p>Lớp: 12A</p>
@@ -186,7 +214,7 @@ footer .footer-text {
         </div>
 
         <div class="member">
-            <img src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg" alt="Tuyết Hạnh">
+            <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg" alt="Tuyết Hạnh">
             <div class="member-details">
                 <h2>Tuyết Hạnh</h2>
                 <p>Lớp: 12A</p>
@@ -216,10 +244,16 @@ footer .footer-text {
         </div>
 
     </div>
+
+    <div class="presentation-box">
+        <h2>Bài Thuyết Trình Nhóm 3</h2>
+        <p>Bài thuyết trình này tổng hợp toàn bộ nội dung các dự án, sản phẩm học tập của nhóm. Từ bài tập môn Văn, Toán, đến các dự án sáng tạo, mọi thành viên đều góp phần xây dựng và hoàn thiện sản phẩm. Đây cũng là nơi nhóm thể hiện tinh thần hợp tác, sáng tạo và học hỏi lẫn nhau.</p>
+    </div>
 </div>
 
 <footer>
     <div class="footer-text">© 2025 Nhóm 3 - 12 Anh</div>
+    <img src="https://www.anhnghethuatdulich.com/wp-content/uploads/2025/07/hinh-nen-powerpoint-cam-on-cute-mat-cuoi.jpg" alt="Hình nền footer">
 </footer>
 
 </body>
