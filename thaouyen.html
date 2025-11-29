@@ -20,7 +20,7 @@ body {
     animation: neonWave 15s ease infinite;
 }
 
-/* Background gradient animation */
+/* Gradient animation */
 @keyframes neonWave {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -38,6 +38,8 @@ body {
     box-shadow: 0 12px 40px rgba(255, 60, 120, 0.3);
     animation: fadeIn 1s ease;
     margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes fadeIn {
@@ -49,6 +51,7 @@ body {
     position: relative;
     display: inline-block;
     animation: rotate 10s linear infinite;
+    z-index: 1;
 }
 
 .avatar {
@@ -71,45 +74,9 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-h1 {
-    color: #ff2e72;
-    font-size: 34px;
-    margin-top: 20px;
-}
+h1 { color: #ff2e72; font-size: 34px; margin-top: 20px; }
 
-.slogan-card {
-    width: 520px;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(18px);
-    padding: 30px 40px;
-    border-radius: 32px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(255, 30, 110, 0.4);
-    font-size: 22px;
-    font-weight: bold;
-    color: #ff1e6e;
-    animation: glowFade 2s ease-in-out infinite alternate, pulse 3s ease-in-out infinite, fadeIn 1.5s ease;
-    margin-top: 25px;
-    border: 2px solid rgba(255, 30, 110, 0.5);
-}
-
-@keyframes glowFade {
-    0% { box-shadow: 0 0 15px rgba(255, 30, 110, 0.6); }
-    100% { box-shadow: 0 0 35px rgba(255, 30, 110, 1); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.section {
-    margin: 15px 0;
-    font-size: 18px;
-    color: #6b2c3f;
-    line-height: 1.6;
-}
+.section { margin: 15px 0; font-size: 18px; color: #6b2c3f; line-height: 1.6; }
 
 .return {
     display: inline-block;
@@ -129,13 +96,48 @@ h1 {
     box-shadow: 0 8px 25px rgba(255, 50, 120, 0.4);
 }
 
+/* ===== Slogan Card ===== */
+.slogan-card {
+    width: 520px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px);
+    padding: 30px 40px;
+    border-radius: 32px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(255, 30, 110, 0.4);
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff1e6e;
+    animation: glowFade 2s ease-in-out infinite alternate, pulse 3s ease-in-out infinite, fadeIn 1.5s ease;
+    margin-top: 25px;
+    border: 2px solid rgba(255, 30, 110, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes glowFade {
+    0% { box-shadow: 0 0 15px rgba(255, 30, 110, 0.6); }
+    100% { box-shadow: 0 0 35px rgba(255, 30, 110, 1); }
+}
+
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+/* ===== Effect container ===== */
+#effectLayer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* ===== Floating stars ===== */
 .star {
-    position: fixed;
+    position: absolute;
     color: #fff;
     font-size: 10px;
     opacity: 0.8;
-    pointer-events: none;
     animation-name: starTwinkle;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -149,12 +151,11 @@ h1 {
 
 /* ===== Floating hearts ===== */
 .heartBubble {
-    position: fixed;
+    position: absolute;
     bottom: -30px;
     font-size: 15px;
     color: #ff1e6e;
     opacity: 0.8;
-    pointer-events: none;
     animation-name: heartRise;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -169,41 +170,47 @@ h1 {
 </head>
 <body>
 
+<div id="effectLayer"></div> <!-- Layer cho sao + tim -->
+
+<!-- Card 1: Giới thiệu bản thân -->
 <div class="card">
     <div class="avatar-container">
         <img class="avatar" src="https://i.pinimg.com/736x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg">
     </div>
     <h1>Thảo Uyên</h1>
-</div>
-
-<div class="card">
     <div class="section"><b>Ngày sinh:</b> 02/11/2008</div>
-    <div class="section"><b>Định hướng nghề nghiệp:</b><br> Thiết kế đồ họa · Sáng tạo nội dung · Khởi nghiệp cá nhân</div>
-    <div class="section"><b>Tính cách:</b><br> Hòa đồng · Kiên nhẫn · Luôn học hỏi</div>
-    <div class="section"><b>Mục tiêu:</b><br> Phát triển kỹ năng sáng tạo · Xây dựng thương hiệu cá nhân · Hoàn thiện bản thân</div>
+    <div class="section"><b>Định hướng nghề nghiệp:</b> Thiết kế đồ họa · Sáng tạo nội dung · Khởi nghiệp cá nhân</div>
+    <div class="section"><b>Tính cách:</b> Hòa đồng · Kiên nhẫn · Luôn học hỏi</div>
     <div class="section"><b>Sở thích:</b> Nấu ăn · Game · Đạp xe</div>
-
-    <a class="return" href="index.html">⬅ Quay lại</a>
 </div>
 
+<!-- Card 2: Mục tiêu & lí tưởng -->
+<div class="card">
+    <div class="section"><b>Mục tiêu:</b> Phát triển kỹ năng sáng tạo · Xây dựng thương hiệu cá nhân · Hoàn thiện bản thân</div>
+    <div class="section"><b>Lí tưởng sống:</b> Luôn học hỏi, dám thử thách bản thân, truyền cảm hứng cho người khác</div>
+</div>
+
+<!-- Card 3: Slogan -->
 <div class="slogan-card">
 "Don't give up your dream. Keep sleeping?"
 </div>
 
 <script>
-/* ===== Floating stars ===== */
+const effectLayer = document.getElementById('effectLayer');
+
+/* ===== Stars ===== */
 for (let i = 0; i < 50; i++) {
     let star = document.createElement("div");
     star.classList.add("star");
-    star.innerHTML = "✦"; 
+    star.innerHTML = "✦";
     star.style.left = Math.random()*100 + "vw";
     star.style.top = Math.random()*100 + "vh";
     star.style.fontSize = (8 + Math.random()*12) + "px";
     star.style.animationDuration = (2 + Math.random()*3) + "s";
-    document.body.appendChild(star);
+    effectLayer.appendChild(star);
 }
 
-/* ===== Floating hearts ===== */
+/* ===== Hearts ===== */
 for (let i = 0; i < 40; i++) {
     let heart = document.createElement("div");
     heart.classList.add("heartBubble");
@@ -212,7 +219,7 @@ for (let i = 0; i < 40; i++) {
     heart.style.fontSize = (12 + Math.random()*18) + "px";
     heart.style.animationDuration = (5 + Math.random()*5) + "s";
     heart.style.animationDelay = Math.random()*5 + "s";
-    document.body.appendChild(heart);
+    effectLayer.appendChild(heart);
 }
 </script>
 
