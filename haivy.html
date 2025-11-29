@@ -6,7 +6,7 @@
 <style>
 body {
     font-family: "Be Vietnam Pro", sans-serif;
-    background: linear-gradient(120deg, #ffd1e8, #ffeaf3, #ffc7dc);
+    background: linear-gradient(120deg, #ff4d6d, #ff7a8a, #ffb3c1);
     background-size: 400% 400%;
     animation: bgMove 12s ease infinite;
     margin: 0;
@@ -27,7 +27,7 @@ body {
     width: 450px;
     margin: auto;
     text-align: center;
-    box-shadow: 0 6px 20px rgba(255, 95, 130, 0.18);
+    box-shadow: 0 6px 25px rgba(255, 30, 60, 0.25);
 }
 
 img {
@@ -35,62 +35,67 @@ img {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ff6699;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 80, 100, 0.6);
+    backdrop-filter: blur(8px);
+    animation: pulse 3s infinite;
 }
 
-h1 { color: #ff3377; }
-p { color: #333; font-size: 16px; }
-a { color: #ff4d88; font-weight: bold; text-decoration: none; }
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 80, 100, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 80, 100, 0.9); }
+    100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 80, 100, 0.5); }
+}
 
-.leaf, .leaf2 {
+h1 { color: #ff1e4d; }
+p { color: #fff; font-size: 16px; }
+a { color: #ffe6ec; font-weight: bold; text-decoration: none; }
+
+/* HEART FALL */
+.heart {
     position: fixed;
     top: -60px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
     background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.85;
+    width: 28px;
+    height: 28px;
+    opacity: 0.9;
+    animation: fall linear infinite, spin 4s linear infinite;
     pointer-events: none;
-    animation: fall linear infinite;
-    transform-style: preserve-3d;
-}
-
-.leaf {
-    width: 30px;
-    height: 30px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/7650/7650466.png');
 }
 
 @keyframes fall {
-    0% { transform: translateY(-60px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
+    0% { transform: translateY(-60px) rotate(0deg); }
+    100% { transform: translateY(120vh) rotate(360deg); opacity: 0.2; }
 }
 
 @keyframes spin {
-    0%   { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    50%  { transform: rotateX(180deg) rotateY(90deg) rotateZ(180deg); }
-    100% { transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg); }
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
 }
 
+/* INTRO OVERLAY */
 #introOverlay {
     position: fixed;
     inset: 0;
-    background: rgba(255, 204, 227, 0.92);
-    backdrop-filter: blur(6px);
+    background: rgba(255, 100, 130, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 9999;
+    color: white;
 }
 
 #introOverlay h2 {
-    font-size: 30px;
-    color: #ff2e72;
+    font-size: 32px;
     margin-bottom: 20px;
 }
 
 #enterBtn {
     padding: 12px 26px;
-    background: #ff5f9e;
+    background: #ff1e4d;
     border: none;
     color: white;
     font-size: 18px;
@@ -99,7 +104,7 @@ a { color: #ff4d88; font-weight: bold; text-decoration: none; }
     transition: 0.3s;
 }
 
-#enterBtn:hover { background: #ff2e72; }
+#enterBtn:hover { background: #d60036; }
 
 .fadeOut {
     animation: fadeOut 0.8s forwards;
@@ -109,91 +114,39 @@ a { color: #ff4d88; font-weight: bold; text-decoration: none; }
     from { opacity: 1; }
     to { opacity: 0; }
 }
-
-/* hiệu ứng background particles */
-.particle {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    animation: floatUp linear infinite;
-    pointer-events: none;
-}
-
-@keyframes floatUp {
-    0%   { transform: translateY(120vh); opacity: 0; }
-    10%  { opacity: 0.6; }
-    100% { transform: translateY(-10vh); opacity: 0; }
-}
 </style>
 </head>
 <body>
 
 <div id="introOverlay">
-    <h2>✨ Chào mừng đến với trang của Hải Vy ✨</h2>
+    <h2>❤️ Chào mừng đến với trang của Hải Vy ❤️</h2>
     <button id="enterBtn">Bấm để vào</button>
 </div>
 
-<audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/01/27/audio_3adbc49f86.mp3?filename=relaxing-music-lofi-133746.mp3" type="audio/mpeg">
+<audio id="bgMusic" controls autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3b54c90bb3.mp3?filename=romantic-piano-110243.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 const music = document.getElementById("bgMusic");
 
-document.getElementById("enterBtn").onclick = function() {
-    const overlay = document.getElementById("introOverlay");
-    overlay.classList.add("fadeOut");
 
-    setTimeout(() => { 
-        overlay.style.display = "none"; 
-        music.play(); 
-    }, 800);
+enterBtn.onclick = function() {
+    introOverlay.classList.add("fadeOut");
+    setTimeout(() => {
+        introOverlay.style.display = "none";
+        music.play();
+    }, 900);
 };
 
-// Lá rơi cơ bản
-for (let i = 0; i < 35; i++) {
-    let leaf = document.createElement("div");
-    leaf.classList.add("leaf");
-    leaf.style.left = Math.random() * 100 + "vw";
-    leaf.style.animationDuration = (5 + Math.random() * 5) + "s";
-    leaf.style.animationDelay = Math.random() * 5 + "s";
-    const size = 22 + Math.random() * 20;
-    leaf.style.width = size + "px";
-    leaf.style.height = size + "px";
-    document.body.appendChild(leaf);
-}
 
-// Lá rơi nâng cấp (nhiều loại lá)
-const leafImages = [
-    "https://cdn-icons-png.flaticon.com/512/7650/7650466.png",
-    "https://cdn-icons-png.flaticon.com/512/4151/4151022.png",
-    "https://cdn-icons-png.flaticon.com/512/2909/2909761.png",
-    "https://cdn-icons-png.flaticon.com/512/7650/7650472.png"
-];
-
-for (let i = 0; i < 40; i++) {
-    let leaf = document.createElement("div");
-    leaf.classList.add("leaf2");
-    leaf.style.backgroundImage = `url('${leafImages[Math.floor(Math.random() * leafImages.length)]}')`;
-    const size = 25 + Math.random() * 35;
-    leaf.style.width = size + "px";
-    leaf.style.height = size + "px";
-    leaf.style.left = Math.random() * 100 + "vw";
-    leaf.style.animationDuration = (6 + Math.random() * 6) + "s";
-    leaf.style.animationDelay = Math.random() * 4 + "s";
-    document.body.appendChild(leaf);
-}
-
-// Particles background
-for (let i = 0; i < 40; i++) {
-    let p = document.createElement("div");
-    p.classList.add("particle");
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.animationDuration = (4 + Math.random() * 6) + "s";
-    p.style.animationDelay = Math.random() * 5 + "s";
-    document.body.appendChild(p);
+for (let i = 0; i < 45; i++) {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(heart);
 }
 </script>
 
