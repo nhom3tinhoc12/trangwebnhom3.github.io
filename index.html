@@ -26,36 +26,25 @@ header {
 header h1 { font-size: 42px; margin: 0; font-weight: 700; }
 header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
 
-.container {
+.container-profiles {
     display: flex;
-    overflow-x: auto;
-    padding: 40px 20px;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
-    scroll-behavior: smooth;
+    padding: 40px 20px;
 }
 
-.container::-webkit-scrollbar {
-    height: 12px;
-}
-.container::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
-    border-radius: 6px;
-}
-.container::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-}
-
-.card, .presentation-card {
-    flex: 0 0 300px;
+.card {
+    flex: 0 0 200px;
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(15px);
-    padding: 30px;
+    padding: 25px;
     border-radius: 25px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
 }
-.card:hover, .presentation-card:hover {
+.card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 45px rgba(0,0,0,0.35);
 }
@@ -85,10 +74,35 @@ header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
 }
 .profile-btn:hover { background: #ff3385; transform: translateY(-3px); }
 
+.container-presentation {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-x: auto;
+    gap: 30px;
+}
+.container-presentation::-webkit-scrollbar {
+    height: 12px;
+}
+.container-presentation::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 6px;
+}
+.container-presentation::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+}
+
 .presentation-card {
+    flex: 0 0 600px;
     background: linear-gradient(135deg, #ffcc33, #ffdd66, #ffee99);
     color: #fff;
+    padding: 50px 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    text-align: center;
 }
+.presentation-card h3 { font-size: 28px; margin-bottom: 15px; }
+.presentation-card p { font-size: 18px; margin-bottom: 20px; }
 .presentation-card .profile-btn {
     background: #ffbb00;
 }
@@ -124,44 +138,42 @@ footer img {
     <p>Trang web tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm</p>
 </header>
 
-<div class="container">
-    <!-- Members -->
+<!-- Profile Cards -->
+<div class="container-profiles">
     <div class="card">
         <img src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg" alt="Mỹ Anh">
         <h3>Mỹ Anh</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="myanh.html">Xem trang cá nhân</a>
     </div>
-
     <div class="card">
         <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg" alt="Hải Yến">
         <h3>Hải Yến</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="haiyen.html">Xem trang cá nhân</a>
     </div>
-
     <div class="card">
         <img src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg" alt="Tuyết Hạnh">
         <h3>Tuyết Hạnh</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="tuyethanh.html">Xem trang cá nhân</a>
     </div>
-
     <div class="card">
         <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-sieu-nhan-mau-do.jpg" alt="Hải Vy">
         <h3>Hải Vy</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="haivy.html">Xem trang cá nhân</a>
     </div>
-
     <div class="card">
         <img src="https://i.pinimg.com/564x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg" alt="Thảo Uyên">
         <h3>Thảo Uyên</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="thaouyen.html">Xem trang cá nhân</a>
     </div>
+</div>
 
-    <!-- Presentation Card -->
+<!-- Presentation Card -->
+<div class="container-presentation">
     <div class="presentation-card">
         <h3>Bài Thuyết Trình Nhóm 3</h3>
         <p>Nhấn vào nút dưới đây để xem bài thuyết trình đầy đủ trên Canva.</p>
