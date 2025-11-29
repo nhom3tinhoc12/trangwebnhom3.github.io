@@ -28,4 +28,154 @@ body {
 .card {
     width: 500px;
     background: rgba(255, 255, 255, 0.6);
-    back
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(255, 60, 120, 0.3);
+    animation: fadeIn 1s ease;
+    margin-bottom: 25px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    animation: rotate 10s linear infinite;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid rgba(255, 80, 140, 0.6);
+    box-shadow: 0 0 35px rgba(255, 70, 130, 0.8);
+    transition: 0.5s ease;
+}
+
+.avatar-container:hover .avatar {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 50px rgba(255, 80, 140, 0.9);
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h1 {
+    color: #ff2e72;
+    font-size: 34px;
+    margin-top: 20px;
+}
+
+.slogan-card {
+    width: 520px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px);
+    padding: 30px 40px;
+    border-radius: 32px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(255, 30, 110, 0.4);
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff1e6e;
+    animation: glowFade 2s ease-in-out infinite alternate, pulse 3s ease-in-out infinite, fadeIn 1.5s ease;
+    margin-top: 25px;
+    border: 2px solid rgba(255, 30, 110, 0.5);
+}
+
+@keyframes glowFade {
+    0% { box-shadow: 0 0 15px rgba(255, 30, 110, 0.6); }
+    100% { box-shadow: 0 0 35px rgba(255, 30, 110, 1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.section {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #6b2c3f;
+    line-height: 1.6;
+}
+
+.return {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #ff4d88;
+    color: white;
+    border-radius: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.return:hover {
+    background: #ff2e72;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(255, 50, 120, 0.4);
+}
+
+/* ======= Animals ======= */
+.animal {
+    position: fixed;
+    bottom: 20px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    z-index: 1000;
+}
+
+/* animation chạy từ trái sang phải rồi quay lại */
+@keyframes runRightLeft {
+    0% { transform: translateX(-100px) scaleX(1); }
+    50% { transform: translateX(calc(100vw - 80px)) scaleX(1); }
+    50.01% { transform: translateX(calc(100vw - 80px)) scaleX(-1); }
+    100% { transform: translateX(-100px) scaleX(-1); }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="avatar-container">
+        <img class="avatar" src="https://i.pinimg.com/736x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg">
+    </div>
+    <h1>Thảo Uyên</h1>
+</div>
+
+<div class="card">
+    <div class="section"><b>Ngày sinh:</b> 02/11/2008</div>
+    <div class="section"><b>Định hướng nghề nghiệp:</b><br> Thiết kế đồ họa · Sáng tạo nội dung · Khởi nghiệp cá nhân</div>
+    <div class="section"><b>Tính cách:</b><br> Hòa đồng · Kiên nhẫn · Luôn học hỏi</div>
+    <div class="section"><b>Mục tiêu:</b><br> Phát triển kỹ năng sáng tạo · Xây dựng thương hiệu cá nhân · Hoàn thiện bản thân</div>
+    <div class="section"><b>Sở thích:</b> Nấu ăn · Game · Đạp xe</div>
+
+    <a class="return" href="index.html">⬅ Quay lại</a>
+</div>
+
+<div class="slogan-card">
+"Don't give up your dream. Keep sleeping?"
+</div>
+
+<!-- ======= Animals ======= -->
+<img src="https://i.imgur.com/1pQH9yG.png" class="animal" id="cat">
+<img src="https://i.imgur.com/F4h0fQJ.png" class="animal" id="dog">
+
+<script>
+document.getElementById("cat").style.animation = "runRightLeft 15s linear infinite";
+document.getElementById("dog").style.animation = "runRightLeft 20s linear infinite";
+</script>
+
+</body>
+</html>
