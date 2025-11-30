@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng ký thành viên CLB</title>
+</head>
+<body>
+<h2>Đăng ký thành viên Câu lạc bộ</h2>
+
+<form action="/dang-ky-clb" method="post">
+  <!-- Họ và tên -->
+  <label for="fullname">Họ và tên:</label>
+  <input type="text" id="fullname" name="fullname" required><br><br>
+
+  <!-- Email -->
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <!-- Số điện thoại -->
+  <label for="phone">Số điện thoại:</label>
+  <input type="tel" id="phone" name="phone" required><br><br>
+
+  <!-- Giới tính -->
+  <label for="gender">Giới tính:</label>
+  <select id="gender" name="gender">
+    <option value="male">Nam</option>
+    <option value="female">Nữ</option>
+    <option value="other">Khác</option>
+  </select><br><br>
+
+  <!-- Ngày sinh -->
+  <label for="birthday">Ngày sinh:</label>
+  <input type="date" id="birthday" name="birthday"><br><br>
+
+  <!-- Chọn câu lạc bộ -->
+  <label for="club">Chọn câu lạc bộ:</label>
+  <select id="club" name="club">
+    <option value="music">Câu lạc bộ Âm nhạc</option>
+    <option value="sport">Câu lạc bộ Thể thao</option>
+    <option value="english">Câu lạc bộ Tiếng Anh</option>
+    <option value="volunteer">Câu lạc bộ Tình nguyện</option>
+  </select><br><br>
+
+  <!-- Lý do tham gia -->
+  <label for="reason">Lý do tham gia:</label><br>
+  <textarea id="reason" name="reason" rows="4" placeholder="Hãy chia sẻ lý do bạn muốn tham gia..."></textarea><br><br>
+
+  <!-- Đồng ý điều khoản -->
+  <label>
+    <input type="checkbox" name="agree" required>
+    Tôi đồng ý với các điều khoản tham gia.
+  </label><br><br>
+
+  <!-- Nút gửi -->
+  <button type="submit">Gửi đăng ký</button>
+</form>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang web nghệ thuật</title>
+<style>
+  iframe {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+
+<h1>Nghệ thuật</h1>
+
+<!-- Chèn ảnh minh họa -->
+<img src="link_den_anh_minh_hoa.jpg" alt="Hình ảnh minh họa" width="500" height="300">
+
+<!-- Bài hát Quốc ca -->
+<audio controls>
+  <source src="link_den_bai_hat_quoc_ca.mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ phát audio.
+</audio>
+
+<hr>
+
+<h2>Luyện tập</h2>
+
+<!-- Form đăng ký tài khoản -->
+<h3>Form đăng ký tài khoản</h3>
+<form action="/register" method="post">
+  <label for="username">Tên đăng nhập:</label>
+  <input type="text" id="username" name="username" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="password">Mật khẩu:</label>
+  <input type="password" id="password" name="password" required><br><br>
+
+  <button type="submit">Đăng ký</button>
+</form>
+
+<!-- Form tìm kiếm -->
+<h3>Form tìm kiếm</h3>
+<form action="/search" method="get">
+  <input type="text" name="keyword" placeholder="Nhập từ khóa...">
+  <button type="submit">Tìm kiếm</button>
+</form>
+
+<!-- Form select -->
+<h3>Form chọn giới tính</h3>
+<select name="gender">
+  <option value="male">Nam</option>
+  <option value="female">Nữ</option>
+  <option value="other">Khác</option>
+</select>
+
+<hr>
+
+<h2>Vận dụng</h2>
+
+<!-- Liên kết mở trang đăng ký CLB trong iframe -->
+<p>
+  <a href="dangky.html" target="iframe_content">Đăng ký thành viên Câu lạc bộ</a>
+</p>
+
+<!-- iframe -->
+<iframe name="iframe_content"></iframe>
+
+</body>
+</html>
