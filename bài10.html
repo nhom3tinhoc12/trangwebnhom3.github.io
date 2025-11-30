@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập HTML</title>
+
+    <style>
+        body {
+            background: #fff7cc;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d4a100;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 200px;
+            padding: 25px;
+            background: #ffde59;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0 0 10px #c9a300;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .box:hover {
+            background: #ffe88c;
+            transform: scale(1.05);
+        }
+
+        .content {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #c9a300;
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #d4a100;
+            padding: 10px;
+        }
+
+        th {
+            background: #ffde59;
+        }
+
+        a { 
+            color: #b88600; 
+            cursor: pointer;
+        }
+
+        .club-info {
+            display: none;
+        }
+    </style>
+
+    <script>
+        function showContent(id) {
+            document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showClub(id) {
+            document.querySelectorAll('.club-info').forEach(div => div.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h1>Bài tập HTML</h1>
+
+<div class="menu">
+    <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
+    <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
+    <div class="box" onclick="showContent('vd')">Vận dụng</div>
+</div>
+
+<div id="lt1" class="content">
+    <h2>Luyện tập 1: Viết đoạn mã để tạo liên kết quay về trang chủ CLB.html trong trang thong_tin.html.</h2>
+
+    <h3>Trang thong_tin.html</h3>
+
+    <h1>Thông tin CLB</h1>
+    <p>Đây là trang thông tin về CLB của chúng ta.</p>
+
+    <a href="CLB.html">Trang chủ</a>
+</div>
+
+<div id="lt2" class="content">
+    <h2>Luyện tập 2: Viết một trang web giới thiệu bản thân, trong đó để ít nhất 3 liên kết tới trang Facebook của bạn cùng lớp.</h2>
+
+    <h1>Giới thiệu bản thân</h1>
+    <p>Xin chào, đây là trang web giới thiệu sơ lược về bản thân tôi. Tôi thích nấu ăn, nghe nhạc và đọc sách và ước mơ của tôi là trở thành bác sĩ thú y.</p>
+
+    <h2>Bạn cùng lớp</h2>
+    <ul>
+        <li><a href="https://www.facebook.com/share/1LTSe16dp6/?mibextid=wwXlfr" target="_blank">Facebook của Bạn Uyên</a></li>
+        <li><a href="https://www.facebook.com/share/1A9mwfdoax/?mibextid=wwXlfr" target="_blank">Facebook của Bạn Mỹ Anh</a></li>
+        <li><a href="https://www.facebook.com/share/1EmZ5ut7K8/?mibextid=wwXlfr" target="_blank">Facebook của Bạn Hạnh</a></li>
+    </ul>
+
+    <p>Cảm ơn bạn đã ghé thăm!</p>
+</div>
+
+<div id="vd" class="content">
+    <h2>Vận dụng</h2>
+
+    <h1>Lịch hoạt động công tác CLB thể thao</h1>
+
+    <table>
+        <tr>
+            <th>Tên câu lạc bộ</th>
+            <th>Lịch hoạt động</th>
+        </tr>
+        <tr>
+            <td><a onclick="showClub('club1')">Câu lạc bộ CBT</a></td>
+            <td>Thứ Hai, Thứ Tư, Thứ Sáu – 18:00 đến 20:00</td>
+        </tr>
+        <tr>
+            <td><a onclick="showClub('club2')">Câu lạc bộ A</a></td>
+            <td>Thứ Ba, Thứ Năm – 16:00 đến 18:00</td>
+        </tr>
+    </table>
+
+    <div id="club1" class="club-info">
+        <h2>Câu lạc bộ CBT</h2>
+        <p>Địa điểm: Sân bóng XYZ</p>
+        <p>Thành viên: 50</p>
+        <p>Thành tích: Giải nhất giải đấu Thể thao X năm 2025</p>
+        <p>Phí hội viên: 100.000 đồng/tháng</p>
+        <p>Điện thoại liên hệ: 0123 456 789</p>
+    </div>
+
+    <div id="club2" class="club-info">
+        <h2>Câu lạc bộ A</h2>
+        <p>Địa điểm: Bể bơi ABC</p>
+        <p>Thành viên: 30</p>
+        <p>Thành tích: Huy chương vàng môn bơi lội tại Hội thao Y năm 2025</p>
+        <p>Phí hội viên: 150.000 đồng/tháng</p>
+        <p>Điện thoại liên hệ: 0987 654 321</p>
+    </div>
+</div>
+
+</body>
+</html>
