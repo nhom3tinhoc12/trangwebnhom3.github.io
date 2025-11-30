@@ -92,4 +92,22 @@
 
     <!-- 🔥 NÚT QUAY VỀ TRANG CHỦ -->
     <button onclick="goHome()" style="background:#777; margin-top:20px;">Quay về trang chủ</button>
+    <script>
+function showForm(id) {
+    document.querySelectorAll('.form-container').forEach(div => {
+        div.style.display = "none";
+    });
+    document.getElementById(id).style.display = "block";
+}
+
+function goHome() {
+    // Ẩn tất cả khung form
+    document.querySelectorAll('.form-container').forEach(div => {
+        div.style.display = "none";
+    });
+    // Không hiển thị gì → trở lại giao diện ban đầu chỉ có 2 nút
+}
+</script>
+
 </div>
+
