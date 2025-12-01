@@ -2,174 +2,214 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bài Tập HTML – Tổng hợp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8: Định dạng văn bản</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #ffeaf4;
+            background: #ffe4ec;
             margin: 0;
             padding: 0;
-            color: #333;
         }
 
         header {
-            background: linear-gradient(135deg, #ff9acb, #ff7bb0);
-            padding: 25px;
+            background: #ff74a3;
+            padding: 20px;
             text-align: center;
             color: white;
             font-size: 28px;
             font-weight: bold;
-            letter-spacing: 1px;
         }
 
         .container {
-            width: 90%;
+            padding: 20px;
             max-width: 900px;
             margin: auto;
-            margin-top: 25px;
         }
 
-        .card {
-            background: white;
-            border-radius: 12px;
+        .section {
+            background: #fff0f6;
+            border: 2px solid #ff9ec4;
             padding: 20px;
-            margin-bottom: 20px;
-            border-left: 6px solid #ff7bb0;
-            box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            border-radius: 10px;
         }
 
         h2 {
-            color: #d84e8b;
+            color: #d9006d;
         }
 
-        button {
-            background: #ff7bb0;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #ff74a3;
             color: white;
-            cursor: pointer;
-            font-size: 15px;
-            transition: 0.2s;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-weight: bold;
         }
 
-        button:hover {
-            background: #e85c9f;
+        .btn:hover {
+            background: #ff4f8c;
         }
 
         .answer {
             display: none;
-            background: #ffe1ef;
+            background: #fff;
             padding: 15px;
             border-radius: 8px;
             margin-top: 15px;
+            border: 1px solid #ffb6d5;
         }
 
-        .back-btn {
-            margin-top: 15px;
-            background: #ff9acb;
-        }
-
-        nav {
-            background: white;
+        pre {
+            white-space: pre-wrap;
+            background: #ffe3ef;
             padding: 15px;
-            border-radius: 12px;
-            border-left: 6px solid #ff7bb0;
-            box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            display: block;
-            padding: 8px 0;
-            color: #d84e8b;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #ff4f9a;
+            border-radius: 8px;
+            border: 1px solid #ffb8d8;
         }
     </style>
 
     <script>
-        function toggleAnswer(id) {
-            const content = document.getElementById(id);
-            content.style.display = content.style.display === "none" ? "block" : "none";
+        function showAnswer(id) {
+            document.getElementById(id).style.display = "block";
         }
 
-        function goTop() {
+        function goHome() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
 </head>
 
 <body>
-<header>🌸 Bài Tập HTML Tổng Hợp 🌸</header>
+
+<header>Bài 8: Định dạng văn bản</header>
 
 <div class="container">
 
-    <!-- MỤC LỤC -->
-    <nav id="mucluc">
-        <h2>Mục lục</h2>
-        <a href="#bai1">Bài 1 – strong & em</a>
-        <a href="#van1">Vận dụng 1 – chọn màu từ ảnh</a>
-        <a href="#van2">Vận dụng 2 – định dạng đoạn văn</a>
-    </nav>
+    <!-- Luyện tập 1 -->
+    <div class="section">
+        <h2>Luyện tập 1</h2>
+        <p><b>Câu hỏi:</b> Hãy sửa lại phân tử sau để làm nổi bật ý chính của câu:</p>
 
-    <!-- BÀI 1 -->
-    <div class="card" id="bai1">
-        <h2>Bài 1</h2>
-        <p>Hãy sửa lại phần tử sau để làm nổi bật ý chính của câu.</p>
+        <pre>
+&lt;p&gt; thẻ strong vào thẻ em được sử dụng đế nhấn mạnh vào nội dung trong phần tử.
+Thẻ B chỉ có tác dụng in đậm văn bán &lt;p&gt;
+        </pre>
 
-        <button onclick="toggleAnswer('ans1')">Xem bài làm</button>
+        <a class="btn" onclick="showAnswer('ans1')">Xem bài làm</a>
 
         <div class="answer" id="ans1">
+            <b>Đáp án:</b>
             <pre>
-Thẻ &lt;strong&gt; luôn dùng để làm nổi bật ý quan trọng
-và &lt;em&gt; dùng để nhấn mạnh phần nội dung cần chú ý.
+&lt;p&gt;&lt;strong-Thé strong&lt;/strong&gt; vào &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phân tử. 
+Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản &lt;/p&gt;
             </pre>
-
-            <button class="back-btn" onclick="goTop()">Quay về trang chủ</button>
+            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
         </div>
     </div>
 
-    <!-- VẬN DỤNG 1 -->
-    <div class="card" id="van1">
-        <h2>Vận dụng 1</h2>
-        <p>Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề bài thơ.</p>
 
-        <button onclick="toggleAnswer('ans2')">Xem bài làm</button>
+    <!-- Luyện tập 2 (ĐÃ THÊM ĐÚNG YÊU CẦU) -->
+    <div class="section">
+        <h2>Luyện tập 2</h2>
+
+        <p><b>Câu hỏi:</b> Trình bày đoạn văn bản sau bằng mã HTML.</p>
+
+        <pre>
+INTERNET TỐC ĐỘ CAO
+
+Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.
+Các tính năng nổi bật:
+Tốc độ siêu cao từ 150 MBps trở lên
+Lắp đặt nhanh chóng trong 24h
+Phù hợp với cá nhân/Hộ gia đình
+Tặng modem 2 băng tần
+Miễn phí lắp đặt hỗ trợ 24/7
+        </pre>
+
+        <a class="btn" onclick="showAnswer('ans2')">Xem bài làm</a>
 
         <div class="answer" id="ans2">
-            <p><b>Các bước thực hiện:</b></p>
-            <ul>
-                <li>Chọn màu cụ thể từ bức ảnh.</li>
-                <li>Chọn ảnh nền phù hợp hoặc dùng ảnh trắng.</li>
-                <li>Tạo tiêu đề trong HTML bằng thẻ &lt;h1&gt;, &lt;h2&gt;.</li>
-                <li>Thêm thuộc tính <code>color</code> và ảnh nền bằng CSS.</li>
-            </ul>
+            <b>Đáp án:</b>
 
-            <button class="back-btn" onclick="goTop()">Quay về trang chủ</button>
+            <pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;strong&gt;Các tính năng nổi bật:&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;
+    &lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;
+    &lt;li&gt;Phù hợp với cá nhân/Hộ gia đình&lt;/li&gt;
+    &lt;li&gt;Tặng modem 2 băng tần&lt;/li&gt;
+    &lt;li&gt;Miễn phí lắp đặt hỗ trợ 24/7&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+
+            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
         </div>
     </div>
 
-    <!-- VẬN DỤNG 2 -->
-    <div class="card" id="van2">
-        <h2>Vận dụng 2</h2>
-        <p>Hãy đưa ra các định dạng để được kết quả như hình yêu cầu.</p>
 
-        <button onclick="toggleAnswer('ans3')">Xem bài làm</button>
+    <!-- Vận dụng 1 -->
+    <div class="section">
+        <h2>Vận dụng 1</h2>
+
+        <p><b>Câu hỏi:</b> Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.</p>
+
+        <a class="btn" onclick="showAnswer('ans3')">Xem bài làm</a>
 
         <div class="answer" id="ans3">
-            <p>Đoạn văn bản có:</p>
-            <ul>
-                <li>Chữ cái thường</li>
-                <li>Chữ in đậm</li>
-                <li>Các cỡ chữ khác nhau</li>
-            </ul>
+            <b>Đáp án:</b>
+            <p>“Các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề bài thơ:<br>
+            Chọn màu cụ thể: Trước tiên, bạn cần quyết định màu sắc bạn muốn sử dụng cho tiêu đề của bài thơ.<br>
+            Chọn ảnh nền: Chọn một bức ảnh phù hợp để sử dụng làm nền cho tiêu đề. Bạn cũng có thể sử dụng một ảnh trắng đơn giản và thêm màu sắc sau đó.<br>
+            Tạo tiêu đề trong HTML: Sử dụng thẻ &lt;h1&gt;, &lt;h2&gt;, hoặc &lt;h3&gt; để tạo tiêu đề của bài thơ.<br>
+            Thêm ảnh nền và thuộc tính color để thay đổi màu chữ”.</p>
 
-            <button class="back-btn" onclick="goTop()">Quay về trang chủ</button>
+            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
+        </div>
+    </div>
+
+
+    <!-- Vận dụng 2 -->
+    <div class="section">
+        <h2>Vận dụng 2</h2>
+
+        <p><b>Câu hỏi:</b> Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như hình minh họa.</p>
+
+        <a class="btn" onclick="showAnswer('ans4')">Xem bài làm</a>
+
+        <div class="answer" id="ans4">
+            <b>Đáp án:</b>
+            <p>“Đoạn văn bản gồm chữ cái thường, chữ in đậm và các cỡ chữ khác nhau.<br>
+            =&gt; Các định dạng là:<br>
+            - Định dạng chữ đậm<br>
+            - Định dạng chữ thường.<br>
+            - Định dạng chữ cỡ chữ”.</p>
+
+            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
         </div>
     </div>
 
