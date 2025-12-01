@@ -2,151 +2,111 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 8: Định dạng văn bản</title>
-
+    <title>Bài luyện tập – 1 file duy nhất</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #ffe4ec;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: #ff74a3;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .container {
-            padding: 20px;
-            max-width: 900px;
+            max-width: 800px;
             margin: auto;
-        }
-
-        .section {
-            background: #fff0f6;
-            border: 2px solid #ff9ec4;
             padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 10px;
         }
-
-        h2 {
-            color: #d9006d;
+        .section {
+            display: none;
+            margin-top: 20px;
         }
-
         .btn {
             display: inline-block;
-            padding: 10px 16px;
-            background: #ff74a3;
+            padding: 6px 12px;
+            background: #0078ff;
             color: white;
             text-decoration: none;
             border-radius: 6px;
-            margin-top: 10px;
-            font-weight: bold;
+            cursor: pointer;
+            margin-top: 6px;
         }
-
         .btn:hover {
-            background: #ff4f8c;
+            background: #005fcc;
         }
-
-        .answer {
-            display: none;
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border: 1px solid #ffb6d5;
-        }
-
         pre {
-            white-space: pre-wrap;
-            background: #ffe3ef;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ffb8d8;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
         }
     </style>
-
-    <script>
-        function showAnswer(id) {
-            document.getElementById(id).style.display = "block";
-        }
-
-        function goHome() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
 </head>
 
 <body>
 
-<header>Bài 8: Định dạng văn bản</header>
+<h1>DANH SÁCH BÀI LUYỆN TẬP</h1>
 
-<div class="container">
+<!-- MENU -->
+<div>
+    <h3>Luyện tập 1</h3>
+    <span class="btn" onclick="show('bai1')">Xem bài làm</span>
 
-    <!-- Luyện tập 1 -->
-    <div class="section">
-        <h2>Luyện tập 1</h2>
-        <p><b>Câu hỏi:</b> Hãy sửa lại phân tử sau để làm nổi bật ý chính của câu:</p>
+    <h3>Luyện tập 2</h3>
+    <span class="btn" onclick="show('bai2')">Xem bài làm</span>
+</div>
 
-        <pre>
-&lt;p&gt; thẻ strong vào thẻ em được sử dụng đế nhấn mạnh vào nội dung trong phần tử.
-Thẻ B chỉ có tác dụng in đậm văn bán &lt;p&gt;
-        </pre>
+<hr>
 
-        <a class="btn" onclick="showAnswer('ans1')">Xem bài làm</a>
+<!-- BÀI 1 -->
+<div id="bai1" class="section">
+    <h2>Luyện tập 1</h2>
 
-        <div class="answer" id="ans1">
-            <b>Đáp án:</b>
-            <pre>
-&lt;p&gt;&lt;strong-Thé strong&lt;/strong&gt; vào &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phân tử. 
-Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản &lt;/p&gt;
-            </pre>
-            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
-        </div>
-    </div>
+    <p><strong>Câu hỏi:</strong><br>
+        Hãy sửa lại phần tử sau để làm nổi bật ý chính của câu.
+    </p>
+
+    <p>
+        Thẻ <strong>strong</strong> và thẻ <em>em</em> giúp nhấn mạnh nội dung quan trọng trong văn bản.
+    </p>
+
+    <hr>
+
+    <p><strong>Câu trả lời:</strong></p>
+
+    <p>
+        Thẻ <strong>strong</strong> và thẻ <em>em</em> giúp nhấn mạnh nội dung quan trọng trong văn bản.
+    </p>
+
+    <br>
+    <span class="btn" onclick="show('menu')">Quay về trang chủ</span>
+</div>
 
 
-    <!-- Luyện tập 2 (ĐÃ THÊM ĐÚNG YÊU CẦU) -->
-    <div class="section">
-        <h2>Luyện tập 2</h2>
+<!-- BÀI 2 -->
+<div id="bai2" class="section">
+    <h2>Luyện tập 2</h2>
 
-        <p><b>Câu hỏi:</b> Trình bày đoạn văn bản sau bằng mã HTML.</p>
+    <p><strong>Câu hỏi:</strong><br>
+    Trình bày đoạn văn bản sau bằng mã HTML.
+    </p>
 
-        <pre>
+<pre>
 INTERNET TỐC ĐỘ CAO
 
 Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.
 Các tính năng nổi bật:
-Tốc độ siêu cao từ 150 MBps trở lên
-Lắp đặt nhanh chóng trong 24h
-Phù hợp với cá nhân/Hộ gia đình
-Tặng modem 2 băng tần
-Miễn phí lắp đặt hỗ trợ 24/7
-        </pre>
+- Tốc độ siêu cao từ 150 MBps trở lên
+- Lắp đặt nhanh chóng trong 24h
+- Phù hợp với cá nhân/Hộ gia đình
+- Tặng modem 2 băng tần
+- Miễn phí lắp đặt hỗ trợ 24/7
+</pre>
 
-        <a class="btn" onclick="showAnswer('ans2')">Xem bài làm</a>
+<hr>
 
-        <div class="answer" id="ans2">
-            <b>Đáp án:</b>
+<p><strong>Câu trả lời:</strong></p>
 
-            <pre>
+<pre>
 &lt;!DOCTYPE html&gt;
-
 &lt;html lang="en"&gt;
-
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
     &lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
 &lt;/head&gt;
-
 &lt;body&gt;
 
 &lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
@@ -165,55 +125,30 @@ Miễn phí lắp đặt hỗ trợ 24/7
 
 &lt;/body&gt;
 &lt;/html&gt;
-            </pre>
+</pre>
 
-            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
-        </div>
-    </div>
-
-
-    <!-- Vận dụng 1 -->
-    <div class="section">
-        <h2>Vận dụng 1</h2>
-
-        <p><b>Câu hỏi:</b> Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.</p>
-
-        <a class="btn" onclick="showAnswer('ans3')">Xem bài làm</a>
-
-        <div class="answer" id="ans3">
-            <b>Đáp án:</b>
-            <p>“Các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề bài thơ:<br>
-            Chọn màu cụ thể: Trước tiên, bạn cần quyết định màu sắc bạn muốn sử dụng cho tiêu đề của bài thơ.<br>
-            Chọn ảnh nền: Chọn một bức ảnh phù hợp để sử dụng làm nền cho tiêu đề. Bạn cũng có thể sử dụng một ảnh trắng đơn giản và thêm màu sắc sau đó.<br>
-            Tạo tiêu đề trong HTML: Sử dụng thẻ &lt;h1&gt;, &lt;h2&gt;, hoặc &lt;h3&gt; để tạo tiêu đề của bài thơ.<br>
-            Thêm ảnh nền và thuộc tính color để thay đổi màu chữ”.</p>
-
-            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
-        </div>
-    </div>
-
-
-    <!-- Vận dụng 2 -->
-    <div class="section">
-        <h2>Vận dụng 2</h2>
-
-        <p><b>Câu hỏi:</b> Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như hình minh họa.</p>
-
-        <a class="btn" onclick="showAnswer('ans4')">Xem bài làm</a>
-
-        <div class="answer" id="ans4">
-            <b>Đáp án:</b>
-            <p>“Đoạn văn bản gồm chữ cái thường, chữ in đậm và các cỡ chữ khác nhau.<br>
-            =&gt; Các định dạng là:<br>
-            - Định dạng chữ đậm<br>
-            - Định dạng chữ thường.<br>
-            - Định dạng chữ cỡ chữ”.</p>
-
-            <a class="btn" onclick="goHome()">Quay về trang chủ</a>
-        </div>
-    </div>
+<br>
+<span class="btn" onclick="show('menu')">Quay về trang chủ</span>
 
 </div>
+
+
+<script>
+function show(id) {
+    // Ẩn tất cả
+    document.querySelectorAll('.section').forEach(s => s.style.display = "none");
+
+    // Nếu nhấn menu → chỉ cuộn lên đầu
+    if (id === 'menu') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }
+
+    // Hiện section được chọn
+    document.getElementById(id).style.display = "block";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
