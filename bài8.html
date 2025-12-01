@@ -41,8 +41,6 @@ button:hover { background-color: #45a049; }
     box-shadow: 0 0 10px #ccc;
 }
 
-h2 { margin-bottom: 20px; }
-
 .return {
     display: inline-block;
     margin-top: 20px;
@@ -65,33 +63,32 @@ h2 { margin-bottom: 20px; }
 <!-- =================== Luyện tập Menu =================== -->
 <div id="luyenTapMenu" class="form-container">
     <h2>Luyện tập</h2>
-    <button onclick="showSection('luyenTap1')">Luyện tập 1: Strong & Em</button><br>
-    <button onclick="showSection('luyenTap2')">Luyện tập 2: Internet tốc độ cao</button><br>
-    <a class="return" href="#" onclick="backToMain('luyenTapMenu')">⬅ Quay về Trang chủ</a>
+    <button onclick="showSection('luyenTap1')">Luyện tập 1: Sửa phần tử để làm nổi bật ý chính</button><br>
+    <button onclick="showSection('luyenTap2')">Luyện tập 2: Trình bày đoạn văn bản</button><br>
+    <a class="return" href="#" onclick="backToMain('mainMenu')">⬅ Quay về Trang chủ</a>
 </div>
 
 <!-- =================== Vận dụng Menu =================== -->
 <div id="vanDungMenu" class="form-container">
     <h2>Vận dụng</h2>
-    <button onclick="showSection('vanDung1')">Vận dụng 1: Màu từ ảnh</button><br>
+    <button onclick="showSection('vanDung1')">Vận dụng 1: Dùng màu từ ảnh</button><br>
     <button onclick="showSection('vanDung2')">Vận dụng 2: Kích thước tăng-giảm</button><br>
-    <a class="return" href="#" onclick="backToMain('vanDungMenu')">⬅ Quay về Trang chủ</a>
+    <a class="return" href="#" onclick="backToMain('mainMenu')">⬅ Quay về Trang chủ</a>
 </div>
 
 <!-- =================== Luyện tập 1 =================== -->
 <div id="luyenTap1" class="form-container">
-    <h2>Luyện tập 1: Strong & Em</h2>
+    <h2>Luyện tập 1: Sửa phần tử để làm nổi bật ý chính</h2>
     <p>
-        Thẻ <strong>strong</strong> và thẻ <em>em</em> được sử dụng để 
-        <strong>nhấn mạnh vào nội dung quan trọng</strong> trong phần tử. 
-        Thẻ <b>b</b> chỉ có tác dụng <em>in đậm văn bản nhưng không mang ý nghĩa nhấn mạnh</em>.
+        Thẻ <strong>strong</strong> và thẻ <em>em</em> được sử dụng để nhấn mạnh vào nội dung trong phần tử. 
+        Thẻ <b>b</b> chỉ có tác dụng in đậm văn bản.
     </p>
     <a class="return" href="#" onclick="backToMain('luyenTapMenu')">⬅ Quay về</a>
 </div>
 
 <!-- =================== Luyện tập 2 =================== -->
 <div id="luyenTap2" class="form-container">
-    <h2>Luyện tập 2: Internet tốc độ cao</h2>
+    <h2>Luyện tập 2: Trình bày đoạn văn bản</h2>
     <h1>INTERNET TỐC ĐỘ CAO</h1>
     <p><em>Dịch vụ Internet tốc độ cao là dịch vụ Internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.</em></p>
 
@@ -109,7 +106,7 @@ h2 { margin-bottom: 20px; }
 
 <!-- =================== Vận dụng 1 =================== -->
 <div id="vanDung1" class="form-container">
-    <h2>Vận dụng 1: Màu từ ảnh</h2>
+    <h2>Vận dụng 1: Dùng màu từ ảnh</h2>
     <p>Các bước để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề bài thơ:</p>
     <ol>
         <li>Mở bức ảnh và dùng công cụ chọn màu (Color Picker).</li>
@@ -141,15 +138,12 @@ h2 { margin-bottom: 20px; }
 
 <script>
 function showSection(id) {
-    // Ẩn tất cả
     document.querySelectorAll('.form-container').forEach(div => div.style.display = 'none');
     document.getElementById(id).style.display = 'block';
 }
 
 function backToMain(menuId) {
-    // Ẩn tất cả bài tập
     document.querySelectorAll('.form-container').forEach(div => div.style.display = 'none');
-    // Hiện menu tương ứng
     document.getElementById(menuId).style.display = 'block';
 }
 </script>
