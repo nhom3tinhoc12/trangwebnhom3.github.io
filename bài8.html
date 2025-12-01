@@ -1,154 +1,247 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Bài luyện tập – 1 file duy nhất</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .section {
-            display: none;
-            margin-top: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 6px 12px;
-            background: #0078ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 6px;
-        }
-        .btn:hover {
-            background: #005fcc;
-        }
-        pre {
-            background: #f4f4f4;
-            padding: 10px;
-            border-radius: 4px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Bài 8: Định dạng văn bản</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #ffe6f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background: #ff99c8;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    button {
+        background: #ff75b5;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff4f9e;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .back-btn {
+        margin-top: 20px;
+        display: inline-block;
+        background: #ff99c8;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    pre {
+        background: #ffe6f2;
+        padding: 10px;
+        border-radius: 8px;
+        white-space: pre-wrap;
+    }
+</style>
+
+<script>
+function showPage(id) {
+    document.getElementById("homepage").style.display = "none";
+    document.getElementById(id).style.display = "block";
+}
+
+function goHome() {
+    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+    document.getElementById("homepage").style.display = "block";
+}
+</script>
 </head>
 
 <body>
 
-<h1>DANH SÁCH BÀI LUYỆN TẬP</h1>
+<header>Bài 8: Định dạng văn bản</header>
 
-<!-- MENU -->
-<div>
-    <h3>Luyện tập 1</h3>
-    <span class="btn" onclick="show('bai1')">Xem bài làm</span>
+<div class="container">
 
-    <h3>Luyện tập 2</h3>
-    <span class="btn" onclick="show('bai2')">Xem bài làm</span>
-</div>
+    <!-- TRANG CHỦ -->
+    <div id="homepage">
+        <div class="card">
+            <h2>Luyện tập 1</h2>
+            <button onclick="showPage('lt1')">Xem bài làm</button>
+        </div>
 
-<hr>
+        <div class="card">
+            <h2>Luyện tập 2</h2>
+            <button onclick="showPage('lt2')">Xem bài làm</button>
+        </div>
 
-<!-- BÀI 1 -->
-<div id="bai1" class="section">
-    <h2>Luyện tập 1</h2>
+        <div class="card">
+            <h2>Vận dụng 1</h2>
+            <button onclick="showPage('vd1')">Xem bài làm</button>
+        </div>
 
-    <p><strong>Câu hỏi:</strong><br>
-        Hãy sửa lại phần tử sau để làm nổi bật ý chính của câu.
-    </p>
+        <div class="card">
+            <h2>Vận dụng 2</h2>
+            <button onclick="showPage('vd2')">Xem bài làm</button>
+        </div>
+    </div>
 
-    <p>
-        Thẻ <strong>strong</strong> và thẻ <em>em</em> giúp nhấn mạnh nội dung quan trọng trong văn bản.
-    </p>
+    <!-- ======= TRANG NỘI DUNG ======= -->
 
-    <hr>
+    <!-- LT1 -->
+    <div id="lt1" class="page hidden">
+        <div class="card">
+            <h2>Luyện tập 1</h2>
 
-    <p><strong>Câu trả lời:</strong></p>
+            <p><strong>Câu hỏi:</strong><br>
+            “Hãy sửa lại phân tử sau để làm nổi bật ý chính của câu:<br>
+            &lt;p&gt; thẻ strong vào thẻ em được sử dụng để nhấn mạnh vào nội dung trong phần tử.
+            Thẻ B chỉ có tác dụng in đậm văn bản &lt;/p&gt;”
+            </p>
 
-    <p>
-        Thẻ <strong>strong</strong> và thẻ <em>em</em> giúp nhấn mạnh nội dung quan trọng trong văn bản.
-    </p>
+            <hr>
 
-    <br>
-    <span class="btn" onclick="show('menu')">Quay về trang chủ</span>
-</div>
+            <p><strong>Câu trả lời:</strong></p>
 
+            <p>
+                &lt;p&gt;
+                &lt;strong&gt;Thẻ strong&lt;/strong&gt; vào 
+                &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phần tử. 
+                Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản.
+                &lt;/p&gt;
+            </p>
+        </div>
 
-<!-- BÀI 2 -->
-<div id="bai2" class="section">
-    <h2>Luyện tập 2</h2>
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
 
-    <p><strong>Câu hỏi:</strong><br>
-    Trình bày đoạn văn bản sau bằng mã HTML.
-    </p>
+    <!-- LT2 -->
+    <div id="lt2" class="page hidden">
+        <div class="card">
+            <h2>Luyện tập 2</h2>
 
-<pre>
+            <p><strong>Câu hỏi:</strong></p>
+            <pre>
 INTERNET TỐC ĐỘ CAO
 
 Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.
 Các tính năng nổi bật:
-- Tốc độ siêu cao từ 150 MBps trở lên
-- Lắp đặt nhanh chóng trong 24h
-- Phù hợp với cá nhân/Hộ gia đình
-- Tặng modem 2 băng tần
-- Miễn phí lắp đặt hỗ trợ 24/7
-</pre>
+Tốc độ siêu cao từ 150 MBps trở lên
+Lắp đặt nhanh chóng trong 24h
+Phù hợp với cá nhân/Hộ gia đình
+Tặng modem 2 băng tần
+Miễn phí lắp đặt hỗ trợ 24/7
+            </pre>
 
-<hr>
+            <hr>
 
-<p><strong>Câu trả lời:</strong></p>
-
+            <p><strong>Câu trả lời:</strong></p>
 <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>INTERNET TỐC ĐỘ CAO</title>
+</head>
+<body>
 
-&lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
+<h1>INTERNET TỐC ĐỘ CAO</h1>
 
-&lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;
+<p><em>Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.</em></p>
 
-&lt;h2&gt;&lt;strong&gt;Các tính năng nổi bật:&lt;/strong&gt;&lt;/h2&gt;
+<h2><strong>Các tính năng nổi bật:</strong></h2>
 
-&lt;ul&gt;
-    &lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;
-    &lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;
-    &lt;li&gt;Phù hợp với cá nhân/Hộ gia đình&lt;/li&gt;
-    &lt;li&gt;Tặng modem 2 băng tần&lt;/li&gt;
-    &lt;li&gt;Miễn phí lắp đặt hỗ trợ 24/7&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+    <li>Tốc độ siêu cao từ 150 MBps trở lên</li>
+    <li>Lắp đặt nhanh chóng trong 24h</li>
+    <li>Phù hợp với cá nhân/Hộ gia đình</li>
+    <li>Tặng modem 2 băng tần</li>
+    <li>Miễn phí lắp đặt hỗ trợ 24/7</li>
+</ul>
 
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 </pre>
+        </div>
 
-<br>
-<span class="btn" onclick="show('menu')">Quay về trang chủ</span>
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
+
+    <!-- Vận dụng 1 -->
+    <div id="vd1" class="page hidden">
+        <div class="card">
+            <h2>Vận dụng 1</h2>
+
+            <p><strong>Câu hỏi:</strong><br>
+            Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.
+            </p>
+
+            <hr>
+
+            <p><strong>Câu trả lời:</strong></p>
+            <p>
+                - Chọn màu cụ thể.<br>
+                - Chọn ảnh nền phù hợp.<br>
+                - Tạo tiêu đề bằng thẻ &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;.<br>
+                - Thêm ảnh nền và thuộc tính <strong>color</strong> để đổi màu chữ.
+            </p>
+        </div>
+
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
+
+    <!-- Vận dụng 2 -->
+    <div id="vd2" class="page hidden">
+        <div class="card">
+            <h2>Vận dụng 2</h2>
+
+            <p><strong>Câu hỏi:</strong><br>
+            “Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như hình sau.”
+            </p>
+
+            <hr>
+
+            <p><strong>Câu trả lời:</strong></p>
+            <p>
+                Đoạn văn bản gồm chữ cái thường, chữ in đậm và các cỡ chữ khác nhau.<br><br>
+                → Các định dạng là:<br>
+                - Định dạng chữ đậm.<br>
+                - Định dạng chữ thường.<br>
+                - Định dạng cỡ chữ.
+            </p>
+        </div>
+
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
 
 </div>
-
-
-<script>
-function show(id) {
-    // Ẩn tất cả
-    document.querySelectorAll('.section').forEach(s => s.style.display = "none");
-
-    // Nếu nhấn menu → chỉ cuộn lên đầu
-    if (id === 'menu') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-    }
-
-    // Hiện section được chọn
-    document.getElementById(id).style.display = "block";
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
 
 </body>
 </html>
