@@ -22,6 +22,7 @@ h1 {
     gap: 30px;
     margin: 40px 0;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .box {
@@ -42,16 +43,8 @@ h1 {
     transform: scale(1.05);
 }
 
-.content {
-    display: none;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #c9a300;
-    margin-top: 20px;
-}
-
-.return {
+/* Nút Quay lại */
+.back-btn, .home-btn {
     display: inline-block;
     padding: 8px 15px;
     background: #ffd24c;
@@ -63,8 +56,17 @@ h1 {
     transition: 0.2s;
 }
 
-.return:hover {
+.back-btn:hover, .home-btn:hover {
     background: #ffe27f;
+}
+
+.content {
+    display: none;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #c9a300;
+    margin-top: 20px;
 }
 
 table {
@@ -97,9 +99,15 @@ a {
 
 <script>
 function showContent(id) {
-    document.getElementById("menu").style.display = "none";
+    document.getElementById("menu").style.display = "none"; // ẩn menu
     document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
     document.getElementById(id).style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function goBackToMenu() {
+    document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+    document.getElementById("menu").style.display = "flex"; // hiện menu bìa
     window.scrollTo({top:0, behavior:'smooth'});
 }
 
@@ -113,7 +121,9 @@ function showClub(id) {
 
 <h1>Bài tập HTML</h1>
 
+<!-- MENU BÌA -->
 <div class="menu" id="menu">
+    <a class="home-btn" href="index.html">🏠 Quay lại trang chủ</a>
     <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
     <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
     <div class="box" onclick="showContent('vd')">Vận dụng</div>
@@ -121,7 +131,7 @@ function showClub(id) {
 
 <!-- LT1 -->
 <div id="lt1" class="content">
-    <a class="return" href="index.html">⬅ Quay lại</a>
+    <a class="back-btn" href="javascript:void(0)" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
     <h2>Luyện tập 1: Tạo liên kết quay về CLB.html</h2>
     <h3>Trang thong_tin.html</h3>
     <p>Đây là trang thông tin CLB.</p>
@@ -130,7 +140,7 @@ function showClub(id) {
 
 <!-- LT2 -->
 <div id="lt2" class="content">
-    <a class="return" href="index.html">⬅ Quay lại</a>
+    <a class="back-btn" href="javascript:void(0)" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
     <h2>Luyện tập 2: Giới thiệu bản thân + 3 Facebook</h2>
     <p>Xin chào, tôi thích nấu ăn, nghe nhạc, đọc sách.</p>
     <h3>Bạn cùng lớp</h3>
@@ -143,7 +153,7 @@ function showClub(id) {
 
 <!-- VẬN DỤNG -->
 <div id="vd" class="content">
-    <a class="return" href="index.html">⬅ Quay lại</a>
+    <a class="back-btn" href="javascript:void(0)" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
     <h2>Vận dụng: Lịch hoạt động CLB thể thao</h2>
     <table>
         <tr>
