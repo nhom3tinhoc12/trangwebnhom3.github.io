@@ -15,11 +15,13 @@
         color: white;
         text-align: center;
         margin-bottom: 50px;
+        z-index: 2;
+        position: relative;
     }
     .container {
         text-align: center;
-        z-index: 1;
-        padding-top: 50px;
+        z-index: 2;
+        position: relative;
     }
     .box {
         background-color: #104E8B;
@@ -47,6 +49,8 @@
         color: white;
         line-height: 1.6;
         word-wrap: break-word;
+        z-index: 2;
+        position: relative;
     }
     .back {
         margin-top: 20px;
@@ -64,7 +68,6 @@
         border-radius: 10px;
         overflow-x: auto;
     }
-    /* Họa tiết đường cong */
     .curve {
         position: absolute;
         width: 200%;
@@ -73,7 +76,8 @@
         left: -50%;
         background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%);
         transform: rotate(30deg);
-        z-index: 0;
+        z-index: 1;
+        pointer-events: none; /* tránh chắn click */
     }
 </style>
 </head>
@@ -86,18 +90,14 @@
     <div class="box" onclick="showContent('vandung')">Vận dụng</div>
 </div>
 
-<!-- Nội dung các bài -->
 <div id="luyentap1" class="content">
     <h2>Luyện tập 1</h2>
     <p><strong>Câu hỏi:</strong> Cho ảnh có kích thước gốc là 720x450 Pixel. Chèn ảnh vào trang web bằng câu lệnh: <code>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</code>. Hỏi ảnh trong trang web có kích thước bao nhiêu?</p>
     <p><strong>Đáp án:</strong></p>
     <div class="code-block">
-        Kích thước của ảnh trong trang web sau khi chèn sẽ được xác định bởi câu lệnh &lt;img&gt; và thuộc tính width mà bạn đã chỉ định. Trong trường hợp này, bạn đã chỉ định width="600", nghĩa là bạn muốn ảnh có chiều rộng là 600 pixels. Tuy nhiên, do không đã chỉ định chiều cao, trình duyệt sẽ tự động điều chỉnh chiều cao một cách tự nhiên dựa trên tỉ lệ kích thước gốc của ảnh. 
-        <br><br>
-        Tỉ lệ giữa chiều rộng và chiều cao của ảnh gốc là: 720 / 450
-        <br>
-        Vậy chiều cao của ảnh trong trang web sẽ là: 600 × 450 / 720 = 375 pixels.
-        <br>
+        Kích thước của ảnh trong trang web sau khi chèn sẽ được xác định bởi câu lệnh &lt;img&gt; và thuộc tính width mà bạn đã chỉ định. Trong trường hợp này, bạn đã chỉ định width="600", nghĩa là bạn muốn ảnh có chiều rộng là 600 pixels. Tuy nhiên, do không đã chỉ định chiều cao, trình duyệt sẽ tự động điều chỉnh chiều cao một cách tự nhiên dựa trên tỉ lệ kích thước gốc của ảnh. <br><br>
+        Tỉ lệ giữa chiều rộng và chiều cao của ảnh gốc là: 720 / 450 <br>
+        Vậy chiều cao của ảnh trong trang web sẽ là: 600 × 450 / 720 = 375 pixels.<br>
         Do đó, ảnh trong trang web sẽ có kích thước là 600 pixels chiều rộng và 375 pixels chiều cao.
     </div>
     <div class="back" onclick="backToHome()">&#8592; Quay về trang đầu</div>
