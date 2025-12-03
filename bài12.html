@@ -13,9 +13,13 @@ body {
     text-align: center;
 }
 
-h1 { color: #333; margin-bottom: 30px; }
+h1 { 
+    color: #333; 
+    margin-bottom: 30px; 
+    font-size: 2.5em;
+}
 
-button {
+button, .back {
     padding: 12px 24px;
     margin: 10px;
     font-size: 16px;
@@ -25,8 +29,10 @@ button {
     background-color: #4CAF50;
     color: white;
     transition: 0.3s;
+    text-decoration: none;
 }
-button:hover { background-color: #45a049; }
+
+button:hover, .back:hover { background-color: #45a049; }
 
 .form-container { 
     margin-top: 30px;
@@ -37,14 +43,12 @@ button:hover { background-color: #45a049; }
     margin-right: auto;
     background: white;
     padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* Khung Luyện tập */
+/* Tiêu đề các bài */
 #luyenTap h2 { color: blue; }
-
-/* Khung Vận dụng */
 #vanDung h2 { color: #003399; }
 
 label {
@@ -65,6 +69,19 @@ iframe {
     border: 2px solid #003399;
     margin-top: 20px;
 }
+
+.back {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #0B3D91;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.back:hover { background-color: #1A52A1; }
 </style>
 </head>
 
@@ -72,8 +89,10 @@ iframe {
 
 <h1>Bài tập Form HTML</h1>
 
-<button onclick="showForm('luyenTap')"> Luyện tập</button>
-<button onclick="showForm('vanDung')"> Vận dụng</button>
+<div id="home">
+    <button onclick="showForm('luyenTap')"> Luyện tập</button>
+    <button onclick="showForm('vanDung')"> Vận dụng</button>
+</div>
 
 <!-- =================== Luyện tập =================== -->
 <div id="luyenTap" class="form-container">
@@ -109,6 +128,8 @@ iframe {
         <option value="female">Nữ</option>
         <option value="other">Khác</option>
     </select>
+
+    <div class="back" onclick="backHome()">&#8592; Quay về bìa</div>
 </div>
 
 <!-- =================== Vận dụng =================== -->
@@ -153,19 +174,24 @@ iframe {
 
         <button type="submit">Gửi đăng ký</button>
     </form>
-<a class="return" href="index.html">⬅ Quay lại</a>
+
+    <div class="back" onclick="backHome()">&#8592; Quay về bìa</div>
 </div>
 
 <script>
 function showForm(id) {
-    document.querySelectorAll('.form-container').forEach(div => {
-        div.style.display = "none";
-    });
+    document.getElementById("home").style.display = "none";
+    document.querySelectorAll('.form-container').forEach(div => div.style.display = "none");
     document.getElementById(id).style.display = "block";
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function backHome() {
+    document.querySelectorAll('.form-container').forEach(div => div.style.display = "none");
+    document.getElementById("home").style.display = "block";
+    window.scrollTo({top:0, behavior:'smooth'});
 }
 </script>
 
 </body>
 </html>
-
-
