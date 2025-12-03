@@ -1,97 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <title>Luyện Tập Tin Học 12</title>
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #1E90FF, #87CEFA);
-    }
-    h1 {
-        color: white;
-        text-align: center;
-        margin-top: 50px;
-    }
-    .container {
-        text-align: center;
-        margin-top: 50px;
-    }
-    .box {
-        background-color: #104E8B;
-        color: white;
-        padding: 30px 50px;
-        margin: 20px;
-        font-size: 24px;
-        border-radius: 20px;
-        cursor: pointer;
-        display: inline-block;
-    }
-    .box:hover {
-        background-color: #0B3D91;
-    }
-    .content {
-        display: none;
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 30px;
-        background-color: #104E8B;
-        color: white;
-        border-radius: 20px;
-    }
-    .back {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #0B3D91;
-        border-radius: 10px;
-        color: white;
-        cursor: pointer;
-        text-decoration: none;
-    }
-    pre {
-        background-color: rgba(255,255,255,0.05);
-        padding: 10px;
-        border-radius: 10px;
-        overflow-x: auto;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1E90FF, #87CEFA);
+    overflow-x: hidden;
+  }
+  h1 {
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+  }
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .box {
+    background-color: #104E8B;
+    color: white;
+    padding: 30px 50px;
+    margin: 20px;
+    font-size: 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  .content {
+    display: none;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #104E8B;
+    color: white;
+    border-radius: 20px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    position: relative;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0B3D91;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .curve {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%);
+    transform: rotate(30deg);
+    pointer-events: none; /* không chắn click */
+    z-index: 0;
+  }
+  pre {
+    background-color: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
 </style>
 </head>
 <body>
 
+<div class="curve"></div>
+
 <h1>Luyện Tập Tin Học 12</h1>
 
 <div class="container" id="home">
-    <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
-    <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
-    <div class="box" onclick="showContent('vd')">Vận dụng</div>
+  <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
+  <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
+  <div class="box" onclick="showContent('vd')">Vận dụng</div>
 </div>
 
 <!-- Luyện tập 1 -->
 <div class="content" id="lt1">
-    <h2>Luyện tập 1</h2>
-    <p><strong>Câu hỏi:</strong> Cho ảnh có kích thước gốc là 720x450 Pixel. Chèn ảnh vào trang web bằng câu lệnh: <code>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</code>. Hỏi ảnh trong trang web có kích thước bao nhiêu?</p>
-    <p><strong>Đáp án:</strong></p>
-    <pre>
-Kích thước của ảnh trong trang web sau khi chèn sẽ được xác định bởi câu lệnh <img> và thuộc tính width mà bạn đã chỉ định. 
-Bạn đã chỉ định width="600", nghĩa là ảnh sẽ có chiều rộng 600px. Trình duyệt tự động điều chỉnh chiều cao theo tỉ lệ gốc:
+  <h2>Luyện tập 1</h2>
+  <p><strong>Câu hỏi:</strong> Cho ảnh có kích thước gốc là 720x450 Pixel. Chèn ảnh vào trang web bằng câu lệnh: <code>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</code>. Hỏi ảnh trong trang web có kích thước bao nhiêu?</p>
+  <p><strong>Đáp án:</strong></p>
+  <pre>
+Kích thước của ảnh trong trang web sau khi chèn sẽ được xác định bởi câu lệnh &lt;img&gt; và thuộc tính width mà bạn đã chỉ định. 
+Trong trường hợp này, bạn đã chỉ định width="600", nghĩa là bạn muốn ảnh có chiều rộng là 600 pixels.
+Tuy nhiên, do không chỉ định chiều cao, trình duyệt sẽ tự động điều chỉnh chiều cao dựa trên tỉ lệ kích thước gốc của ảnh.
 
-Chiều cao = 600 × (450 / 720) = 375 px.
+Tỉ lệ chiều rộng / chiều cao của ảnh gốc: 720 / 450
 
-Vậy ảnh sẽ có 600 px chiều rộng và 375 px chiều cao.
-    </pre>
-    <div class="back" onclick="backHome()">&#8592; Quay về trang đầu</div>
+Chiều cao trong trang web = 600 × 450 / 720 = 375 pixels
+
+Vậy kích thước của ảnh trên trang web là: 600 pixels chiều rộng và 375 pixels chiều cao.
+  </pre>
+  <div class="back" onclick="backHome()">&#8592; Quay về trang đầu</div>
 </div>
 
 <!-- Luyện tập 2 -->
 <div class="content" id="lt2">
-    <h2>Luyện tập 2</h2>
-    <p><strong>Câu hỏi:</strong> Chèn thêm một số ảnh của mình vào trang web giới thiệu bản thân (Bài 10).</p>
-    <p><strong>Đáp án:</strong></p>
-    <pre>
+  <h2>Luyện tập 2</h2>
+  <p><strong>Câu hỏi:</strong> Chèn thêm một số ảnh của mình vào trang web giới thiệu bản thân (em đã tạo ở phần luyện tập, Bài 10).</p>
+  <p><strong>Đáp án:</strong></p>
+  <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -101,22 +123,34 @@ Vậy ảnh sẽ có 600 px chiều rộng và 375 px chiều cao.
 &lt;body&gt;
     &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
     &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+
+    &lt;!-- Chèn ảnh của bạn --&gt;
     &lt;h2&gt;Ảnh của tôi&lt;/h2&gt;
     &lt;img src="path_to_your_image/image1.jpg" alt="Ảnh của bạn"&gt;
     &lt;img src="path_to_your_image/image2.jpg" alt="Ảnh của bạn"&gt;
     &lt;img src="path_to_your_image/image3.jpg" alt="Ảnh của bạn"&gt;
+
+    &lt;!-- Bạn cùng lớp --&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-    </pre>
-    <div class="back" onclick="backHome()">&#8592; Quay về trang đầu</div>
+  </pre>
+  <div class="back" onclick="backHome()">&#8592; Quay về trang đầu</div>
 </div>
 
 <!-- Vận dụng -->
 <div class="content" id="vd">
-    <h2>Vận dụng</h2>
-    <p><strong>Câu hỏi:</strong> Tạo một khung nội tuyến và liên kết đến bài hát em yêu thích (ví dụ trên YouTube) vào trang web giới thiệu bản thân.</p>
-    <p><strong>Đáp án:</strong></p>
-    <pre>
+  <h2>Vận dụng</h2>
+  <p><strong>Câu hỏi:</strong> Tạo một khung nội tuyến và liên kết đến bài hát em yêu thích (ví dụ trên YouTube) vào trang web giới thiệu bản thân.</p>
+  <p><strong>Đáp án:</strong></p>
+  <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -126,24 +160,36 @@ Vậy ảnh sẽ có 600 px chiều rộng và 375 px chiều cao.
 &lt;body&gt;
     &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
     &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+
+    &lt;!-- Khung nội tuyến chứa video yêu thích từ YouTube --&gt;
     &lt;h2&gt;Bài hát yêu thích của tôi&lt;/h2&gt;
     &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/video_id" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+    &lt;!-- Bạn cùng lớp --&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-    </pre>
-    <div class="back" onclick="backHome()">&#8592; Quay về trang đầu</div>
+  </pre>
+  <div class="back" onclick="backHome()">&#8592; Quay về trang đầu</div>
 </div>
 
 <script>
-function showContent(id){
-    document.getElementById("home").style.display = "none";
-    document.querySelectorAll(".content").forEach(c => c.style.display = "none");
-    document.getElementById(id).style.display = "block";
+function showContent(id) {
+  document.getElementById("home").style.display = "none";
+  document.querySelectorAll(".content").forEach(c => c.style.display = "none");
+  document.getElementById(id).style.display = "block";
 }
 
-function backHome(){
-    document.querySelectorAll(".content").forEach(c => c.style.display = "none");
-    document.getElementById("home").style.display = "block";
+function backHome() {
+  document.querySelectorAll(".content").forEach(c => c.style.display = "none");
+  document.getElementById("home").style.display = "block";
 }
 </script>
 
