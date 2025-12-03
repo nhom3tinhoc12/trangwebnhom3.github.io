@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Luyện Tập Tin Học 12</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1E90FF, #87CEFA);
+        min-height: 100vh;
+        padding: 30px;
+        position: relative;
+        color: white;
+    }
+
+    h1, h2 { text-align: center; }
+
+    .menu {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .btn {
+        background-color: #104E8B;
+        padding: 20px 40px;
+        color: white;
+        font-size: 22px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    .section {
+        display: none;
+        background-color: #104E8B;
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 900px;
+        margin: auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    pre {
+        background: rgba(0,0,0,0.2);
+        padding: 15px;
+        border-radius: 10px;
+        overflow-x: auto;
+    }
+
+    .curve {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%);
+        transform: rotate(30deg);
+        z-index: -1;
+    }
+</style>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        window.scrollTo(0,0);
+    }
+</script>
+
+</head>
+<body>
+
+<div class="curve"></div>
+
+<h1>Luyện Tập Tin Học 12</h1>
+
+<div class="menu">
+    <div class="btn" onclick="showSection('lt1')">Luyện tập 1</div>
+    <div class="btn" onclick="showSection('lt2')">Luyện tập 2</div>
+    <div class="btn" onclick="showSection('vd')">Vận dụng</div>
+</div>
+
+<!-- Luyện tập 1 -->
+<div id="lt1" class="section">
+    <h2>Luyện tập 1</h2>
+    <p><strong>Câu hỏi:</strong> Cho ảnh có kích thước gốc là 720x450 Pixel chèn ảnh vào trang web bằng câu lệnh:</p>
+    <pre>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</pre>
+    <p><strong>Đáp án:</strong><br>
+        Chiều rộng ảnh được đặt = 600 px.<br>
+        Trình duyệt giữ nguyên tỉ lệ:<br>
+        Chiều cao = 600 × (450/720) = 375 px.<br><br>
+        👉 Ảnh hiển thị: <b>600 × 375 px</b>
+    </p>
+</div>
+
+<!-- Luyện tập 2 -->
+<div id="lt2" class="section">
+    <h2>Luyện tập 2</h2>
+    <p><strong>Câu hỏi:</strong> Chèn thêm một số ảnh vào trang web giới thiệu bản thân.</p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+    &lt;img src="image1.jpg" alt="Ảnh của tôi"&gt;
+    &lt;img src="image2.jpg" alt="Ảnh của tôi"&gt;
+    &lt;img src="image3.jpg" alt="Ảnh của tôi"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<!-- Vận dụng -->
+<div id="vd" class="section">
+    <h2>Vận dụng</h2>
+    <p><strong>Câu hỏi:</strong> Tạo khung nội tuyến liên kết đến bài hát yêu thích.</p>
+
+<pre>
+&lt;iframe width="560" height="315"
+        src="https://www.youtube.com/embed/video_id"
+        frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</pre>
+</div>
+
+</body>
+</html>
