@@ -61,6 +61,7 @@
         color: white;
         border-radius: 8px;
         text-decoration: none;
+        cursor: pointer;
     }
 
     pre {
@@ -68,6 +69,17 @@
         padding: 10px;
         border-radius: 8px;
         white-space: pre-wrap;
+    }
+
+    /* nút quay lại index */
+    .back-index {
+        background: #ff4f9e;
+        color: white;
+        padding: 10px 20px;
+        display: inline-block;
+        margin-top: 20px;
+        border-radius: 8px;
+        text-decoration: none;
     }
 </style>
 
@@ -112,6 +124,9 @@ function goHome() {
             <h2>Vận dụng 2</h2>
             <button onclick="showPage('vd2')">Xem bài làm</button>
         </div>
+
+        <!-- NÚT QUAY LẠI INDEX.HTML -->
+        <a href="index.html" class="back-index">← Quay lại Index</a>
     </div>
 
     <!-- ======= TRANG NỘI DUNG ======= -->
@@ -143,7 +158,7 @@ function goHome() {
         <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
     </div>
 
-    <!-- LT2 (ĐÃ SỬA CHÍNH XÁC: phần 'Câu trả lời' giữ nguyên nguyên bản bạn cung cấp) -->
+    <!-- LT2 -->
     <div id="lt2" class="page hidden">
         <div class="card">
             <h2>Luyện tập 2</h2>
@@ -228,7 +243,8 @@ Miễn phí lắp đặt hỗ trợ 24/7
                 Chọn màu cụ thể: Trước tiên, bạn cần quyết định màu sắc bạn muốn sử dụng cho tiêu đề của bài thơ.<br>
                 Chọn ảnh nền: Chọn một bức ảnh phù hợp để sử dụng làm nền cho tiêu đề. Bạn cũng có thể sử dụng một ảnh trắng đơn giản và thêm màu sắc sau đó.<br>
                 Tạo tiêu đề trong HTML: Sử dụng thẻ &lt;h1&gt;, &lt;h2&gt;, hoặc &lt;h3&gt; để tạo tiêu đề của bài thơ.<br>
-                Thêm ảnh nền và thuộc tính color để thay đổi màu chữ”.</p>
+                Thêm ảnh nền và thuộc tính color để thay đổi màu chữ”.
+            </p>
         </div>
 
         <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
@@ -251,7 +267,8 @@ Miễn phí lắp đặt hỗ trợ 24/7
                 =&gt; Các định dạng là:<br>
                 - Định dạng chữ đậm<br>
                 - Định dạng chữ thường.<br>
-                - Định dạng chữ cỡ chữ”.</p>
+                - Định dạng chữ cỡ chữ”.
+            </p>
         </div>
 
         <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
