@@ -26,7 +26,25 @@
         margin: auto;
     }
 
-    .card {
+    /* TRANG BÌA – màu vàng */
+    #homepage {
+        background: #fff8c2;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    /* Card trang bìa đổi màu vàng + bo góc */
+    #homepage .card {
+        background: #ffef8b;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        border: 2px solid #f5d85c;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Card ở trang nội dung giữ nguyên */
+    .page .card {
         background: white;
         padding: 20px;
         margin-bottom: 15px;
@@ -125,8 +143,8 @@ function goHome() {
             <button onclick="showPage('vd2')">Xem bài làm</button>
         </div>
 
-        <!-- NÚT QUAY LẠI INDEX.HTML -->
-        <a href="index.html" class="back-index">← Quay lại Index</a>
+        <!-- NÚT QUAY LẠI INDEX.HTML (đổi tên theo yêu cầu) -->
+        <a href="index.html" class="back-index">← Quay lại trang chủ</a>
     </div>
 
     <!-- ======= TRANG NỘI DUNG ======= -->
