@@ -11,6 +11,30 @@ body {
     background: linear-gradient(135deg, #1E90FF, #87CEFA);
     overflow-x: hidden;
     color: white;
+    position: relative;
+}
+
+/* Họa tiết bông hoa trắng */
+body::before {
+    content: "✿ ✿ ✿ ✿ ✿";
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 40px;
+    color: rgba(255,255,255,0.3);
+    transform: rotate(-20deg);
+    z-index: 0;
+}
+
+body::after {
+    content: "✿ ✿ ✿";
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    font-size: 50px;
+    color: rgba(255,255,255,0.25);
+    transform: rotate(15deg);
+    z-index: 0;
 }
 
 h1 {
@@ -18,23 +42,32 @@ h1 {
     margin-top: 50px;
     font-size: 3em;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
 }
 
 .container {
     text-align: center;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column; /* xếp theo hàng dọc */
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .box {
     background-color: #104E8B;
     color: white;
     padding: 30px 50px;
-    margin: 20px;
     font-size: 24px;
     border-radius: 20px;
     cursor: pointer;
-    display: inline-block;
+    width: 70%; /* đảm bảo nằm theo cột */
+    max-width: 400px;
     transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 2;
 }
 
 .box:hover {
@@ -54,6 +87,7 @@ h1 {
     word-wrap: break-word;
     position: relative;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    z-index: 2;
 }
 
 .back {
@@ -71,6 +105,23 @@ h1 {
 
 .back:hover {
     background-color: #1A52A1;
+}
+
+/* Nút quay lại trang chủ (index.html) */
+.back-index {
+    background-color: #002b80;
+    padding: 12px 25px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    transition: 0.2s;
+}
+
+.back-index:hover {
+    background-color: #003ca8;
 }
 
 pre {
@@ -106,6 +157,9 @@ pre {
     <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
     <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
     <div class="box" onclick="showContent('vd')">Vận dụng</div>
+
+    <!-- NÚT QUAY LẠI TRANG CHỦ (index.html) -->
+    <a href="index.html" class="back-index">← Quay lại trang chủ</a>
 </div>
 
 <!-- Luyện tập 1 -->
