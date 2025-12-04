@@ -18,6 +18,7 @@ body {
     background: linear-gradient(270deg, #ffb6d2, #ffcce1, #ffe0ec);
     background-size: 600% 600%;
     animation: neonWave 15s ease infinite;
+    color: white; /* TẤT CẢ CHỮ → TRẮNG */
 }
 
 /* Gradient animation */
@@ -30,7 +31,7 @@ body {
 /* Cards */
 .card {
     width: 500px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
     padding: 40px;
     border-radius: 30px;
@@ -39,7 +40,9 @@ body {
     animation: fadeIn 1s ease;
     margin-bottom: 25px;
     position: relative;
+    overflow: hidden;
     z-index: 1;
+    color: white; /* Chữ trong card → trắng */
 }
 
 @keyframes fadeIn {
@@ -47,6 +50,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Avatar */
 .avatar-container {
     position: relative;
     display: inline-block;
@@ -74,14 +78,15 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* Name */
 h1 { 
-    color: #ff2e72; 
+    color: white;
     font-size: 34px; 
     margin-top: 20px; 
     position: relative;
 }
 
-/* 🌟 Sparkle effect for name */
+/* Sparkle effect for name */
 h1::after {
     content: "✨";
     position: absolute;
@@ -98,17 +103,18 @@ h1::after {
     100% { opacity: 0; transform: scale(0.5); }
 }
 
+/* Slogan */
 .slogan-card {
     width: 520px;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(18px);
     padding: 30px 40px;
     border-radius: 32px;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(255, 30, 110, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 30, 110, 0.35);
     font-size: 22px;
     font-weight: bold;
-    color: #ff1e6e;
+    color: white; /* Slogan → trắng */
     animation: glowFade 2s ease-in-out infinite alternate, pulse 3s ease-in-out infinite, fadeIn 1.5s ease;
     margin-top: 25px;
     border: 2px solid rgba(255, 30, 110, 0.5);
@@ -117,19 +123,24 @@ h1::after {
 }
 
 @keyframes glowFade {
-    0% { box-shadow: 0 0 15px rgba(255, 30, 110, 0.6); }
-    100% { box-shadow: 0 0 35px rgba(255, 30, 110, 1); }
+    0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+    100% { box-shadow: 0 0 35px rgba(255, 255, 255, 1); }
 }
 
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes pulse { 
+    0% { transform: scale(1); } 
+    50% { transform: scale(1.05); } 
+    100% { transform: scale(1); } 
+}
 
 .section { 
     margin: 15px 0; 
     font-size: 18px; 
-    color: #6b2c3f; 
+    color: white;  /* CHỮ TRẮNG */
     line-height: 1.6; 
 }
 
+/* Return Button */
 .return {
     display: inline-block;
     margin-top: 25px;
@@ -158,7 +169,7 @@ h1::after {
     z-index: 0;
 }
 
-/* ===== Stars ===== */
+/* Stars */
 .star {
     position: absolute;
     color: #fff;
@@ -175,7 +186,7 @@ h1::after {
     100% { opacity: 0.3; transform: scale(1); }
 }
 
-/* ===== Hearts ===== */
+/* Hearts */
 .heartBubble {
     position: absolute;
     bottom: -30px;
@@ -193,7 +204,7 @@ h1::after {
     100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
 }
 
-/* 🌟 NEW UY EFFECT — Butterfly Animation */
+/* Butterfly */
 .butterfly {
     position: fixed;
     top: -30px;
@@ -210,12 +221,7 @@ h1::after {
     100% { transform: translate(100vw, -10vh) rotate(0deg); }
 }
 
-/* 🌟 Glow border for cards */
-.card {
-    position: relative;
-    overflow: hidden;
-}
-
+/* Glow border */
 .card::after {
     content: "";
     position: absolute;
@@ -238,7 +244,7 @@ h1::after {
 </head>
 <body>
 
-<div id="effectLayer"></div> <!-- Layer cho sao + tim -->
+<div id="effectLayer"></div>
 
 <div class="card">
     <div class="avatar-container">
@@ -258,13 +264,13 @@ h1::after {
 </div>
 
 <div class="slogan-card">
-"Giữa việc đi học và ngủ ở nhà mình thích đi học hơn vì khi đến lớp mình gặp được những người bạn "yêu vấu" của mình."
+"Giữa việc đi học và ngủ ở nhà mình thích đi học hơn vì khi đến lớp mình gặp được những người bạn 'yêu vấu' của mình."
 </div>
 
 <script>
 const effectLayer = document.getElementById('effectLayer');
 
-/* ===== Stars ===== */
+/* Stars */
 for (let i = 0; i < 50; i++) {
     let star = document.createElement("div");
     star.classList.add("star");
@@ -276,7 +282,7 @@ for (let i = 0; i < 50; i++) {
     effectLayer.appendChild(star);
 }
 
-/* ===== Hearts ===== */
+/* Hearts */
 for (let i = 0; i < 40; i++) {
     let heart = document.createElement("div");
     heart.classList.add("heartBubble");
@@ -288,7 +294,7 @@ for (let i = 0; i < 40; i++) {
     effectLayer.appendChild(heart);
 }
 
-/* 🌟 NEW UY EFFECT — Butterflies flying */
+/* Butterflies */
 const butterflyIcons = ["🦋","🦋","🦋","🦋"];
 
 for (let i = 0; i < 10; i++) {
@@ -304,3 +310,4 @@ for (let i = 0; i < 10; i++) {
 
 </body>
 </html>
+
