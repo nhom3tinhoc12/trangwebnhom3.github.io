@@ -2,216 +2,285 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luyện Tập Tin Học 12</title>
+<title>Bài 8: Định dạng văn bản</title>
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1E90FF, #87CEFA);
-    overflow-x: hidden;
-    color: white;
-    position: relative;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background: #ffe6f2;
+        margin: 0;
+        padding: 0;
+    }
 
-/* Họa tiết bông hoa trắng */
-body::before {
-    content: "✿ ✿ ✿ ✿ ✿";
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    font-size: 40px;
-    color: rgba(255,255,255,0.3);
-    transform: rotate(-20deg);
-    z-index: 0;
-}
+    header {
+        background: #ff99c8;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+    }
 
-body::after {
-    content: "✿ ✿ ✿";
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
-    font-size: 50px;
-    color: rgba(255,255,255,0.25);
-    transform: rotate(15deg);
-    z-index: 0;
-}
+    .container {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+    }
 
-h1 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 3em;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    position: relative;
-    z-index: 2;
-}
+    /* xếp theo hàng dọc */
+    #homepage {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 
-.container {
-    text-align: center;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column; /* xếp theo hàng dọc */
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    z-index: 2;
-}
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-.box {
-    background-color: #104E8B;
-    color: white;
-    padding: 30px 50px;
-    font-size: 24px;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 70%; /* đảm bảo nằm theo cột */
-    max-width: 400px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    z-index: 2;
-}
+    button {
+        background: #ff75b5;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+    }
 
-.box:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
+    button:hover {
+        background: #ff4f9e;
+    }
 
-.content {
-    display: none;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #104E8B;
-    color: white;
-    border-radius: 20px;
-    line-height: 1.6;
-    word-wrap: break-word;
-    position: relative;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    z-index: 2;
-}
+    .hidden {
+        display: none;
+    }
 
-.back {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #0B3D91;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.2s;
-}
+    .back-btn {
+        margin-top: 20px;
+        display: inline-block;
+        background: #ff99c8;
+        padding: 10px 20px;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-.back:hover {
-    background-color: #1A52A1;
-}
+    .back-homepage {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 18px;
+        background: #ff75b5;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        width: fit-content;
+    }
 
-/* Nút quay lại trang chủ (index.html) */
-.back-index {
-    background-color: #002b80;
-    padding: 12px 25px;
-    border-radius: 12px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 30px;
-    transition: 0.2s;
-}
+    .back-homepage:hover {
+        background: #ff4f9e;
+    }
 
-.back-index:hover {
-    background-color: #003ca8;
-}
-
-pre {
-    background-color: rgba(255,255,255,0.1);
-    padding: 15px;
-    border-radius: 10px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-/* Hiệu ứng hình cong nền */
-.curve {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%);
-    transform: rotate(30deg);
-    pointer-events: none;
-    z-index: 0;
-}
+    pre {
+        background: #ffe6f2;
+        padding: 10px;
+        border-radius: 8px;
+        white-space: pre-wrap;
+    }
 </style>
-</head>
-<body>
-
-<div class="curve"></div>
-
-<h1>Luyện Tập Tin Học 12</h1>
-
-<div class="container" id="home">
-    <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
-    <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
-    <div class="box" onclick="showContent('vd')">Vận dụng</div>
-
-    <!-- NÚT QUAY LẠI TRANG CHỦ (index.html) -->
-    <a href="index.html" class="back-index">← Quay lại trang chủ</a>
-</div>
-
-<!-- Luyện tập 1 -->
-<div class="content" id="lt1">
-    <h2>Luyện tập 1</h2>
-    <p><strong>Câu hỏi:</strong> Cho ảnh có kích thước gốc là 720x450 Pixel. Chèn ảnh vào trang web bằng câu lệnh: <code>&lt;img src="images/1.png" alt="chiếc lá" width="600"&gt;</code>. Hỏi ảnh trong trang web có kích thước bao nhiêu?</p>
-    <p><strong>Đáp án:</strong></p>
-    <pre>
-Chiều rộng: 600 pixels
-Chiều cao: 375 pixels (tỉ lệ gốc 720/450)
-    </pre>
-    <div class="back" onclick="backHome()">&#8592; Quay về bìa</div>
-</div>
-
-<!-- Luyện tập 2 -->
-<div class="content" id="lt2">
-    <h2>Luyện tập 2</h2>
-    <p><strong>Câu hỏi:</strong> Chèn thêm một số ảnh của mình vào trang web giới thiệu bản thân.</p>
-    <p><strong>Đáp án:</strong></p>
-    <pre>
-&lt;img src="path_to_your_image/image1.jpg" alt="Ảnh của bạn"&gt;
-&lt;img src="path_to_your_image/image2.jpg" alt="Ảnh của bạn"&gt;
-&lt;img src="path_to_your_image/image3.jpg" alt="Ảnh của bạn"&gt;
-    </pre>
-    <div class="back" onclick="backHome()">&#8592; Quay về bìa</div>
-</div>
-
-<!-- Vận dụng -->
-<div class="content" id="vd">
-    <h2>Vận dụng</h2>
-    <p><strong>Câu hỏi:</strong> Tạo khung nội tuyến và liên kết đến bài hát yêu thích trên YouTube.</p>
-    <p><strong>Đáp án:</strong></p>
-    <pre>
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/video_id" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-    </pre>
-    <div class="back" onclick="backHome()">&#8592; Quay về bìa</div>
-</div>
 
 <script>
-function showContent(id) {
-    document.getElementById("home").style.display = "none";
-    document.querySelectorAll(".content").forEach(c => c.style.display = "none");
+function showPage(id) {
+    document.getElementById("homepage").style.display = "none";
     document.getElementById(id).style.display = "block";
-    window.scrollTo({top:0, behavior:'smooth'});
 }
 
-function backHome() {
-    document.querySelectorAll(".content").forEach(c => c.style.display = "none");
-    document.getElementById("home").style.display = "block";
-    window.scrollTo({top:0, behavior:'smooth'});
+function goHome() {
+    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+    document.getElementById("homepage").style.display = "flex";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+</head>
+
+<body>
+
+<header>Bài 8: Định dạng văn bản</header>
+
+<div class="container">
+
+    <!-- TRANG CHỦ -->
+    <div id="homepage">
+
+        <a href="index.html" class="back-homepage">← Quay lại trang chủ</a>
+
+        <div class="card">
+            <h2>Luyện tập 1</h2>
+            <button onclick="showPage('lt1')">Xem bài làm</button>
+        </div>
+
+        <div class="card">
+            <h2>Luyện tập 2</h2>
+            <button onclick="showPage('lt2')">Xem bài làm</button>
+        </div>
+
+        <div class="card">
+            <h2>Vận dụng 1</h2>
+            <button onclick="showPage('vd1')">Xem bài làm</button>
+        </div>
+
+        <div class="card">
+            <h2>Vận dụng 2</h2>
+            <button onclick="showPage('vd2')">Xem bài làm</button>
+        </div>
+    </div>
+
+    <!-- ======= TRANG NỘI DUNG ======= -->
+
+    <!-- LT1 -->
+    <div id="lt1" class="page hidden">
+        <div class="card">
+            <h2>Luyện tập 1</h2>
+
+            <p><strong>Câu hỏi:</strong><br>
+            “Hãy sửa lại phân tử sau để làm nổi bật ý chính của câu:<br>
+            &lt;p&gt; thẻ strong vào thẻ em được sử dụng để nhấn mạnh vào nội dung trong phần tử.
+            Thẻ B chỉ có tác dụng in đậm văn bản &lt;/p&gt;”</p>
+
+            <hr>
+
+            <p><strong>Câu trả lời:</strong></p>
+            <p>
+                &lt;p&gt;
+                &lt;strong&gt;Thẻ strong&lt;/strong&gt; vào 
+                &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phần tử. 
+                Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản.
+                &lt;/p&gt;
+            </p>
+        </div>
+
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
+
+    <!-- LT2 -->
+    <div id="lt2" class="page hidden">
+        <div class="card">
+            <h2>Luyện tập 2</h2>
+
+            <p><strong>Câu hỏi:</strong></p>
+            <pre>
+INTERNET TỐC ĐỘ CAO
+
+Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.
+Các tính năng nổi bật:
+Tốc độ siêu cao từ 150 MBps trở lên
+Lắp đặt nhanh chóng trong 24h
+Phù hợp với cá nhân/Hộ gia đình
+Tặng modem 2 băng tần
+Miễn phí lắp đặt hỗ trợ 24/7
+            </pre>
+
+            <hr>
+
+            <p><strong>Câu trả lời:</strong></p>
+
+            <pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;&lt;strong&gt;Các tính năng nổi bật:&lt;/strong&gt;&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+
+    &lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;
+
+    &lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;
+
+    &lt;li&gt;Phù hợp với cá nhân/Hộ gia đình&lt;/li&gt;
+
+    &lt;li&gt;Tặng modem 2 băng tần&lt;/li&gt;
+
+    &lt;li&gt;Miễn phí lắp đặt hỗ trợ 24/7&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+        </div>
+
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
+
+    <!-- Vận dụng 1 -->
+    <div id="vd1" class="page hidden">
+        <div class="card">
+            <h2>Vận dụng 1</h2>
+
+            <p><strong>Câu hỏi:</strong><br>
+            Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.</p>
+
+            <hr>
+
+            <p><strong>Câu trả lời:</strong></p>
+            <p>
+                “Các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề bài thơ:<br>
+                Chọn màu cụ thể: Trước tiên, bạn cần quyết định màu sắc bạn muốn sử dụng cho tiêu đề của bài thơ.<br>
+                Chọn ảnh nền: Chọn một bức ảnh phù hợp để sử dụng làm nền cho tiêu đề. Bạn cũng có thể sử dụng một ảnh trắng đơn giản và thêm màu sắc sau đó.<br>
+                Tạo tiêu đề trong HTML: Sử dụng thẻ &lt;h1&gt;, &lt;h2&gt;, hoặc &lt;h3&gt; để tạo tiêu đề của bài thơ.<br>
+                Thêm ảnh nền và thuộc tính color để thay đổi màu chữ”.</p>
+        </div>
+
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
+
+    <!-- Vận dụng 2 -->
+    <div id="vd2" class="page hidden">
+        <div class="card">
+            <h2>Vận dụng 2</h2>
+
+            <p><strong>Câu hỏi:</strong><br>
+            “Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như hình sau.”</p>
+
+            <hr>
+
+            <p><strong>Câu trả lời:</strong></p>
+            <p>
+                “Đoạn văn bản gồm chữ cái thường, chữ in đậm và các cỡ chữ khác nhau.<br>
+                =&gt; Các định dạng là:<br>
+                - Định dạng chữ đậm<br>
+                - Định dạng chữ thường.<br>
+                - Định dạng chữ cỡ chữ”.</p>
+        </div>
+
+        <a class="back-btn" onclick="goHome()">← Quay về trang chủ</a>
+    </div>
+
+</div>
 
 </body>
 </html>
