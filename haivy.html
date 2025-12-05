@@ -20,7 +20,6 @@ body {
     animation: neonWave 15s ease infinite;
 }
 
-/* Gradient animation */
 @keyframes neonWave {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -71,7 +70,12 @@ body {
 
 @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-.section { margin: 15px 0; font-size: 18px; color: #6b2c3f; line-height: 1.6; }
+.section {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #6b2c3f;
+    line-height: 1.6;
+}
 
 .return {
     display: inline-block;
@@ -90,7 +94,32 @@ body {
     box-shadow: 0 8px 25px rgba(255, 50, 120, 0.4);
 }
 
-/* ===== Effect container ===== */
+/* ===== SLOGAN CARD GIỮ NGUYÊN ===== */
+.slogan-card {
+    width: 520px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px);
+    padding: 30px 40px;
+    border-radius: 32px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(255, 30, 110, 0.4);
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff1e6e;
+    animation: glowFade 2s ease-in-out infinite alternate, pulse 3s ease-in-out infinite, fadeIn 1.5s ease;
+    margin-top: 25px;
+    border: 2px solid rgba(255, 30, 110, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes glowFade {
+    0% { box-shadow: 0 0 15px rgba(255, 30, 110, 0.6); }
+    100% { box-shadow: 0 0 35px rgba(255, 30, 110, 1); }
+}
+
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
 #effectLayer {
     position: fixed;
     top: 0; left: 0;
@@ -100,7 +129,6 @@ body {
     z-index: 0;
 }
 
-/* ===== Floating stars ===== */
 .star {
     position: absolute;
     color: #fff;
@@ -110,13 +138,13 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
+
 @keyframes starTwinkle {
     0% { opacity: 0.3; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.3); }
     100% { opacity: 0.3; transform: scale(1); }
 }
 
-/* ===== Floating hearts ===== */
 .heartBubble {
     position: absolute;
     bottom: -30px;
@@ -127,6 +155,7 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
+
 @keyframes heartRise {
     0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
     50% { transform: translateY(-50vh) rotate(180deg); opacity: 1; }
@@ -139,7 +168,15 @@ body {
 
 <div id="effectLayer"></div>
 
-<!-- ======================= CARD VAI TRÒ ======================= -->
+<!-- CARD 1: AVATAR + TÊN -->
+<div class="card">
+    <div class="avatar-container">
+        <img class="avatar" src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-sieu-nhan-mau-do.jpg">
+    </div>
+    <h1>Hải Vy</h1>
+</div>
+
+<!-- CARD 2: VAI TRÒ (ĐÃ ĐƯỢC ĐƯA XUỐNG DƯỚI AVT) -->
 <div class="card">
     <h2>Vai trò</h2>
     <div class="section">
@@ -149,25 +186,18 @@ body {
     </div>
 </div>
 
-<!-- ======================= Card 1 ======================= -->
-<div class="card">
-    <div class="avatar-container">
-        <img class="avatar" src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-sieu-nhan-mau-do.jpg">
-    </div>
-    <h1>Hải Vy</h1>
-</div>
-
-<!-- ======================= Card 2 ======================= -->
+<!-- CARD 3: THÔNG TIN CÁ NHÂN -->
 <div class="card">
     <div class="section"><b>Ngày sinh:</b> 01/01/2008</div>
     <div class="section"><b>Định hướng nghề nghiệp:</b><br> Kế toán · Huấn luyện viên thú cưng</div>
     <div class="section"><b>Tính cách:</b><br> Hòa đồng · Kiên nhẫn · Luôn học hỏi</div>
     <div class="section"><b>Mục tiêu:</b><br> Nâng cao kỹ năng · Xây dựng sự tự tin · Hoàn thiện bản thân</div>
     <div class="section"><b>Sở thích:</b> Nấu ăn · Game · Đạp xe</div>
+
     <a class="return" href="index.html">⬅ Quay lại</a>
 </div>
 
-<!-- ======================= Card 3 ======================= -->
+<!-- GIỮ NGUYÊN CARD ĐỰNG SLOGAN CỦA MÀY NÈ ✅ -->
 <div class="slogan-card">"Để chọn một nơi yêu thích nhất ở Chuyên Bến Tre thì trong đầu mình hiện lên ngay hình ảnh chiếc xích đu thân yêu, mỗi giờ ra chơi, mình cùng những người bạn thường hay chơi xích đu cùng nhau"</div>
 
 <script>
@@ -188,7 +218,7 @@ for (let i = 0; i < 40; i++) {
     let heart = document.createElement("div");
     heart.classList.add("heartBubble");
     heart.innerHTML = "❤";
-    heart.style.left = Math.random()*100 + "vw";
+    heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (12 + Math.random()*18) + "px";
     heart.style.animationDuration = (5 + Math.random()*5) + "s";
     heart.style.animationDelay = Math.random()*5 + "s";
