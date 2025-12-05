@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài luyện tập và vận dụng - CSS</title>
+</head>
+<body>
+
+    <h2>Luyện tập 1</h2>
+    <p><strong>Câu hỏi:</strong> Khẳng định “Ngôn ngữ định dạng CSS chính là ngôn ngữ HTML” là đúng hay sai?</p>
+    <p><strong>Câu trả lời:</strong> Sai. Ngôn ngữ định dạng CSS (Cascading Style Sheets) không phải là ngôn ngữ HTML (HyperText Markup Language).
+    HTML được sử dụng để tạo cấu trúc và định dạng nội dung trên trang web bằng cách sử dụng các thẻ và các thuộc tính được nhúng trong các thẻ này.
+    Trong khi đó, CSS được sử dụng để điều chỉnh cách mà các phần tử HTML được hiển thị trên trình duyệt, bao gồm màu sắc, font chữ, khoảng cách, đường viền và các thuộc tính khác. CSS là một ngôn ngữ độc lập dùng để cung cấp phong cách và thiết kế cho các trang web, và nó hoạt động cùng với HTML để tạo ra trải nghiệm người dùng hoàn chỉnh.</p>
+
+    <h2>Luyện tập 2</h2>
+    <p><strong>Câu hỏi:</strong> Có thể chỉ cần thay đổi thông tin của tệp CSS sẽ làm thay đổi định dạng của nhiều trang web thậm chí của cả một trang website là đúng hay sai?</p>
+    <p><strong>Câu trả lời:</strong> Đúng. Việc chỉ cần thay đổi thông tin trong tệp CSS có thể làm thay đổi định dạng của nhiều trang web hoặc thậm chí của cả một trang web. Điều này là do CSS được sử dụng để kiểm soát phong cách và định dạng của các phần tử HTML trên trang web. Việc chỉnh sửa CSS có thể ảnh hưởng lớn đến giao diện của nhiều trang web hoặc thậm chí của cả một trang web.</p>
+
+    <h2>Vận dụng 1</h2>
+    <p><strong>Câu hỏi:</strong> Trong các phần mềm soạn thảo văn bản thường có chức năng tạo các mẫu định dạng Style Sheet dùng để tạo khuôn cho các đoạn (paragraph) của văn bản. Em hãy trình bày sự giống nhau và tương thích của Style Sheet trong các phần mềm soạn thảo văn bản với CSS của trang web.</p>
+    <p><strong>Câu trả lời:</strong> 
+        Sự giống nhau và tương thích của Style Sheet trong các phần mềm soạn thảo văn bản với CSS của trang web:
+        <br>- <strong>Cấu trúc và cú pháp:</strong> Cả Style Sheet trong các phần mềm soạn thảo văn bản và CSS đều tuân theo một cấu trúc và cú pháp nhất định. Thông thường, các tệp Style Sheet được viết bằng cú pháp CSS trong trang web, trong khi các chức năng tạo định dạng trong phần mềm soạn thảo văn bản cũng sẽ tuân theo một cấu trúc tương tự.
+        <br>- <strong>Tính tái sử dụng:</strong> Cả hai đều hỗ trợ tính tái sử dụng. Trong CSS, bạn có thể đặt các quy tắc định dạng trong một tệp riêng và áp dụng chúng cho nhiều trang web hoặc nhiều phần tử HTML khác nhau. Tương tự, trong các phần mềm soạn thảo văn bản, bạn có thể tạo các mẫu định dạng và áp dụng chúng cho nhiều phần văn bản khác nhau.
+        <br>- <strong>Khuôn mẫu định dạng:</strong> Cả Style Sheet và CSS đều cho phép tạo ra các khuôn mẫu định dạng để áp dụng cho các phần tử văn bản, giúp tăng tính thống nhất.
+        <br>- <strong>Kiểm soát phong cách và định dạng:</strong> Cả Style Sheet và CSS đều cho phép điều chỉnh màu sắc, kích thước chữ, font chữ, độ dày viền, khoảng cách… nhằm tạo giao diện phù hợp mục đích sử dụng.
+    </p>
+
+    <h2>Vận dụng 2</h2>
+    <p><strong>Câu hỏi:</strong> Thiết lập trang web với nội dung về lịch sử CSS và định dạng bằng các mẫu CSS.</p>
+    <p><strong>Câu trả lời:</strong></p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lịch sử CSS&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1 class="title"&gt;Lịch sử CSS&lt;/h1&gt;
+        &lt;p&gt;Ý tưởng của CSS do kỹ sư Hakon Wium Lie thiết lập năm 1994 tại CERN.&lt;/p&gt;
+        &lt;p&gt;CSS được tạo ra để định dạng các phần tử HTML một cách độc lập và hiệu quả.&lt;/p&gt;
+        &lt;h2 class="subtitle"&gt;Lịch sử các phiên bản CSS đầu tiên&lt;/h2&gt;
+        &lt;p&gt;CSS1 ra đời năm 1996. CSS2 hoàn thiện năm 1998, bản CSS2.1 ra năm 2011.&lt;/p&gt;
+        &lt;h2 class="subtitle"&gt;Các phiên bản CSS tiếp theo&lt;/h2&gt;
+        &lt;p&gt;CSS3 được phát triển theo từng module. Một số chuẩn CSS4 và CSS5 vẫn đang được phát triển.&lt;/p&gt;
+        &lt;p&gt;Tổ chức W3C chịu trách nhiệm phát triển CSS.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+CSS:
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subtitle {
+    margin: 10px 0 5px;
+}
+
+a {
+    text-decoration: none;
+}
+</pre>
+
+</body>
+</html>
