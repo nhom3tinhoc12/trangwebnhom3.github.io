@@ -10,9 +10,11 @@ body { font-family:"Be Vietnam Pro",sans-serif; margin:0; padding:40px 0; displa
 @keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 .avatar-container{position:relative;display:inline-block;animation:rotate 10s linear infinite;}
 .avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;border:6px solid rgba(0,153,51,0.6);box-shadow:0 0 35px rgba(0,153,51,0.8);}
+
 @keyframes rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 h1{color:#009933;font-size:34px;margin-top:20px;}
 .slogan-card{width:520px;background:rgba(255,255,255,0.25);backdrop-filter:blur(18px);padding:30px 40px;border-radius:32px;text-align:center;box-shadow:0 8px 30px rgba(0,153,51,0.4);font-size:22px;font-weight:bold;color:#009933;animation:glowFade 2s ease-in-out infinite alternate,fadeIn 1.5s ease;margin-top:25px;border:2px solid rgba(0,153,51,0.5);}
+
 @keyframes glowFade{0%{box-shadow:0 0 15px rgba(0,153,51,0.6);}100%{box-shadow:0 0 35px rgba(0,153,51,1);}}
 .section{margin:15px 0;font-size:18px;color:#1f4d1f;line-height:1.6;}
 .return{display:inline-block;margin-top:25px;padding:12px 28px;background:#33cc33;color:white;border-radius:14px;font-weight:bold;text-decoration:none;transition:0.3s;}
@@ -26,7 +28,24 @@ h1{color:#009933;font-size:34px;margin-top:20px;}
 for(let i=0;i<50;i++){let heart=document.createElement("div");heart.classList.add("heart");heart.innerHTML="❤";heart.style.left=Math.random()*100+"vw";heart.style.fontSize=(18+Math.random()*24)+"px";heart.style.animationDuration=(4+Math.random()*5)+"s";heart.style.animationDelay=Math.random()*5+"s";document.body.appendChild(heart);}
 </script>
 
-<div class="card"><div class="avatar-container"><img class="avatar" src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg"></div><h1>Tuyết Hạnh</h1></div>
+<!-- Card Vai trò -->
+<div class="card">
+    <h2>Vai trò</h2>
+    <div class="section">
+        <b>Soạn nội dung bài 8, 13</b><br>
+        <b>Edit bài 8</b><br>
+        <b>Edit profile</b><br>
+        <b>Edit trang chủ</b>
+    </div>
+</div>
+
+<!-- Card Thông tin cá nhân -->
+<div class="card">
+    <div class="avatar-container">
+        <img class="avatar" src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg">
+    </div>
+    <h1>Tuyết Hạnh</h1>
+</div>
 
 <div class="card">
     <div class="section"><b>Ngày sinh:</b> 16/01/2008</div>
@@ -38,6 +57,6 @@ for(let i=0;i<50;i++){let heart=document.createElement("div");heart.classList.ad
 </div>
 
 <div class="slogan-card">"Môn học yêu thích nhất của mình là Tiếng Anh, mỗi lần tới tiết tiếng Anh, mình đều rất háo hức và tràn đầy năng lượng"</div>
+
 </body>
 </html>
-
