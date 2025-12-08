@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài luyện tập và vận dụng - CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #0066cc;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px 0 0;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #004d99;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="button" href="index.html">Quay về trang chủ</a>
+
+    <!-- Luyện tập 1 -->
+    <div class="content" id="luyen-tap-1">
+        <h2>Luyện tập 1</h2>
+        <p><strong>Câu hỏi:</strong> Mỗi phông chữ sau đây thuộc loại nào?</p>
+
+        <p><strong>Câu trả lời:</strong></p>
+        <p>a) Phông có chân. <strong>Serif</strong>.</p>
+        <p>b) Phông khoảng cách đều nhau. <strong>Monospace</strong>.</p>
+        <p>c) Phông không chân. <strong>Sans-serif</strong>.</p>
+        <p>d) Phông kiểu chữ viết tay. <strong>Cursive</strong>.</p>
+        <p>e) Phông không chân. <strong>Sans-serif</strong>.</p>
+        <p>f) Phông trừu tượng. <strong>Fantasy</strong>.</p>
+        <p>g) Phông khoảng cách đều nhau. <strong>Monospace</strong>.</p>
+        <p>h) Phông khoảng cách đều nhau. <strong>Monospace</strong>.</p>
+
+        <a class="button" href="#luyen-tap-2">Đi đến Luyện tập 2</a>
+        <a class="button" href="#van-dung-1">Đi đến Vận dụng 1</a>
+    </div>
+
+    <!-- Luyện tập 2 -->
+    <div class="content" id="luyen-tap-2">
+        <h2>Luyện tập 2</h2>
+
+        <p><strong>Câu hỏi:</strong> Hãy liệt kê các thuộc tính CSS liên quan đến định dạng đoạn văn bản sau.</p>
+
+        <p><strong>Câu trả lời:</strong></p>
+        <ul>
+            <li>Dòng đầu tiên sử dụng các định dạng: <strong>font-size, color</strong>.</li>
+            <li>Dòng thứ hai sử dụng các định dạng: <strong>text-align, color</strong>.</li>
+            <li>Hai dòng cuối sử dụng các định dạng: <strong>font-family, font-style</strong>.</li>
+        </ul>
+
+        <a class="button" href="#van-dung-1">Đi đến Vận dụng 1 (VD1)</a>
+        <a class="button" href="#luyen-tap-1">Quay về Luyện tập 1</a>
+    </div>
+
+    <!-- Vận dụng 1 -->
+    <div class="content" id="van-dung-1">
+        <h2>VD1: Tìm hiểu thêm các thuộc tính phông chữ</h2>
+
+        <p><strong>Câu hỏi:</strong> Tìm hiểu thêm các thuộc tính phông chữ như <em>font-variant</em> và các thuộc tính dòng văn bản như <em>letter-spacing</em>, <em>word-spacing</em> và <em>text-shadow</em>.</p>
+
+        <p><strong>Câu trả lời:</strong></p>
+        <ul>
+            <li>
+                <strong>font-variant:</strong> Xác định kiểu viết hoa.
+                <br>+ normal: chữ thường (mặc định)
+                <br>+ small-caps: chữ viết hoa nhỏ
+            </li>
+
+            <li>
+                <strong>letter-spacing:</strong> Xác định khoảng cách giữa các ký tự.
+                <br>Ví dụ: <code>letter-spacing: 2px;</code>
+            </li>
+
+            <li>
+                <strong>word-spacing:</strong> Xác định khoảng cách giữa các từ.
+                <br>Ví dụ: <code>word-spacing: 5px;</code>
+            </li>
+
+            <li>
+                <strong>text-shadow:</strong> Tạo hiệu ứng bóng cho chữ.
+                <br>Ví dụ: <code>text-shadow: 2px 2px 4px rgba(0,0,0,0.5);</code>
+            </li>
+        </ul>
+
+        <a class="button" href="#van-dung-2">Đi đến Vận dụng 2 (VD2)</a>
+        <a class="button" href="#luyen-tap-2">Quay về Luyện tập 2</a>
+    </div>
+
+    <!-- Vận dụng 2 -->
+    <div class="content" id="van-dung-2">
+        <h2>VD2: Thiết lập 2 kiểu CSS khác nhau</h2>
+
+        <p><strong>Câu hỏi:</strong> Với bài đọc thêm Lịch sử CSS, hãy thiết lập hai tệp CSS khác nhau về phông chữ, cỡ chữ và màu chữ.</p>
+
+        <p><strong>Câu trả lời:</strong></p>
+
+        <pre>
+/* style1.css */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 28px;
+    color: #990000;
+}
+
+p {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    color: #666666;
+}
+
+/* style2.css */
+body {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 18px;
+    color: #555555;
+}
+
+h1 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 32px;
+    color: #006600;
+}
+
+p {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #888888;
+}
+        </pre>
+
+        <a class="button" href="#luyen-tap-1">Quay về đầu trang</a>
+    </div>
+
+    <div class="footer">
+        <a class="button" href="index.html">Quay về trang chủ</a>
+    </div>
+
+</body>
+</html>
