@@ -1,173 +1,211 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Bài luyện tập và vận dụng - CSS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h2 {
-            color: #0066cc;
-        }
-        .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 5px 0 0;
-            background-color: #0066cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #004d99;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
-</head>
+<meta charset="UTF-8">
+<title>Bài 1414</title>
+<style>
+body {
+    background: #fff7cc;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+}
 
+h1 {
+    text-align: center;
+    color: #c79200;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 220px;
+    padding: 25px;
+    background: #ffde59;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #c9a300;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.box:hover {
+    background: #ffe88c;
+    transform: scale(1.05);
+}
+
+.back-btn, .home-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #ffd24c;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #4a3600;
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.back-btn:hover, .home-btn:hover {
+    background: #ffe27f;
+}
+
+.content {
+    display: none;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #c9a300;
+    margin-top: 20px;
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #d4a100;
+    padding: 10px;
+}
+
+th {
+    background: #ffde59;
+}
+
+a {
+    color: #b88600;
+    cursor: pointer;
+}
+
+.club-info {
+    display: none;
+    padding: 15px;
+    background: #fff1b5;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+</style>
+
+<script>
+function showContent(id) {
+    document.getElementById("menu").style.display = "none";
+    document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function goBackToMenu() {
+    document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+    document.getElementById("menu").style.display = "flex";
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showClub(id) {
+    document.querySelectorAll('.club-info').forEach(div => div.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+</head>
 <body>
 
-    <a class="button" href="index.html">Quay về trang chủ</a>
+<h1>Bài tập HTML</h1>
 
-    <!-- Luyện tập 1 -->
-    <div class="content" id="luyen-tap-1">
-        <h2>Luyện tập 1</h2>
-        <p><strong>Câu hỏi:</strong> Mỗi phông chữ sau đây thuộc loại nào?</p>
+<div class="menu" id="menu">
+    <a class="home-btn" href="index.html">🏠 Quay lại trang chủ</a>
+    <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
+    <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
+    <div class="box" onclick="showContent('vd')">Vận dụng</div>
+</div>
 
-        <p><strong>Câu trả lời:</strong></p>
-        <p>a) Phông có chân. <strong>Serif</strong>.</p>
-        <p>b) Phông khoảng cách đều nhau. <strong>Monospace</strong>.</p>
-        <p>c) Phông không chân. <strong>Sans-serif</strong>.</p>
-        <p>d) Phông kiểu chữ viết tay. <strong>Cursive</strong>.</p>
-        <p>e) Phông không chân. <strong>Sans-serif</strong>.</p>
-        <p>f) Phông trừu tượng. <strong>Fantasy</strong>.</p>
-        <p>g) Phông khoảng cách đều nhau. <strong>Monospace</strong>.</p>
-        <p>h) Phông khoảng cách đều nhau. <strong>Monospace</strong>.</p>
+<!-- LT1 -->
+<div id="lt1" class="content">
+    <a class="back-btn" href="javascript:void(0)" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
+    <h2>Luyện tập 1: Mỗi phông chữ sau đây thuộc loại nào?</h2>
+    <ul>
+        <li>a) Phông có chân – <b>Serif</b></li>
+        <li>b) Phông khoảng cách đều nhau – <b>Monospace</b></li>
+        <li>c) Phông không chân – <b>Sans-serif</b></li>
+        <li>d) Phông kiểu chữ viết tay – <b>Cursive</b></li>
+        <li>e) Phông không chân – <b>Sans-serif</b></li>
+        <li>f) Phông trừu tượng – <b>Fantasy</b></li>
+        <li>g) Phông khoảng cách đều nhau – <b>Monospace</b></li>
+        <li>h) Phông khoảng cách đều nhau – <b>Monospace</b></li>
+    </ul>
+</div>
 
-        <a class="button" href="#luyen-tap-2">Đi đến Luyện tập 2</a>
-        <a class="button" href="#van-dung-1">Đi đến Vận dụng 1</a>
+<!-- LT2 -->
+<div id="lt2" class="content">
+    <a class="back-btn" href="javascript:void(0)" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
+
+    <h2>Luyện tập 2: Thuộc tính CSS định dạng đoạn văn</h2>
+
+    <p>- Dòng đầu tiên: <b>font-size, color</b></p>
+    <p>- Dòng thứ hai: <b>text-align, color</b></p>
+    <p>- Hai dòng cuối: <b>font-family, font-style</b></p>
+
+    <h3>VD1: Các thuộc tính mở rộng</h3>
+    <ul>
+        <li><b>font-variant</b>: normal, small-caps</li>
+        <li><b>letter-spacing</b>: khoảng cách ký tự</li>
+        <li><b>word-spacing</b>: khoảng cách từ</li>
+        <li><b>text-shadow</b>: hiệu ứng bóng chữ</li>
+    </ul>
+
+    <h3>VD2: Hai file CSS khác nhau</h3>
+    <p>/* style1.css */ …</p>
+    <p>/* style2.css */ …</p>
+</div>
+
+<!-- VẬN DỤNG -->
+<div id="vd" class="content">
+    <a class="back-btn" href="javascript:void(0)" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
+    <h2>Vận dụng: Lịch hoạt động CLB thể thao</h2>
+
+    <table>
+        <tr>
+            <th>Tên CLB</th>
+            <th>Lịch hoạt động</th>
+        </tr>
+        <tr>
+            <td><a onclick="showClub('club1')">Câu lạc bộ CBT</a></td>
+            <td>Thứ Hai, Tư, Sáu – 18:00-20:00</td>
+        </tr>
+        <tr>
+            <td><a onclick="showClub('club2')">Câu lạc bộ A</a></td>
+            <td>Thứ Ba, Năm – 16:00-18:00</td>
+        </tr>
+    </table>
+
+    <div id="club1" class="club-info">
+        <h3>CLB CBT</h3>
+        <p>Địa điểm: Sân bóng XYZ</p>
+        <p>Thành viên: 50</p>
+        <p>Phí: 100.000đ/tháng</p>
     </div>
 
-    <!-- Luyện tập 2 -->
-    <div class="content" id="luyen-tap-2">
-        <h2>Luyện tập 2</h2>
-
-        <p><strong>Câu hỏi:</strong> Hãy liệt kê các thuộc tính CSS liên quan đến định dạng đoạn văn bản sau.</p>
-
-        <p><strong>Câu trả lời:</strong></p>
-        <ul>
-            <li>Dòng đầu tiên sử dụng các định dạng: <strong>font-size, color</strong>.</li>
-            <li>Dòng thứ hai sử dụng các định dạng: <strong>text-align, color</strong>.</li>
-            <li>Hai dòng cuối sử dụng các định dạng: <strong>font-family, font-style</strong>.</li>
-        </ul>
-
-        <a class="button" href="#van-dung-1">Đi đến Vận dụng 1 (VD1)</a>
-        <a class="button" href="#luyen-tap-1">Quay về Luyện tập 1</a>
+    <div id="club2" class="club-info">
+        <h3>CLB A</h3>
+        <p>Địa điểm: Bể bơi ABC</p>
+        <p>Thành viên: 30</p>
+        <p>Phí: 150.000đ/tháng</p>
     </div>
-
-    <!-- Vận dụng 1 -->
-    <div class="content" id="van-dung-1">
-        <h2>VD1: Tìm hiểu thêm các thuộc tính phông chữ</h2>
-
-        <p><strong>Câu hỏi:</strong> Tìm hiểu thêm các thuộc tính phông chữ như <em>font-variant</em> và các thuộc tính dòng văn bản như <em>letter-spacing</em>, <em>word-spacing</em> và <em>text-shadow</em>.</p>
-
-        <p><strong>Câu trả lời:</strong></p>
-        <ul>
-            <li>
-                <strong>font-variant:</strong> Xác định kiểu viết hoa.
-                <br>+ normal: chữ thường (mặc định)
-                <br>+ small-caps: chữ viết hoa nhỏ
-            </li>
-
-            <li>
-                <strong>letter-spacing:</strong> Xác định khoảng cách giữa các ký tự.
-                <br>Ví dụ: <code>letter-spacing: 2px;</code>
-            </li>
-
-            <li>
-                <strong>word-spacing:</strong> Xác định khoảng cách giữa các từ.
-                <br>Ví dụ: <code>word-spacing: 5px;</code>
-            </li>
-
-            <li>
-                <strong>text-shadow:</strong> Tạo hiệu ứng bóng cho chữ.
-                <br>Ví dụ: <code>text-shadow: 2px 2px 4px rgba(0,0,0,0.5);</code>
-            </li>
-        </ul>
-
-        <a class="button" href="#van-dung-2">Đi đến Vận dụng 2 (VD2)</a>
-        <a class="button" href="#luyen-tap-2">Quay về Luyện tập 2</a>
-    </div>
-
-    <!-- Vận dụng 2 -->
-    <div class="content" id="van-dung-2">
-        <h2>VD2: Thiết lập 2 kiểu CSS khác nhau</h2>
-
-        <p><strong>Câu hỏi:</strong> Với bài đọc thêm Lịch sử CSS, hãy thiết lập hai tệp CSS khác nhau về phông chữ, cỡ chữ và màu chữ.</p>
-
-        <p><strong>Câu trả lời:</strong></p>
-
-        <pre>
-/* style1.css */
-body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-}
-
-h1 {
-    font-family: "Times New Roman", serif;
-    font-size: 28px;
-    color: #990000;
-}
-
-p {
-    font-family: "Courier New", monospace;
-    font-size: 14px;
-    color: #666666;
-}
-
-/* style2.css */
-body {
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 18px;
-    color: #555555;
-}
-
-h1 {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 32px;
-    color: #006600;
-}
-
-p {
-    font-family: Georgia, serif;
-    font-size: 16px;
-    color: #888888;
-}
-        </pre>
-
-        <a class="button" href="#luyen-tap-1">Quay về đầu trang</a>
-    </div>
-
-    <div class="footer">
-        <a class="button" href="index.html">Quay về trang chủ</a>
-    </div>
+</div>
 
 </body>
 </html>
