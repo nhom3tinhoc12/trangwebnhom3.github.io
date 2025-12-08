@@ -2,92 +2,176 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bài luyện tập và vận dụng - CSS</title>
+    <title>Bài luyện tập & vận dụng - CSS</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background: #fff7cc;
         }
-        h2 {
-            color: #0066cc;
+
+        h1 {
+            text-align: center;
+            color: #c79200;
         }
+
+        /* ======= MENU BÌA ======= */
+        #menu {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .box {
+            width: 250px;
+            padding: 25px;
+            background: #ffde59;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 0 10px #c9a300;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            background: #ffe88c;
+            transform: scale(1.05);
+        }
+
+        /* ======= CONTENT ======= */
         .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #c9a300;
+            margin-top: 20px;
+            display: none;
         }
-        .button {
+
+        h2 {
+            color: #c79200;
+        }
+
+        /* BUTTON */
+        .btn {
             display: inline-block;
             padding: 10px 20px;
-            margin: 10px 0;
-            background-color: #0066cc;
-            color: white;
+            background: #ffd24c;
+            color: #4a3600;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 10px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: 0.2s;
         }
-        .button:hover {
-            background-color: #004d99;
+
+        .btn:hover {
+            background: #ffe27f;
         }
-        .footer {
-            margin-top: 30px;
-            text-align: center;
+
+        /* CODE BOX */
+        pre {
+            background: #fff1b5;
+            padding: 15px;
+            border-radius: 10px;
+            white-space: pre-wrap;
         }
     </style>
+
+<script>
+    function showContent(id) {
+        document.getElementById("menu").style.display = "none";
+        document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    function backToMenu() {
+        document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+        document.getElementById("menu").style.display = "flex";
+        window.scrollTo({top:0, behavior:'smooth'});
+    }
+</script>
+
 </head>
 <body>
 
-    <!-- Nút quay lại trang chủ -->
-    <a class="button" href="index.html">Quay về trang chủ</a>
+<h1>Bài luyện tập & vận dụng CSS</h1>
 
-    <!-- Luyện tập 1 -->
-    <div class="content" id="luyen-tap-1">
-        <h2>Luyện tập 1</h2>
-        <p><strong>Câu hỏi:</strong> Khẳng định “Ngôn ngữ định dạng CSS chính là ngôn ngữ HTML” là đúng hay sai?</p>
-        <p><strong>Câu trả lời:</strong> Sai. Ngôn ngữ định dạng CSS (Cascading Style Sheets) không phải là ngôn ngữ HTML (HyperText Markup Language). HTML được sử dụng để tạo cấu trúc và định dạng nội dung trên trang web bằng cách sử dụng các thẻ và các thuộc tính được nhúng trong các thẻ này. Trong khi đó, CSS được sử dụng để điều chỉnh cách mà các phần tử HTML được hiển thị trên trình duyệt, bao gồm màu sắc, font chữ, khoảng cách, đường viền và các thuộc tính khác. CSS là một ngôn ngữ độc lập dùng để cung cấp phong cách và thiết kế cho các trang web, và nó hoạt động cùng với HTML để tạo ra trải nghiệm người dùng hoàn chỉnh.</p>
-        
-        <a class="button" href="#luyen-tap-2">Đi đến Luyện tập 2</a>
-        <a class="button" href="#van-dung-1">Đi đến Vận dụng 1</a>
-    </div>
+<!-- ==================== MENU ==================== -->
+<div id="menu">
+    <a class="btn" href="index.html">🏠 Trang chủ</a>
 
-    <!-- Luyện tập 2 -->
-    <div class="content" id="luyen-tap-2">
-        <h2>Luyện tập 2</h2>
-        <p><strong>Câu hỏi:</strong> Có thể chỉ cần thay đổi thông tin của tệp CSS sẽ làm thay đổi định dạng của nhiều trang web thậm chí của cả một trang website là đúng hay sai?</p>
-        <p><strong>Câu trả lời:</strong> Đúng. Việc chỉ cần thay đổi thông tin trong tệp CSS có thể làm thay đổi định dạng của nhiều trang web hoặc thậm chí của cả một trang web. Điều này là do CSS được sử dụng để kiểm soát phong cách và định dạng của các phần tử HTML trên trang web. Việc chỉnh sửa CSS có thể ảnh hưởng lớn đến giao diện của nhiều trang web hoặc thậm chí của cả một trang web.</p>
-        
-        <a class="button" href="#van-dung-1">Đi đến Vận dụng 1</a>
-        <a class="button" href="#van-dung-2">Đi đến Vận dụng 2</a>
-        <a class="button" href="#luyen-tap-1">Quay về Luyện tập 1</a>
-    </div>
+    <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
+    <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
+    <div class="box" onclick="showContent('vd1')">Vận dụng 1</div>
+    <div class="box" onclick="showContent('vd2')">Vận dụng 2</div>
+</div>
 
-    <!-- Vận dụng 1 -->
-    <div class="content" id="van-dung-1">
-        <h2>Vận dụng 1</h2>
-        <p><strong>Câu hỏi:</strong> Trong các phần mềm soạn thảo văn bản thường có chức năng tạo các mẫu định dạng Style Sheet dùng để tạo khuôn cho các đoạn (paragraph) của văn bản. Em hãy trình bày sự giống nhau và tương thích của Style Sheet trong các phần mềm soạn thảo văn bản với CSS của trang web.</p>
-        <p><strong>Câu trả lời:</strong> 
-            Sự giống nhau và tương thích của Style Sheet trong các phần mềm soạn thảo văn bản với CSS của trang web:
-            <br>- <strong>Cấu trúc và cú pháp:</strong> Cả Style Sheet trong các phần mềm soạn thảo văn bản và CSS đều tuân theo một cấu trúc và cú pháp nhất định. Thông thường, các tệp Style Sheet được viết bằng cú pháp CSS trong trang web, trong khi các chức năng tạo định dạng trong phần mềm soạn thảo văn bản cũng sẽ tuân theo một cấu trúc tương tự.
-            <br>- <strong>Tính tái sử dụng:</strong> Cả hai đều hỗ trợ tính tái sử dụng. Trong CSS, bạn có thể đặt các quy tắc định dạng trong một tệp riêng và áp dụng chúng cho nhiều trang web hoặc nhiều phần tử HTML khác nhau. Tương tự, trong các phần mềm soạn thảo văn bản, bạn có thể tạo các mẫu định dạng và áp dụng chúng cho nhiều phần văn bản khác nhau.
-            <br>- <strong>Khuôn mẫu định dạng:</strong> Cả Style Sheet và CSS đều cho phép tạo ra các khuôn mẫu định dạng để áp dụng cho các phần tử văn bản, giúp tăng tính thống nhất.
-            <br>- <strong>Kiểm soát phong cách và định dạng:</strong> Cả Style Sheet và CSS đều cho phép điều chỉnh màu sắc, kích thước chữ, font chữ, độ dày viền, khoảng cách… nhằm tạo giao diện phù hợp mục đích sử dụng.
-        </p>
+<!-- ==================== LT1 ==================== -->
+<div id="lt1" class="content">
+    <a class="btn" onclick="backToMenu()">⬅ Quay lại bìa</a>
+    <a class="btn" href="index.html">🏠 Trang chủ</a>
 
-        <a class="button" href="#van-dung-2">Đi đến Vận dụng 2</a>
-        <a class="button" href="#luyen-tap-2">Quay về Luyện tập 2</a>
-        <a class="button" href="#quay-lai">Quay về trang bìa</a>
-    </div>
+    <h2>Luyện tập 1</h2>
 
-    <!-- Vận dụng 2 -->
-    <div class="content" id="van-dung-2">
-        <h2>Vận dụng 2</h2>
-        <p><strong>Câu hỏi:</strong> Thiết lập trang web với nội dung về lịch sử CSS và định dạng bằng các mẫu CSS.</p>
-        <p><strong>Câu trả lời:</strong></p>
+    <p><strong>Câu hỏi:</strong> Khẳng định “Ngôn ngữ định dạng CSS chính là ngôn ngữ HTML” là đúng hay sai?</p>
 
-        <pre>
+    <p><strong>Câu trả lời:</strong> Sai. Ngôn ngữ định dạng CSS (Cascading Style Sheets) không phải là ngôn ngữ HTML (HyperText Markup Language). HTML được sử dụng để tạo cấu trúc và định dạng nội dung trên trang web bằng cách sử dụng các thẻ và các thuộc tính được nhúng trong các thẻ này. Trong khi đó, CSS được sử dụng để điều chỉnh cách mà các phần tử HTML được hiển thị trên trình duyệt, bao gồm màu sắc, font chữ, khoảng cách, đường viền và các thuộc tính khác. CSS là một ngôn ngữ độc lập dùng để cung cấp phong cách và thiết kế cho các trang web, và nó hoạt động cùng với HTML để tạo ra trải nghiệm người dùng hoàn chỉnh.</p>
+
+    <a class="btn" onclick="showContent('lt2')">➡ Luyện tập 2</a>
+    <a class="btn" onclick="showContent('vd1')">➡ Vận dụng 1</a>
+</div>
+
+<!-- ==================== LT2 ==================== -->
+<div id="lt2" class="content">
+    <a class="btn" onclick="backToMenu()">⬅ Quay lại bìa</a>
+    <a class="btn" href="index.html">🏠 Trang chủ</a>
+
+    <h2>Luyện tập 2</h2>
+
+    <p><strong>Câu hỏi:</strong> Có thể chỉ cần thay đổi thông tin của tệp CSS sẽ làm thay đổi định dạng của nhiều trang web thậm chí của cả một trang website là đúng hay sai?</p>
+
+    <p><strong>Câu trả lời:</strong> Đúng. Việc chỉ cần thay đổi thông tin trong tệp CSS có thể làm thay đổi định dạng của nhiều trang web hoặc thậm chí của cả một trang web. Điều này là do CSS được sử dụng để kiểm soát phong cách và định dạng của các phần tử HTML trên trang web. Việc chỉnh sửa CSS có thể ảnh hưởng lớn đến giao diện của nhiều trang web hoặc thậm chí của cả một trang web.</p>
+
+    <a class="btn" onclick="showContent('vd1')">➡ Vận dụng 1</a>
+    <a class="btn" onclick="showContent('vd2')">➡ Vận dụng 2</a>
+</div>
+
+<!-- ==================== VẬN DỤNG 1 ==================== -->
+<div id="vd1" class="content">
+    <a class="btn" onclick="backToMenu()">⬅ Quay lại bìa</a>
+    <a class="btn" href="index.html">🏠 Trang chủ</a>
+
+    <h2>Vận dụng 1</h2>
+
+    <p><strong>Câu hỏi:</strong> Trong các phần mềm soạn thảo văn bản thường có chức năng tạo các mẫu định dạng Style Sheet…</p>
+
+    <p><strong>Câu trả lời:</strong><br>
+    Sự giống nhau và tương thích của Style Sheet trong các phần mềm soạn thảo văn bản với CSS của trang web:
+    <br>- <strong>Cấu trúc và cú pháp:</strong> Cả Style Sheet…  
+    <br>- <strong>Tính tái sử dụng:</strong> …  
+    <br>- <strong>Khuôn mẫu định dạng:</strong> …  
+    <br>- <strong>Kiểm soát phong cách:</strong> …
+    </p>
+
+    <a class="btn" onclick="showContent('vd2')">➡ Vận dụng 2</a>
+</div>
+
+<!-- ==================== VẬN DỤNG 2 ==================== -->
+<div id="vd2" class="content">
+    <a class="btn" onclick="backToMenu()">⬅ Quay lại bìa</a>
+    <a class="btn" href="index.html">🏠 Trang chủ</a>
+
+    <h2>Vận dụng 2</h2>
+
+<pre>
 &lt;!DOCTYPE html&gt;
 &lt;html lang="vi"&gt;
 &lt;head&gt;
@@ -109,41 +193,9 @@
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
+</pre>
 
-CSS:
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-}
-
-.title {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.subtitle {
-    margin: 10px 0 5px;
-}
-
-a {
-    text-decoration: none;
-}
-        </pre>
-
-        <a class="button" href="#quay-lai">Quay về trang bìa</a>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <a class="button" href="index.html">Quay về trang chủ</a>
-    </div>
+</div>
 
 </body>
 </html>
