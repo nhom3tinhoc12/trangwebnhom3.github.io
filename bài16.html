@@ -100,6 +100,12 @@
             margin-top: 8px;
         }
 
+        img {
+            max-width: 100%;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+
         @keyframes fade {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -121,12 +127,12 @@
 <!-- ===== BÌA ===== -->
 <div class="cover">
     <h1>BÀI 16: ĐỊNH DẠNG KHUNG</h1>
-    <p>Tin học 12 – HTML & CSS</p>
+    <p>Tin học 12 – Trang 95</p>
     <a href="index.html" class="btn">Quay về trang chủ</a>
 </div>
 
 <!-- ===== MENU ===== -->
-<div class="menu" id="menu">
+<div class="menu">
     <button onclick="showSection('lt1')">Luyện tập 1</button>
     <button onclick="showSection('lt2')">Luyện tập 2</button>
     <button onclick="showSection('vd1')">Vận dụng 1</button>
@@ -136,46 +142,65 @@
 <!-- ===== NỘI DUNG ===== -->
 <div class="content">
 
+    <!-- Luyện tập 1 -->
     <div class="box" id="lt1">
-        <h2>Luyện tập 1</h2>
-        <p><b>Phần tử HTML có thể ẩn đi không?</b></p>
-        <p>Có. Có thể sử dụng CSS để ẩn phần tử.</p>
+        <h2>Luyện tập 1 (trang 95)</h2>
+        <p><b>Câu hỏi:</b> Phần tử HTML có thể ẩn đi trên trang web được không? Nếu có thì dùng lệnh CSS gì?</p>
+        <p><b>Lời giải:</b></p>
+        <p>
+            Có, phần tử HTML có thể được ẩn đi trên trang web bằng cách sử dụng lệnh CSS:
+        </p>
         <code>display: none;</code>
     </div>
 
+    <!-- Luyện tập 2 -->
     <div class="box" id="lt2">
-        <h2>Luyện tập 2</h2>
-        <p>
-            <b>test.test_more</b> là bộ chọn áp dụng cho phần tử
-            có đồng thời hai lớp <b>test</b> và <b>test_more</b>.
-        </p>
-        <p>
-            <b>background-color: red;</b> dùng để đặt màu nền.
-        </p>
+        <h2>Luyện tập 2 (trang 95)</h2>
+        <p><b>Yêu cầu:</b> Giải thích ý nghĩa định dạng sau:</p>
+        <img src="https://www.vietjack.com/tin-hoc-12-kn/images/luyen-tap-2-trang-95-tin-hoc-12.PNG" alt="Luyện tập 2">
+        <p><b>Lời giải:</b></p>
+        <ul>
+            <li>
+                <b>test.test_more</b>: Là bộ chọn đồng thời, áp dụng cho các phần tử có
+                <b>cả hai lớp</b> là <i>test</i> và <i>test_more</i>.
+            </li>
+            <li>
+                <b>background-color: red;</b>: Dùng để đặt màu nền đỏ cho các phần tử được chọn.
+            </li>
+        </ul>
     </div>
 
+    <!-- Vận dụng 1 -->
     <div class="box" id="vd1">
-        <h2>Vận dụng 1</h2>
+        <h2>Vận dụng 1 (trang 95)</h2>
+        <p><b>Yêu cầu:</b> Định dạng P1 khác biệt, P2 và P3 giống nhau, các đoạn còn lại giống nhau.</p>
+        <p><b>Cách giải quyết:</b></p>
         <ul>
-            <li>P1: class riêng</li>
-            <li>P2, P3: class chung</li>
-            <li>Các đoạn khác: mặc định</li>
+            <li>Gắn lớp riêng cho P1.</li>
+            <li>Gắn cùng một lớp cho P2 và P3.</li>
+            <li>Các đoạn khác không gắn lớp.</li>
         </ul>
         <code>
-            &lt;p class="important"&gt;P1&lt;/p&gt;<br>
-            &lt;p class="normal"&gt;P2&lt;/p&gt;
+            &lt;p class="important"&gt;Đoạn P1&lt;/p&gt;<br>
+            &lt;p class="normal"&gt;Đoạn P2&lt;/p&gt;<br>
+            &lt;p class="normal"&gt;Đoạn P3&lt;/p&gt;
         </code>
     </div>
 
+    <!-- Vận dụng 2 -->
     <div class="box" id="vd2">
-        <h2>Vận dụng 2</h2>
-        <p>Thiết lập viền từng cạnh:</p>
+        <h2>Vận dụng 2 (trang 95)</h2>
+        <p><b>Yêu cầu:</b> Thiết lập viền trên, dưới, trái, phải khác nhau.</p>
+        <p><b>Cách thực hiện:</b></p>
+        <p>Sử dụng các thuộc tính:</p>
         <code>
             border-top<br>
             border-right<br>
             border-bottom<br>
             border-left
         </code>
+        <p><b>Ví dụ minh họa:</b></p>
+        <img src="https://www.vietjack.com/tin-hoc-12-kn/images/van-dung-2-trang-95-tin-hoc-12-1.PNG" alt="Vận dụng 2">
     </div>
 
 </div>
