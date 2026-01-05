@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài 18: Thực hành tổng hợp thiết kế trang Web</title>
+
+<style>
+body {
+    background: #fff7cc;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #c79200;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 220px;
+    padding: 25px;
+    background: #ffde59;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #c9a300;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.box:hover {
+    background: #ffe88c;
+    transform: scale(1.05);
+}
+
+.back-btn, .home-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #ffd24c;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #4a3600;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.content {
+    display: none;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #c9a300;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #d4a100;
+    padding: 10px;
+}
+
+th {
+    background: #ffde59;
+}
+
+.club-info {
+    display: none;
+    padding: 15px;
+    background: #fff1b5;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+}
+</style>
+
+<script>
+function showContent(id) {
+    document.getElementById("menu").style.display = "none";
+    document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function goBackToMenu() {
+    document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+    document.getElementById("menu").style.display = "flex";
+}
+
+function showClub(id) {
+    document.querySelectorAll('.club-info').forEach(div => div.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+</head>
+
+<body>
+
+<h1>Bài 18: Thực hành tổng hợp thiết kế trang Web</h1>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+    <a class="home-btn" href="index.html">🏠 Quay lại trang chủ</a>
+    <div class="box" onclick="showContent('lt1')">Luyện tập 1</div>
+    <div class="box" onclick="showContent('lt2')">Luyện tập 2</div>
+    <div class="box" onclick="showContent('vd')">Vận dụng</div>
+</div>
+
+<!-- ================= LUYỆN TẬP 1 ================= -->
+<div id="lt1" class="content">
+    <a class="back-btn" href="#" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
+    <h2>Luyện tập 1: Quản lí hoạt động câu lạc bộ</h2>
+
+    <h3>Danh sách câu lạc bộ</h3>
+    <ul>
+        <li>Câu lạc bộ Bóng đá</li>
+        <li>Câu lạc bộ Bơi lội</li>
+        <li>Câu lạc bộ Cầu lông</li>
+    </ul>
+
+    <h3>Lịch hoạt động</h3>
+    <table>
+        <tr>
+            <th>Tên CLB</th>
+            <th>Thời gian</th>
+        </tr>
+        <tr>
+            <td><a onclick="showClub('club1')">CLB Bóng đá</a></td>
+            <td>Thứ 2 – 4 – 6 (17h–19h)</td>
+        </tr>
+        <tr>
+            <td><a onclick="showClub('club2')">CLB Bơi lội</a></td>
+            <td>Thứ 3 – 5 (16h–18h)</td>
+        </tr>
+    </table>
+
+    <div id="club1" class="club-info">
+        <p>Địa điểm: Sân vận động trường</p>
+        <p>Phí: 100.000đ/tháng</p>
+    </div>
+
+    <div id="club2" class="club-info">
+        <p>Địa điểm: Hồ bơi trung tâm</p>
+        <p>Phí: 150.000đ/tháng</p>
+    </div>
+
+    <h3>Phiếu đăng kí câu lạc bộ</h3>
+    <form>
+        <p>Họ và tên: <input type="text" required></p>
+        <p>Lớp: <input type="text" required></p>
+        <p>Email: <input type="email"></p>
+        <p>
+            Chọn CLB:
+            <select>
+                <option>Bóng đá</option>
+                <option>Bơi lội</option>
+                <option>Cầu lông</option>
+            </select>
+        </p>
+        <p><button type="submit">Gửi đăng kí</button></p>
+    </form>
+</div>
+
+<!-- ================= LUYỆN TẬP 2 ================= -->
+<div id="lt2" class="content">
+    <a class="back-btn" href="#" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
+    <h2>Luyện tập 2: Hiệu ứng hover trong CSS</h2>
+
+    <p>
+        Để thay đổi định dạng và màu sắc của phông chữ trong các vùng khi di chuyển chuột qua,
+        em có thể sử dụng hiệu ứng <b>hover</b> trong CSS.
+    </p>
+
+    <h3>Ví dụ mã CSS</h3>
+
+<pre style="background:#fff1b5; padding:15px; border-radius:10px;">
+.vung {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.vung:hover {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+</pre>
+</div>
+
+<!-- ================= VẬN DỤNG ================= -->
+<div id="vd" class="content">
+    <a class="back-btn" href="#" onclick="goBackToMenu()">⬅ Quay lại bìa</a>
+    <h2>Vận dụng</h2>
+
+    <p>
+        Để áp dụng thiết kế mới cho trang web đã tạo trong phần Thực hành,
+        em cần thực hiện các bước sau:
+    </p>
+
+    <ul>
+        <li>Tạo một tệp CSS mới và đặt tên là <b>style.css</b> (hoặc tên tùy chọn khác).</li>
+        <li>Trong tệp CSS, thêm mã CSS để định dạng các phần tử theo thiết kế mới.</li>
+        <li>Liên kết tệp CSS với trang HTML bằng thẻ <code>&lt;link&gt;</code>.</li>
+    </ul>
+
+    <h3>Ví dụ mã CSS</h3>
+
+<pre style="background:#fff1b5; padding:15px; border-radius:10px;">
+/* Định dạng phần banner */
+.banner {
+  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  text-align: center;
+  color: darkred;
+}
+
+.banner h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Định dạng phần slogan */
+.slogan {
+  background-color: rgb(248, 249, 250);
+  text-align: center;
+  padding-right: 0.5rem;
+  padding-left: 3rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1;
+  max-width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.block_3 {
+  flex: 0 0 33.33333333%;
+}
+
+.block_3 h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-content {
+  font-size: 16px;
+  color: #333;
+}
+</pre>
+</div>
+
+<footer>
+    <a href="#" onclick="showContent('lt1')">👉 Đăng kí tham gia câu lạc bộ</a>
+</footer>
+
+</body>
+</html>
