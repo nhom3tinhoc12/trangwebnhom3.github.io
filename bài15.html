@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1515: Bài 15: Tạo màu cho chBài 15: 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background:#fffbea; 
+      margin:0; 
+      line-height:1.6; 
+    }
+
+    header { 
+      background:#facc15; 
+      color:#78350f; 
+      padding:24px; 
+      text-align:center; 
+    }
+
+    nav { 
+      background:#fde68a; 
+      padding:12px; 
+      text-align:center; 
+    }
+
+    nav a { 
+      margin:0 10px; 
+      font-weight:bold; 
+      color:#92400e; 
+      text-decoration:none; 
+    }
+
+    nav a:hover { 
+      text-decoration:underline; 
+    }
+
+    main { 
+      max-width:900px; 
+      margin:auto; 
+      padding:24px; 
+    }
+
+    /* ===== CHỖ QUAN TRỌNG ===== */
+    section { 
+      background:white; 
+      padding:20px; 
+      margin-bottom:20px; 
+      border-radius:8px; 
+      display:none;
+    }
+
+    section:target {
+      display:block;
+    }
+    /* ========================= */
+
+    h2 { 
+      color:#b45309; 
+    }
+
+    img { 
+      max-width:100%; 
+      border:1px solid #ccc; 
+      margin-top:10px; 
+    }
+
+    footer { 
+      text-align:center; 
+      color:#92400e; 
+      padding:20px; 
+    }
+
+    .home-card {
+      background:#fef3c7;
+      border:2px dashed #f59e0b;
+      padding:16px;
+      border-radius:10px;
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .home-card a {
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 20px;
+      background:#facc15;
+      color:#78350f;
+      font-weight:bold;
+      text-decoration:none;
+      border-radius:8px;
+    }
+
+    .home-card a:hover {
+      background:#fde047;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Bài: Tạo màu cho chữ và nền</h1>
+    <p>Gồm đầy đủ: Luyện tập 1, Luyện tập 2, Vận dụng 1, Vận dụng 2</p>
+  </header>
+
+  <nav>
+    <a href="#lt1">Luyện tập 1</a>
+    <a href="#lt2">Luyện tập 2</a>
+    <a href="#vd1">Vận dụng 1</a>
+    <a href="#vd2">Vận dụng 2</a>
+  </nav>
+
+  <main>
+
+    <div class="home-card">
+      <h3>🏠 Trang chủ</h3>
+      <p>Quay về trang chính</p>
+      <a href="index.html">Quay về Index</a>
+    </div>
+
+    <section id="lt1">
+      <h2>Luyện tập 1</h2>
+      <p><b>Câu hỏi:</b> "Thiết lập bảng màu theo quy tắc của hệ màu RGB. Giá trị của mỗi màu được thiết lập bởi RGB (x-red, x-green, x-blue). Trong đó: x-red, x-green, x-blue có thể nhận các giá trị độc lập từ 0 đến 255."</p>
+      <p><b>Câu trả lời:</b></p>
+      <img src="https://vietjack.com/tin-hoc-12-kn/images/luyen-tap-1-trang-88-tin-hoc-12.PNG" alt="Bảng màu RGB">
+    </section>
+
+    <section id="lt2">
+      <h2>Luyện tập 2</h2>
+      <p><b>Câu hỏi:</b> "Khi nào các mẫu định dạng E F và E &gt; F có tác dụng như nhau?"</p>
+      <p><b>Câu trả lời:</b> Các mẫu định dạng <b>E F</b> và <b>E &gt; F</b> trong CSS có tác dụng như nhau khi phần tử <b>F</b> là <b>con trực tiếp</b> của phần tử <b>E</b>. Trong trường hợp này, cả hai mẫu đều áp dụng cho phần tử F nằm trong phần tử E, nghĩa là phần tử F phải là con trực tiếp của E và không nằm trong bất kỳ phần tử con trung gian nào khác.</p>
+    </section>
+
+    <section id="vd1">
+      <h2>Vận dụng 1</h2>
+      <p><b>Câu hỏi:</b> "Tìm ví dụ và giải thích ý nghĩa cho các mẫu định dạng CSS tổng quát như sau:<br>a) E1 E2 E3.<br>b) E1 &gt; E2 &gt; E3."</p>
+      <p><b>Câu trả lời:</b></p>
+      <p><b>a) Mẫu định dạng E1 E2 E3:</b> Đây là một mẫu kết hợp (<i>descendant selector</i>) trong CSS, áp dụng cho các phần tử E3 nằm trong phần tử E2, và phần tử E2 nằm trong phần tử E1.</p>
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_5.jpg" alt="E1 E2 E3">
+      <p><b>b) Mẫu định dạng E1 &gt; E2 &gt; E3:</b> Đây là mẫu con trực tiếp.</p>
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_6.jpg" alt="E1 > E2 > E3">
+    </section>
+
+    <section id="vd2">
+      <h2>Vận dụng 2</h2>
+      <p><b>Câu hỏi:</b> "Tìm ví dụ và giải thích ý nghĩa cho các mẫu định dạng CSS tổng quát như sau:<br>a) E + F + G.<br>b) E &gt; F + G."</p>
+      <p><b>Câu trả lời:</b></p>
+      <p><b>a) Mẫu định dạng E + F + G:</b> Đây là mẫu anh em liền kề.</p>
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_7.jpg" alt="E + F + G">
+      <p><b>b) Mẫu định dạng E &gt; F + G:</b> Kết hợp con trực tiếp và anh em.</p>
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_8.jpg" alt="E > F + G">
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 · Bài tập Tin học 12 · GitHub Pages
+  </footer>
+</body>
+</html>
