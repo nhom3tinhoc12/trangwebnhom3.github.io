@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nhóm 3 - 12 Anh</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap');
 
@@ -14,9 +15,10 @@ body {
     color: #fff;
 }
 
+/* HEADER */
 header {
-    background: linear-gradient(rgba(255,0,102,0.6), rgba(255,77,166,0.6)), 
-                url('https://thptchuyenbentre.edu.vn/themes/default/ogimage.png') 
+    background: linear-gradient(rgba(255,0,102,0.6), rgba(255,77,166,0.6)),
+                url('https://thptchuyenbentre.edu.vn/themes/default/ogimage.png')
                 no-repeat center center;
     background-size: cover;
     text-align: center;
@@ -25,18 +27,26 @@ header {
     border-bottom-right-radius: 50px;
 }
 
-header h1 { font-size: 42px; margin: 0; font-weight: 700; }
-header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
+header h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: 700;
+}
 
-/* Profile Cards Scroll */
+header p {
+    margin-top: 10px;
+    font-size: 20px;
+    opacity: 0.95;
+}
+
+/* PROFILE SCROLL */
 .container-profile-scroll {
     display: flex;
-    justify-content: center;      /* CĂN GIỮA */
-    align-items: center;          /* CĂN GIỮA */
+    justify-content: center;
+    align-items: center;
     gap: 30px;
     padding: 40px 20px;
     overflow-x: auto;
-    flex-wrap: nowrap;
 }
 
 .container-profile-scroll::-webkit-scrollbar {
@@ -48,10 +58,6 @@ header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
     border-radius: 6px;
 }
 
-.container-profile-scroll::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-}
-
 .card {
     flex: 0 0 200px;
     background: rgba(255,255,255,0.15);
@@ -59,26 +65,32 @@ header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
     padding: 25px;
     border-radius: 25px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
     text-align: center;
 }
 
-.card:hover { transform: translateY(-10px); box-shadow: 0 15px 45px rgba(0,0,0,0.35); }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+}
 
 .card img {
-    width: 100px; 
+    width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #ff99c2;
     margin-bottom: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card img:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 8px 25px rgba(255,50,150,0.5); }
+.card h3 {
+    margin: 0 0 10px;
+}
 
-.card h3 { margin: 0 0 10px; color: #fff; }
-.card p { margin: 5px 0; color: #ffe6f0; }
+.card p {
+    margin: 5px 0;
+    color: #ffe6f0;
+}
 
 .profile-btn {
     display: inline-block;
@@ -92,38 +104,39 @@ header p { margin-top: 10px; font-size: 20px; opacity: 0.95; }
     transition: 0.3s;
 }
 
-.profile-btn:hover { background: #ff3385; transform: translateY(-3px); }
+.profile-btn:hover {
+    background: #ff3385;
+    transform: translateY(-3px);
+}
 
-/* Card bài 8–12 */
+/* BÀI TẬP */
 .container-bai {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   /* CĂN GIỮA */
-    align-items: center;       /* CĂN GIỮA */
+    justify-content: center;
     gap: 30px;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     text-align: center;
     margin-top: 50px;
     padding: 60px 0 20px;
-    color: #fff;
-    font-weight: 500;
     background: rgba(255,0,102,0.6);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
 
-footer img { 
-    width: 100%; 
-    max-width: 800px; 
-    border-radius: 20px; 
-    margin-bottom: 10px; 
+footer img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -131,92 +144,62 @@ footer img {
     <p>Trang web tổng hợp các bài tập, bài thuyết trình và sản phẩm học tập của nhóm</p>
 </header>
 
-<!-- Profile Scroll -->
+<!-- PROFILE -->
 <div class="container-profile-scroll">
     <div class="card">
-        <img src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg" alt="Mỹ Anh">
+        <img src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg">
         <h3>Mỹ Anh</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="myanh.html">Xem trang cá nhân</a>
     </div>
+
     <div class="card">
-        <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg" alt="Hải Yến">
+        <img src="https://i.pinimg.com/236x/24/ca/4b/24ca4bcc4f8c31a822f155cc71820ce3.jpg">
         <h3>Hải Yến</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="haiyen.html">Xem trang cá nhân</a>
     </div>
+
     <div class="card">
-        <img src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg" alt="Tuyết Hạnh">
+        <img src="https://avatarngau.sbs/wp-content/uploads/2025/06/avatar-sieu-nhan-cho-nam.jpg">
         <h3>Tuyết Hạnh</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="tuyethanh.html">Xem trang cá nhân</a>
     </div>
+
     <div class="card">
-        <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-sieu-nhan-mau-do.jpg" alt="Hải Vy">
+        <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-sieu-nhan-mau-do.jpg">
         <h3>Hải Vy</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="haivy.html">Xem trang cá nhân</a>
     </div>
+
     <div class="card">
-        <img src="https://i.pinimg.com/564x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg" alt="Thảo Uyên">
+        <img src="https://i.pinimg.com/564x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg">
         <h3>Thảo Uyên</h3>
         <p>Lớp: 12A</p>
         <a class="profile-btn" href="thaouyen.html">Xem trang cá nhân</a>
     </div>
 </div>
 
-<!-- Bài 8–14 -->
+<!-- BÀI 8 – 18 -->
 <div class="container-bai">
-    <div class="card">
-        <h3>Bài 8</h3>
-        <p>Nhấn nút để xem nội dung Bài 8</p>
-        <a class="profile-btn" href="bài8.html">Xem Bài 8</a>
-    </div>
-    <div class="card">
-        <h3>Bài 9</h3>
-        <p>Nhấn nút để xem nội dung Bài 9</p>
-        <a class="profile-btn" href="bài9.html">Xem Bài 9</a>
-    </div>
-    <div class="card">
-        <h3>Bài 10</h3>
-        <p>Nhấn nút để xem nội dung Bài 10</p>
-        <a class="profile-btn" href="bài10.html">Xem Bài 10</a>
-    </div>
-    <div class="card">
-        <h3>Bài 11</h3>
-        <p>Nhấn nút để xem nội dung Bài 11</p>
-        <a class="profile-btn" href="bài11.html">Xem Bài 11</a>
-    </div>
-    <div class="card">
-        <h3>Bài 12</h3>
-        <p>Nhấn nút để xem nội dung Bài 12</p>
-        <a class="profile-btn" href="bài12.html">Xem Bài 12</a>
-    </div>
-    <div class="card">
-        <h3>Bài 13</h3>
-        <p>Nhấn nút để xem nội dung Bài 13</p>
-        <a class="profile-btn" href="bài13.html">Xem Bài 13</a>
-    </div>
-    <div class="card">
-        <h3>Bài 14</h3>
-        <p>Nhấn nút để xem nội dung Bài 14</p>
-        <a class="profile-btn" href="bài14.html">Xem Bài 14</a>
-    </div>
-        <div class="card">
-        <h3>Bài 15</h3>
-        <p>Nhấn nút để xem nội dung Bài 15</p>
-        <a class="profile-btn" href="bài15.html">Xem Bài 15</a>
-    </div>
-       <div class="card">
-        <h3>Bài 16</h3>
-        <p>Nhấn nút để xem nội dung Bài 16</p>
-        <a class="profile-btn" href="bài16.html">Xem Bài 16</a>
-     </div>
+    <div class="card"><h3>Bài 8</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài8.html">Xem Bài 8</a></div>
+    <div class="card"><h3>Bài 9</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài9.html">Xem Bài 9</a></div>
+    <div class="card"><h3>Bài 10</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài10.html">Xem Bài 10</a></div>
+    <div class="card"><h3>Bài 11</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài11.html">Xem Bài 11</a></div>
+    <div class="card"><h3>Bài 12</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài12.html">Xem Bài 12</a></div>
+    <div class="card"><h3>Bài 13</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài13.html">Xem Bài 13</a></div>
+    <div class="card"><h3>Bài 14</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài14.html">Xem Bài 14</a></div>
+    <div class="card"><h3>Bài 15</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài15.html">Xem Bài 15</a></div>
+    <div class="card"><h3>Bài 16</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài16.html">Xem Bài 16</a></div>
+    <div class="card"><h3>Bài 17</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài17.html">Xem Bài 17</a></div>
+    <div class="card"><h3>Bài 18</h3><p>Nhấn nút để xem nội dung</p><a class="profile-btn" href="bài18.html">Xem Bài 18</a></div>
 </div>
 
 <footer>
-    <img src="https://www.anhnghethuatdulich.com/wp-content/uploads/2025/07/hinh-nen-powerpoint-cam-on-cute-mat-cuoi.jpg" alt="Footer Image">
-    <div class="footer-text">© 2025 Nhóm 3 - 12 Anh</div>
+    <img src="https://www.anhnghethuatdulich.com/wp-content/uploads/2025/07/hinh-nen-powerpoint-cam-on-cute-mat-cuoi.jpg">
+    <div>© 2025 Nhóm 3 - 12 Anh</div>
 </footer>
 
 </body>
