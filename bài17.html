@@ -7,48 +7,23 @@
 <style>
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #fff7cc, #ffec99);
-    padding: 0;
-    margin: 0;
+    background: linear-gradient(to right, #fffbea, #fef3c7);
+    padding: 20px;
 }
 
-/* ===== BÌA ===== */
-.cover {
-    background: linear-gradient(135deg, #facc15, #fde047);
-    text-align: center;
-    padding: 70px 20px;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-}
-
-.cover h1 {
-    margin: 0;
-    font-size: 36px;
+/* ===== NÚT QUAY VỀ ===== */
+.back-home {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background: #facc15;
     color: #78350f;
-}
-
-.cover p {
-    font-size: 18px;
-    margin: 10px 0 25px;
-    color: #92400e;
-}
-
-.cover a {
-    text-decoration: none;
-    background: #78350f;
-    color: #fff;
-    padding: 12px 22px;
-    border-radius: 12px;
     font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
 }
-
-.cover a:hover {
-    background: #5a2d0c;
-}
-
-/* ===== KHỐI CHÍNH ===== */
-.wrapper {
-    padding: 25px;
+.back-home:hover {
+    background: #fde047;
 }
 
 /* ===== HỘP TIÊU ĐỀ ===== */
@@ -58,35 +33,30 @@ body {
     padding: 15px;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     margin-bottom: 15px;
     transition: 0.3s;
 }
-.main-box:hover {
-    background: #fbbf24;
-}
+.main-box:hover { background: #fbbf24; }
 
 .sub-box {
     background: #fde68a;
-    color: #78350f;
+    color: #92400e;
     padding: 10px;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
 }
-.sub-box:hover {
-    background: #fcd34d;
-}
+.sub-box:hover { background: #fcd34d; }
 
 .content {
     display: none;
     margin-top: 10px;
-    background: #fff;
-    border-radius: 12px;
+    background: white;
+    border-radius: 10px;
     padding: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* ===== CHIA 2 CỘT ===== */
@@ -94,27 +64,21 @@ body {
     display: flex;
     gap: 20px;
     margin-top: 15px;
-    flex-wrap: wrap;
 }
 
 .left, .right {
-    width: 48%;
+    width: 50%;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
-.left {
-    background: #fef3c7;
-}
-.right {
-    background: #fffbeb;
-}
+.left { background: #fffbeb; }
+.right { background: #ecfeff; }
 
 pre {
-    background: #fde68a;
+    background: #fef3c7;
     padding: 10px;
-    border-radius: 8px;
-    overflow-x: auto;
+    border-radius: 6px;
 }
 
 /* ===== CSS DEMO ===== */
@@ -122,19 +86,14 @@ pre {
 /* Luyện tập 2 */
 .name {
     font-style: italic;
-    border: 1px solid #78350f;
-    padding: 2px 6px;
+    border: 1px solid #92400e;
+    padding: 2px;
     display: inline-block;
-    background: #fff7cc;
 }
 
 /* pseudo-class */
-.demo-visited a:visited {
-    color: gray;
-}
-.demo-invalid input:invalid {
-    border: 2px solid red;
-}
+.demo-visited a:visited { color: gray; }
+.demo-invalid input:invalid { border: 2px solid red; }
 
 /* pseudo-element */
 .demo-placeholder input::placeholder {
@@ -144,7 +103,7 @@ pre {
 
 img {
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
     margin-top: 10px;
 }
 </style>
@@ -152,21 +111,15 @@ img {
 <script>
 function toggle(id) {
     const el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
+    el.style.display = el.style.display === "block" ? "none" : "block";
 }
 </script>
 </head>
 
 <body>
 
-<!-- ===== BÌA ===== -->
-<div class="cover">
-    <h1>BÀI TẬP CSS – TRANG 101</h1>
-    <p>Tin học 12 | Pseudo-class & Pseudo-element</p>
-    <a href="index.html">⬅ Quay về trang chủ</a>
-</div>
-
-<div class="wrapper">
+<!-- ===== QUAY VỀ TRANG CHỦ ===== -->
+<a href="index.html" class="back-home">🏠 Quay về trang chủ</a>
 
 <!-- ================= LUYỆN TẬP ================= -->
 <div class="main-box" onclick="toggle('luyentap')">LUYỆN TẬP</div>
@@ -176,8 +129,8 @@ function toggle(id) {
 <div class="sub-box" onclick="toggle('lt1')">LUYỆN TẬP 1 (trang 101)</div>
 <div id="lt1" class="content">
 <p><strong>Giải thích sự khác nhau giữa hai bộ chọn:</strong></p>
-<p><strong>#p123 + p</strong>: Áp dụng cho thẻ <code>p</code> ngay sau phần tử có id <code>p123</code>.</p>
-<p><strong>h2#p123 + p</strong>: Áp dụng cho thẻ <code>p</code> ngay sau thẻ <code>h2</code> có id <code>p123</code>.</p>
+<p><strong>#p123 + p</strong>: Áp dụng cho thẻ p ngay sau phần tử có id p123.</p>
+<p><strong>h2#p123 + p</strong>: Áp dụng cho thẻ p ngay sau thẻ h2 có id p123.</p>
 
 <img src="lt1.png" alt="Ảnh đề Luyện tập 1">
 </div>
@@ -269,8 +222,6 @@ input::placeholder {
 <p>Sau khi nhập:</p>
 <input type="text" value="Trần Văn Cải">
 </div>
-</div>
-
 </div>
 
 </div>
