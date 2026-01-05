@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Trang cá nhân - Thảo Uyên</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap');
 
@@ -18,31 +19,29 @@ body {
     background: linear-gradient(270deg, #ffb6d2, #ffcce1, #ffe0ec);
     background-size: 600% 600%;
     animation: neonWave 15s ease infinite;
-    color: white; /* TẤT CẢ CHỮ → TRẮNG */
+    color: white;
 }
 
-/* Gradient animation */
 @keyframes neonWave {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Cards */
+/* Card */
 .card {
     width: 500px;
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255,255,255,0.25);
     backdrop-filter: blur(12px);
     padding: 40px;
     border-radius: 30px;
     text-align: center;
-    box-shadow: 0 12px 40px rgba(255, 60, 120, 0.3);
-    animation: fadeIn 1s ease;
+    box-shadow: 0 12px 40px rgba(255,60,120,0.3);
     margin-bottom: 25px;
     position: relative;
     overflow: hidden;
-    z-index: 1;
-    color: white; /* Chữ trong card → trắng */
+    color: white;
+    animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
@@ -50,178 +49,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Avatar */
-.avatar-container {
-    position: relative;
-    display: inline-block;
-    animation: rotate 10s linear infinite;
-    z-index: 1;
-}
-
-.avatar {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid rgba(255, 80, 140, 0.6);
-    box-shadow: 0 0 35px rgba(255, 70, 130, 0.8);
-    transition: 0.5s ease;
-}
-
-.avatar-container:hover .avatar {
-    transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 0 50px rgba(255, 80, 140, 0.9);
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Name */
-h1 { 
-    color: white;
-    font-size: 34px; 
-    margin-top: 20px; 
-    position: relative;
-}
-
-/* Sparkle effect for name */
-h1::after {
-    content: "✨";
-    position: absolute;
-    right: -25px;
-    top: -10px;
-    font-size: 20px;
-    opacity: 0;
-    animation: sparkle 2.2s infinite;
-}
-
-@keyframes sparkle {
-    0% { opacity: 0; transform: scale(0.5); }
-    50% { opacity: 1; transform: scale(1.3); }
-    100% { opacity: 0; transform: scale(0.5); }
-}
-
-/* Slogan */
-.slogan-card {
-    width: 520px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(18px);
-    padding: 30px 40px;
-    border-radius: 32px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(255, 30, 110, 0.35);
-    font-size: 22px;
-    font-weight: bold;
-    color: white; /* Slogan → trắng */
-    animation: glowFade 2s ease-in-out infinite alternate, pulse 3s ease-in-out infinite, fadeIn 1.5s ease;
-    margin-top: 30px; /* Tăng khoảng cách giữa slogan và card trên */
-    border: 2px solid rgba(255, 30, 110, 0.5);
-    position: relative;
-    z-index: 1;
-}
-
-@keyframes glowFade {
-    0% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
-    100% { box-shadow: 0 0 35px rgba(255, 255, 255, 1); }
-}
-
-@keyframes pulse { 
-    0% { transform: scale(1); } 
-    50% { transform: scale(1.05); } 
-    100% { transform: scale(1); } 
-}
-
-.section { 
-    margin: 15px 0; 
-    font-size: 18px; 
-    color: white;  /* CHỮ TRẮNG */
-    line-height: 1.6; 
-}
-
-/* Return Button */
-.return {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 28px;
-    background: #ff4d88;
-    color: white;
-    border-radius: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.return:hover {
-    background: #ff2e72;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(255, 50, 120, 0.4);
-}
-
-/* ===== Effect container ===== */
-#effectLayer {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Stars */
-.star {
-    position: absolute;
-    color: #fff;
-    font-size: 10px;
-    opacity: 0.8;
-    animation-name: starTwinkle;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes starTwinkle {
-    0% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.3); }
-    100% { opacity: 0.3; transform: scale(1); }
-}
-
-/* Hearts */
-.heartBubble {
-    position: absolute;
-    bottom: -30px;
-    font-size: 15px;
-    color: #ff1e6e;
-    opacity: 0.8;
-    animation-name: heartRise;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes heartRise {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
-    50% { transform: translateY(-50vh) rotate(180deg); opacity: 1; }
-    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
-}
-
-/* Butterfly */
-.butterfly {
-    position: fixed;
-    top: -30px;
-    font-size: 26px;
-    animation: flyButter 8s linear infinite;
-    opacity: 0.9;
-}
-
-@keyframes flyButter {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(20vw, 20vh) rotate(20deg); }
-    50% { transform: translate(40vw, -10vh) rotate(-20deg); }
-    75% { transform: translate(70vw, 30vh) rotate(10deg); }
-    100% { transform: translate(100vw, -10vh) rotate(0deg); }
-}
-
-/* Glow border */
 .card::after {
     content: "";
     position: absolute;
@@ -240,21 +67,107 @@ h1::after {
     100% { background-position: 0% 50%; }
 }
 
+/* Avatar */
+.avatar-container {
+    animation: rotate 10s linear infinite;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 6px solid rgba(255,80,140,0.6);
+    box-shadow: 0 0 35px rgba(255,70,130,0.8);
+    transition: 0.5s;
+}
+
+.avatar-container:hover .avatar {
+    transform: scale(1.1) rotate(10deg);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+h1 { font-size: 34px; margin-top: 20px; }
+h2 { margin-top: 0; }
+
+.section {
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Audio */
+audio {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Button */
+.return {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #ff4d88;
+    color: white;
+    border-radius: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.return:hover {
+    background: #ff2e72;
+    transform: translateY(-4px);
+}
+
+/* Effect layer */
+#effectLayer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    font-size: 10px;
+    animation: starTwinkle 2s infinite;
+}
+
+@keyframes starTwinkle {
+    0%,100% { opacity: .3; }
+    50% { opacity: 1; }
+}
+
+.heartBubble {
+    position: absolute;
+    bottom: -30px;
+    animation: heartRise 8s linear infinite;
+}
+
+@keyframes heartRise {
+    from { transform: translateY(0); opacity: .8; }
+    to { transform: translateY(-110vh); opacity: 0; }
+}
 </style>
 </head>
+
 <body>
 
 <div id="effectLayer"></div>
 
-<!-- Card Vai trò ở trên đầu -->
+<!-- Vai trò -->
 <div class="card">
     <h2>Vai trò</h2>
     <div class="section">
-        <b>Soạn nội dung và edit bài 9, edit profile, edit trang chủ</b>
+        <b>Soạn nội dung, edit bài, edit profile và trang chủ</b>
     </div>
 </div>
 
-<!-- Card Thông tin cá nhân -->
+<!-- Avatar -->
 <div class="card">
     <div class="avatar-container">
         <img class="avatar" src="https://i.pinimg.com/736x/66/df/f9/66dff91fc53c5e9587f97a5ec8a44cb3.jpg">
@@ -262,58 +175,52 @@ h1::after {
     <h1>Thảo Uyên</h1>
 </div>
 
+<!-- Thông tin -->
 <div class="card">
     <div class="section"><b>Ngày sinh:</b> 02/11/2008</div>
-    <div class="section"><b>Định hướng nghề nghiệp:</b><br> Thiết kế đồ họa · Sáng tạo nội dung · Khởi nghiệp cá nhân</div>
-    <div class="section"><b>Tính cách:</b><br> Hòa đồng · Kiên nhẫn · Luôn học hỏi</div>
-    <div class="section"><b>Mục tiêu:</b><br> Phát triển kỹ năng sáng tạo · Xây dựng thương hiệu cá nhân · Hoàn thiện bản thân</div>
+    <div class="section"><b>Định hướng:</b> Thiết kế đồ họa · Sáng tạo nội dung</div>
+    <div class="section"><b>Tính cách:</b> Hòa đồng · Kiên nhẫn · Ham học hỏi</div>
     <div class="section"><b>Sở thích:</b> Nấu ăn · Game · Đạp xe</div>
 
     <a class="return" href="index.html">⬅ Quay lại</a>
 </div>
 
-<div class="slogan-card">
-"Giữa việc đi học và ngủ ở nhà mình thích đi học hơn vì khi đến lớp mình gặp được những người bạn 'yêu vấu' của mình."
+<!-- 🎵 CARD BÀI HÁT YÊU THÍCH -->
+<div class="card">
+    <h2>🎵 Bài hát yêu thích</h2>
+
+    <div class="section">
+        <b>Tựa đề:</b> Nàng Thơ – Hoàng Dũng
+    </div>
+
+    <audio controls>
+        <source src="snaptt.me-32224956.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="section" style="font-size:15px; opacity:.85;">
+        Bài hát mang lại cảm giác nhẹ nhàng, giúp mình thư giãn và cân bằng cảm xúc.
+    </div>
 </div>
 
 <script>
-const effectLayer = document.getElementById('effectLayer');
+const layer = document.getElementById("effectLayer");
 
-/* Stars */
-for (let i = 0; i < 50; i++) {
-    let star = document.createElement("div");
-    star.classList.add("star");
-    star.innerHTML = "✦";
-    star.style.left = Math.random()*100 + "vw";
-    star.style.top = Math.random()*100 + "vh";
-    star.style.fontSize = (8 + Math.random()*12) + "px";
-    star.style.animationDuration = (2 + Math.random()*3) + "s";
-    effectLayer.appendChild(star);
+for(let i=0;i<40;i++){
+    let s=document.createElement("div");
+    s.className="star";
+    s.innerHTML="✦";
+    s.style.left=Math.random()*100+"vw";
+    s.style.top=Math.random()*100+"vh";
+    layer.appendChild(s);
 }
 
-/* Hearts */
-for (let i = 0; i < 40; i++) {
-    let heart = document.createElement("div");
-    heart.classList.add("heartBubble");
-    heart.innerHTML = "❤";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (12 + Math.random()*18) + "px";
-    heart.style.animationDuration = (5 + Math.random()*5) + "s";
-    heart.style.animationDelay = Math.random()*5 + "s";
-    effectLayer.appendChild(heart);
-}
-
-/* Butterflies */
-const butterflyIcons = ["🦋","🦋","🦋","🦋"];
-
-for (let i = 0; i < 10; i++) {
-    let b = document.createElement("div");
-    b.classList.add("butterfly");
-    b.innerHTML = butterflyIcons[Math.floor(Math.random()*butterflyIcons.length)];
-    b.style.left = Math.random() * 100 + "vw";
-    b.style.animationDelay = Math.random() * 5 + "s";
-    b.style.animationDuration = (6 + Math.random()*6) + "s";
-    effectLayer.appendChild(b);
+for(let i=0;i<30;i++){
+    let h=document.createElement("div");
+    h.className="heartBubble";
+    h.innerHTML="❤";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=12+Math.random()*18+"px";
+    layer.appendChild(h);
 }
 </script>
 
