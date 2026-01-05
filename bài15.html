@@ -17,29 +17,12 @@
     header { 
       background: #facc15; 
       color: #78350f; 
-      padding: 28px 20px; 
+      padding: 30px 20px; 
       text-align: center; 
     }
 
     header h1 {
       margin-bottom: 6px;
-    }
-
-    nav { 
-      background: #fde68a; 
-      padding: 14px; 
-      text-align: center; 
-    }
-
-    nav a { 
-      margin: 0 12px; 
-      font-weight: bold; 
-      color: #92400e; 
-      text-decoration: none; 
-    }
-
-    nav a:hover { 
-      text-decoration: underline; 
     }
 
     main { 
@@ -48,13 +31,38 @@
       padding: 24px; 
     }
 
+    /* ===== CARD MENU ===== */
+    .card-menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .card-menu a {
+      background: #fde68a;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #92400e;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: 0.25s;
+    }
+
+    .card-menu a:hover {
+      transform: translateY(-4px);
+      background: #facc15;
+    }
+
     /* ===== ẨN / HIỆN SECTION ===== */
     section { 
       background: white; 
       padding: 22px; 
-      margin-bottom: 24px; 
-      border-radius: 10px; 
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 28px; 
+      border-radius: 12px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       display: none;
     }
 
@@ -75,7 +83,7 @@
     img { 
       max-width: 100%; 
       border: 1px solid #d4d4d8; 
-      border-radius: 6px;
+      border-radius: 8px;
       margin-top: 12px; 
     }
 
@@ -90,13 +98,9 @@
       background: #fef3c7;
       border: 2px dashed #f59e0b;
       padding: 18px;
-      border-radius: 12px;
+      border-radius: 14px;
       text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .home-card h3 {
-      margin-top: 0;
+      margin-bottom: 30px;
     }
 
     .home-card a {
@@ -122,19 +126,20 @@
     <p>Gồm đầy đủ: Luyện tập 1, Luyện tập 2, Vận dụng 1, Vận dụng 2</p>
   </header>
 
-  <nav>
-    <a href="#lt1">Luyện tập 1</a>
-    <a href="#lt2">Luyện tập 2</a>
-    <a href="#vd1">Vận dụng 1</a>
-    <a href="#vd2">Vận dụng 2</a>
-  </nav>
-
   <main>
 
     <div class="home-card">
       <h3>🏠 Trang chủ</h3>
       <p>Quay về trang chính</p>
       <a href="index.html">Quay về Index</a>
+    </div>
+
+    <!-- CARD CHỌN BÀI -->
+    <div class="card-menu">
+      <a href="#lt1">📘 Luyện tập 1</a>
+      <a href="#lt2">📙 Luyện tập 2</a>
+      <a href="#vd1">📗 Vận dụng 1</a>
+      <a href="#vd2">📕 Vận dụng 2</a>
     </div>
 
     <section id="lt1">
@@ -147,27 +152,23 @@
     <section id="lt2">
       <h2>Luyện tập 2</h2>
       <p><b>Câu hỏi:</b> "Khi nào các mẫu định dạng E F và E &gt; F có tác dụng như nhau?"</p>
-      <p><b>Câu trả lời:</b> Các mẫu định dạng <b>E F</b> và <b>E &gt; F</b> trong CSS có tác dụng như nhau khi phần tử <b>F</b> là <b>con trực tiếp</b> của phần tử <b>E</b>. Trong trường hợp này, cả hai mẫu đều áp dụng cho phần tử F nằm trong phần tử E, nghĩa là phần tử F phải là con trực tiếp của E và không nằm trong bất kỳ phần tử con trung gian nào khác.</p>
+      <p><b>Câu trả lời:</b> Các mẫu định dạng <b>E F</b> và <b>E &gt; F</b> trong CSS có tác dụng như nhau khi phần tử <b>F</b> là <b>con trực tiếp</b> của phần tử <b>E</b>.</p>
     </section>
 
     <section id="vd1">
       <h2>Vận dụng 1</h2>
-      <p><b>Câu hỏi:</b> "Tìm ví dụ và giải thích ý nghĩa cho các mẫu định dạng CSS tổng quát như sau:<br>a) E1 E2 E3.<br>b) E1 &gt; E2 &gt; E3."</p>
-      <p><b>Câu trả lời:</b></p>
-      <p><b>a) Mẫu định dạng E1 E2 E3:</b> Đây là một mẫu kết hợp (<i>descendant selector</i>) trong CSS, áp dụng cho các phần tử E3 nằm trong phần tử E2, và phần tử E2 nằm trong phần tử E1.</p>
-      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_5.jpg" alt="E1 E2 E3">
+      <p><b>a) Mẫu định dạng E1 E2 E3:</b> Đây là một mẫu kết hợp (<i>descendant selector</i>) trong CSS.</p>
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_5.jpg">
       <p><b>b) Mẫu định dạng E1 &gt; E2 &gt; E3:</b> Đây là mẫu con trực tiếp.</p>
-      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_6.jpg" alt="E1 > E2 > E3">
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_6.jpg">
     </section>
 
     <section id="vd2">
       <h2>Vận dụng 2</h2>
-      <p><b>Câu hỏi:</b> "Tìm ví dụ và giải thích ý nghĩa cho các mẫu định dạng CSS tổng quát như sau:<br>a) E + F + G.<br>b) E &gt; F + G."</p>
-      <p><b>Câu trả lời:</b></p>
       <p><b>a) Mẫu định dạng E + F + G:</b> Đây là mẫu anh em liền kề.</p>
-      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_7.jpg" alt="E + F + G">
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_7.jpg">
       <p><b>b) Mẫu định dạng E &gt; F + G:</b> Kết hợp con trực tiếp và anh em.</p>
-      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_8.jpg" alt="E > F + G">
+      <img src="https://img.loigiaihay.com/picture/2024/0817/iai-tin-hoc-12-bai-15-trang-88-sgk-ket-noi-tri-thuc-1723868980_8.jpg">
     </section>
 
   </main>
