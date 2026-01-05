@@ -56,17 +56,18 @@
             padding: 15px;
         }
 
-        .menu a {
+        .menu button {
             margin: 10px;
-            padding: 10px 16px;
+            padding: 10px 18px;
             background: white;
             border-radius: 6px;
-            text-decoration: none;
-            color: #333;
+            border: none;
+            cursor: pointer;
             font-weight: bold;
+            color: #333;
         }
 
-        .menu a:hover {
+        .menu button:hover {
             background: #ffe082;
         }
 
@@ -78,11 +79,13 @@
         }
 
         .box {
+            display: none; /* ẨN HẾT BAN ĐẦU */
             background: white;
             padding: 20px;
             margin-bottom: 30px;
             border-radius: 10px;
             border-left: 6px solid #fbc02d;
+            animation: fade 0.4s ease-in-out;
         }
 
         .box h2 {
@@ -91,12 +94,26 @@
 
         code {
             background: #f5f5f5;
-            padding: 5px 8px;
+            padding: 6px 10px;
             border-radius: 4px;
             display: inline-block;
             margin-top: 8px;
         }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
+
+    <script>
+        function showSection(id) {
+            const boxes = document.querySelectorAll('.box');
+            boxes.forEach(box => box.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo({ top: document.getElementById(id).offsetTop - 20, behavior: 'smooth' });
+        }
+    </script>
 </head>
 
 <body>
@@ -112,10 +129,10 @@
 
 <!-- ===== MENU ===== -->
 <div class="menu" id="menu">
-    <a href="#lt1">Luyện tập 1</a>
-    <a href="#lt2">Luyện tập 2</a>
-    <a href="#vd1">Vận dụng 1</a>
-    <a href="#vd2">Vận dụng 2</a>
+    <button onclick="showSection('lt1')">Luyện tập 1</button>
+    <button onclick="showSection('lt2')">Luyện tập 2</button>
+    <button onclick="showSection('vd1')">Vận dụng 1</button>
+    <button onclick="showSection('vd2')">Vận dụng 2</button>
 </div>
 
 <!-- ===== NỘI DUNG ===== -->
@@ -136,19 +153,17 @@
             có đồng thời hai lớp <b>test</b> và <b>test_more</b>.
         </p>
         <p>
-            <b>background-color: red;</b> dùng để đặt màu nền đỏ cho phần tử đó.
+            <b>background-color: red;</b> dùng để đặt màu nền đỏ.
         </p>
     </div>
 
     <div class="box" id="vd1">
         <h2>Vận dụng 1</h2>
-        <p>
-            Có thể sử dụng <b>class</b> để định dạng khác nhau cho các đoạn văn.
-        </p>
+        <p>Sử dụng <b>class</b> để định dạng khác nhau:</p>
         <ul>
-            <li>P1: gắn class riêng</li>
-            <li>P2, P3: dùng chung một class</li>
-            <li>Các đoạn còn lại: giữ định dạng mặc định</li>
+            <li>P1: class riêng</li>
+            <li>P2, P3: class chung</li>
+            <li>Các đoạn khác: mặc định</li>
         </ul>
         <code>
             &lt;p class="important"&gt;P1&lt;/p&gt;<br>
@@ -158,18 +173,392 @@
 
     <div class="box" id="vd2">
         <h2>Vận dụng 2</h2>
-        <p>
-            Có thể thiết lập viền khác nhau cho từng cạnh bằng các thuộc tính:
-        </p>
+        <p>Có thể thiết lập viền khác nhau cho từng cạnh:</p>
         <code>
             border-top<br>
+            border-right<br>
             border-bottom<br>
-            border-left<br>
-            border-right
+            border-left
         </code>
+        <p>Mỗi cạnh có màu, độ dày và kiểu khác nhau.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 16 - Định dạng khung (Tin học 12)</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff9e6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ===== BÌA ===== */
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, #ffd54f, #ffca28);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cover h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .cover p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: #333;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #000;
+        }
+
+        /* ===== MENU ===== */
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #ffeb3b;
+            padding: 15px;
+        }
+
+        .menu button {
+            margin: 10px;
+            padding: 10px 18px;
+            background: white;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu button:hover {
+            background: #ffe082;
+        }
+
+        /* ===== NỘI DUNG ===== */
+        .content {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .box {
+            display: none; /* ẨN HẾT BAN ĐẦU */
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            border-left: 6px solid #fbc02d;
+            animation: fade 0.4s ease-in-out;
+        }
+
+        .box h2 {
+            color: #f57f17;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 6px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <script>
+        function showSection(id) {
+            const boxes = document.querySelectorAll('.box');
+            boxes.forEach(box => box.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo({ top: document.getElementById(id).offsetTop - 20, behavior: 'smooth' });
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- ===== BÌA ===== -->
+<div class="cover" id="top">
+    <h1>BÀI 16: ĐỊNH DẠNG KHUNG</h1>
+    <p>Tin học 12 – HTML & CSS</p>
+
+    <a href="#menu" class="btn">Vào bài</a>
+    <a href="index.html" class="btn">Quay về trang chủ</a>
+</div>
+
+<!-- ===== MENU ===== -->
+<div class="menu" id="menu">
+    <button onclick="showSection('lt1')">Luyện tập 1</button>
+    <button onclick="showSection('lt2')">Luyện tập 2</button>
+    <button onclick="showSection('vd1')">Vận dụng 1</button>
+    <button onclick="showSection('vd2')">Vận dụng 2</button>
+</div>
+
+<!-- ===== NỘI DUNG ===== -->
+<div class="content">
+
+    <div class="box" id="lt1">
+        <h2>Luyện tập 1</h2>
+        <p><b>Phần tử HTML có thể ẩn đi không?</b></p>
+        <p>Có. Có thể sử dụng CSS để ẩn phần tử khỏi trang web.</p>
+        <code>display: none;</code>
+    </div>
+
+    <div class="box" id="lt2">
+        <h2>Luyện tập 2</h2>
+        <p><b>Ý nghĩa định dạng:</b></p>
         <p>
-            Nhờ đó, mỗi cạnh của khung có thể có màu sắc, kiểu dáng khác nhau.
+            <b>test.test_more</b> là bộ chọn áp dụng cho phần tử
+            có đồng thời hai lớp <b>test</b> và <b>test_more</b>.
         </p>
+        <p>
+            <b>background-color: red;</b> dùng để đặt màu nền đỏ.
+        </p>
+    </div>
+
+    <div class="box" id="vd1">
+        <h2>Vận dụng 1</h2>
+        <p>Sử dụng <b>class</b> để định dạng khác nhau:</p>
+        <ul>
+            <li>P1: class riêng</li>
+            <li>P2, P3: class chung</li>
+            <li>Các đoạn khác: mặc định</li>
+        </ul>
+        <code>
+            &lt;p class="important"&gt;P1&lt;/p&gt;<br>
+            &lt;p class="normal"&gt;P2&lt;/p&gt;
+        </code>
+    </div>
+
+    <div class="box" id="vd2">
+        <h2>Vận dụng 2</h2>
+        <p>Có thể thiết lập viền khác nhau cho từng cạnh:</p>
+        <code>
+            border-top<br>
+            border-right<br>
+            border-bottom<br>
+            border-left
+        </code>
+        <p>Mỗi cạnh có màu, độ dày và kiểu khác nhau.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 16 - Định dạng khung (Tin học 12)</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff9e6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ===== BÌA ===== */
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, #ffd54f, #ffca28);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cover h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .cover p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background: #333;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #000;
+        }
+
+        /* ===== MENU ===== */
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #ffeb3b;
+            padding: 15px;
+        }
+
+        .menu button {
+            margin: 10px;
+            padding: 10px 18px;
+            background: white;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .menu button:hover {
+            background: #ffe082;
+        }
+
+        /* ===== NỘI DUNG ===== */
+        .content {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .box {
+            display: none; /* ẨN HẾT BAN ĐẦU */
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            border-left: 6px solid #fbc02d;
+            animation: fade 0.4s ease-in-out;
+        }
+
+        .box h2 {
+            color: #f57f17;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 6px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <script>
+        function showSection(id) {
+            const boxes = document.querySelectorAll('.box');
+            boxes.forEach(box => box.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            window.scrollTo({ top: document.getElementById(id).offsetTop - 20, behavior: 'smooth' });
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- ===== BÌA ===== -->
+<div class="cover" id="top">
+    <h1>BÀI 16: ĐỊNH DẠNG KHUNG</h1>
+    <p>Tin học 12 – HTML & CSS</p>
+
+    <a href="#menu" class="btn">Vào bài</a>
+    <a href="index.html" class="btn">Quay về trang chủ</a>
+</div>
+
+<!-- ===== MENU ===== -->
+<div class="menu" id="menu">
+    <button onclick="showSection('lt1')">Luyện tập 1</button>
+    <button onclick="showSection('lt2')">Luyện tập 2</button>
+    <button onclick="showSection('vd1')">Vận dụng 1</button>
+    <button onclick="showSection('vd2')">Vận dụng 2</button>
+</div>
+
+<!-- ===== NỘI DUNG ===== -->
+<div class="content">
+
+    <div class="box" id="lt1">
+        <h2>Luyện tập 1</h2>
+        <p><b>Phần tử HTML có thể ẩn đi không?</b></p>
+        <p>Có. Có thể sử dụng CSS để ẩn phần tử khỏi trang web.</p>
+        <code>display: none;</code>
+    </div>
+
+    <div class="box" id="lt2">
+        <h2>Luyện tập 2</h2>
+        <p><b>Ý nghĩa định dạng:</b></p>
+        <p>
+            <b>test.test_more</b> là bộ chọn áp dụng cho phần tử
+            có đồng thời hai lớp <b>test</b> và <b>test_more</b>.
+        </p>
+        <p>
+            <b>background-color: red;</b> dùng để đặt màu nền đỏ.
+        </p>
+    </div>
+
+    <div class="box" id="vd1">
+        <h2>Vận dụng 1</h2>
+        <p>Sử dụng <b>class</b> để định dạng khác nhau:</p>
+        <ul>
+            <li>P1: class riêng</li>
+            <li>P2, P3: class chung</li>
+            <li>Các đoạn khác: mặc định</li>
+        </ul>
+        <code>
+            &lt;p class="important"&gt;P1&lt;/p&gt;<br>
+            &lt;p class="normal"&gt;P2&lt;/p&gt;
+        </code>
+    </div>
+
+    <div class="box" id="vd2">
+        <h2>Vận dụng 2</h2>
+        <p>Có thể thiết lập viền khác nhau cho từng cạnh:</p>
+        <code>
+            border-top<br>
+            border-right<br>
+            border-bottom<br>
+            border-left
+        </code>
+        <p>Mỗi cạnh có màu, độ dày và kiểu khác nhau.</p>
     </div>
 
 </div>
