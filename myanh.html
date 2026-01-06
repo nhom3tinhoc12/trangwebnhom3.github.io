@@ -3,146 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <title>Trang cá nhân - Mỹ Anh</title>
+
 <style>
-body { 
-    font-family:"Be Vietnam Pro",sans-serif; 
-    margin:0; 
-    padding:40px 0; 
-    display:flex; 
-    flex-direction:column; 
-    align-items:center; 
-    min-height:100vh; 
-    background:linear-gradient(135deg,#fff5b6,#fff8cc,#fffbe0); 
-    background-size:300% 300%; 
-    animation:bgFlow 12s ease infinite;
+body{
+    font-family:"Be Vietnam Pro",sans-serif;
+    margin:0;
+    padding:40px 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff5b6,#fff8cc,#fffbe0);
 }
-@keyframes bgFlow {
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+
 .card{
-    width:500px;
+    width:620px;
     background:rgba(255,255,255,0.6);
     backdrop-filter:blur(12px);
     padding:40px;
     border-radius:30px;
     text-align:center;
     box-shadow:0 12px 40px rgba(255,204,0,0.3);
-    animation:fadeIn 1s ease;
     margin-bottom:25px;
 }
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
-}
-.avatar-container{
-    position:relative;
-    display:inline-block;
-    animation:rotate 10s linear infinite;
-}
+
 .avatar{
     width:180px;
     height:180px;
     border-radius:50%;
-    object-fit:cover;
     border:6px solid rgba(255,204,0,0.6);
-    box-shadow:0 0 35px rgba(255,204,50,0.8);
 }
-@keyframes rotate{
-    0%{transform:rotate(0deg);}
-    100%{transform:rotate(360deg);}
+
+h1{color:#e6b800;margin-top:15px;}
+
+.menu-box{
+    display:flex;
+    gap:12px;
+    margin:20px 0;
 }
-h1{
-    color:#e6b800;
-    font-size:34px;
-    margin-top:20px;
-}
-.slogan-card{
-    width:520px;
-    background:rgba(255,255,255,0.25);
-    backdrop-filter:blur(18px);
-    padding:30px 40px;
-    border-radius:32px;
-    text-align:center;
-    box-shadow:0 8px 30px rgba(255,204,0,0.4);
-    font-size:22px;
-    font-weight:bold;
-    color:#e6b800;
-    animation:glowFade 2s ease-in-out infinite alternate,fadeIn 1.5s ease;
-    margin-top:25px;
-    border:2px solid rgba(255,204,0,0.5);
-}
-@keyframes glowFade{
-    0%{box-shadow:0 0 15px rgba(255,204,0,0.6);}
-    100%{box-shadow:0 0 35px rgba(255,204,0,1);}}
-.section{
-    margin:15px 0;
-    font-size:18px;
-    color:#6b4d1f;
-    line-height:1.6;
-    text-align: left; /* Căn lề trái cho phần nội dung */
-}
-.return{
-    display:inline-block;
-    margin-top:25px;
-    padding:12px 28px;
+.menu-box a{
+    flex:1;
+    padding:12px;
     background:#ffcc33;
     color:white;
     border-radius:14px;
     font-weight:bold;
     text-decoration:none;
-    transition:0.3s;
 }
-.return:hover{
-    background:#e6b800;
-    transform:translateY(-4px);
-    box-shadow:0 8px 25px rgba(255,204,50,0.4);
+.menu-box a:hover{background:#e6b800;}
+
+.box{display:none;margin-top:20px;}
+#home{display:block;}
+
+.home-box{
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
-.heart{
-    position:fixed;
-    top:-20px;
-    color:#ffcc33;
+.home-box img{
+    width:240px;
+    border-radius:20px;
+}
+.home-text{
     font-size:22px;
-    animation:fall 6s linear infinite;
-    opacity:0.9;
+    font-weight:bold;
+    color:#e6b800;
 }
-@keyframes fall{
-    0%{transform:translateY(-40px) rotate(0deg);opacity:1;}
-    100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
+
+.section{
+    text-align:left;
+    margin:10px 0;
+    color:#6b4d1f;
+    line-height:1.6;
+}
+
+.sub-btn{
+    padding:10px 18px;
+    margin:8px;
+    background:#ffcc33;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.sub-btn:hover{background:#e6b800;}
+
+/* PLAYER */
+.player{
+    margin-top:20px;
+    background:rgba(255,255,255,0.7);
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(255,204,0,0.3);
+}
+.song-title{
+    font-weight:bold;
+    color:#e6b800;
+    font-size:18px;
+}
+.controls{
+    margin-top:12px;
+}
+.controls button{
+    padding:10px 18px;
+    border:none;
+    background:#ffcc33;
+    color:white;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:5px;
+}
+.controls button:hover{background:#e6b800;}
+
+.progress{
+    width:100%;
+    margin-top:12px;
+}
+
+.time{
+    font-size:14px;
+    margin-top:6px;
+    color:#6b4d1f;
 }
 </style>
-</head>
-<body>
+
 <script>
-for(let i=0;i<50;i++){
-    let heart=document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML="❤";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(18+Math.random()*24)+"px";
-    heart.style.animationDuration=(4+Math.random()*5)+"s";
-    heart.style.animationDelay=Math.random()*5+"s";
-    document.body.appendChild(heart);
+let audio = new Audio();
+
+function showBox(id){
+    document.querySelectorAll(".box").forEach(b=>b.style.display="none");
+    document.getElementById(id).style.display="block";
 }
+
+function playSong(src,title){
+    audio.src = src;
+    audio.play();
+    document.getElementById("title").innerText = "🎵 " + title;
+}
+
+function togglePlay(){
+    if(audio.paused) audio.play();
+    else audio.pause();
+}
+
+function updateProgress(){
+    if(audio.duration){
+        progress.value = (audio.currentTime / audio.duration) * 100;
+        time.innerText = format(audio.currentTime) + " / " + format(audio.duration);
+    }
+}
+
+function seek(){
+    audio.currentTime = (progress.value / 100) * audio.duration;
+}
+
+function format(sec){
+    let m = Math.floor(sec/60);
+    let s = Math.floor(sec%60);
+    return m + ":" + (s<10?"0":"") + s;
+}
+
+audio.ontimeupdate = updateProgress;
 </script>
+</head>
+
+<body>
 
 <div class="card">
-    <div class="avatar-container">
-        <img class="avatar" src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg">
-    </div>
+    <img class="avatar" src="https://i.pinimg.com/170x/fc/d6/71/fcd6713a638ec6fd603c0f6971e0c662.jpg">
     <h1>Mỹ Anh</h1>
 </div>
 
 <div class="card">
-    <div class="section"><b>Ngày sinh:</b> 06/02/2008</div>
-    <div class="section"><b>Định hướng nghề nghiệp:</b> Giáo viên · Content creator</div>
-    <div class="section"><b>Tính cách:</b> Vui vẻ · Năng động · Thông minh</div>
-    <div class="section"><b>Mục tiêu:</b> Học tập xuất sắc · Tích lũy kinh nghiệm · Khám phá bản thân</div>
-    <div class="section"><b>Sở thích:</b> Đọc sách · Du lịch · Âm nhạc</div>
-    <!-- Thêm phần phân chia công việc -->
-    <div class="section"><b>Phân chia công việc:</b> Soạn nội dung · Tạo web profile cá nhân </div>
-    <a class="return" href="index.html">⬅ Quay lại</a>
+
+    <div class="menu-box">
+        <a href="#" onclick="showBox('home')">🏠 Trang chủ</a>
+        <a href="#" onclick="showBox('about')">👩‍🎓 Về tôi</a>
+        <a href="#" onclick="showBox('hobby')">🎵 Sở thích</a>
+        <a href="#" onclick="showBox('contact')">📞 Liên lạc</a>
+    </div>
+
+    <!-- TRANG CHỦ -->
+    <div id="home" class="box">
+        <div class="home-box">
+            <img src="https://24hstore.vn/upload_images/images/hinh-nen-mau-vang/dien-thoai/hinh-nen-vang-de-thuong.jpg">
+            <div class="home-text">
+                ✨ Chào mừng các bạn đã đến <br> trang chủ của <b>Mỹ Anh</b> 💛
+            </div>
+        </div>
+    </div>
+
+    <!-- VỀ TÔI -->
+    <div id="about" class="box">
+        <div class="section"><b>Họ và tên:</b> Nguyễn Thị Mỹ Anh</div>
+        <div class="section"><b>Ngày sinh:</b> 06/02/2008</div>
+        <div class="section"><b>Nơi cư trú:</b> 600C8, KP1, Phú Khương, Vĩnh Long</div>
+        <div class="section"><b>Học tập:</b> Lớp 12A – THPT Chuyên Bến Tre</div>
+    </div>
+
+    <!-- SỞ THÍCH -->
+    <div id="hobby" class="box">
+        <button class="sub-btn" onclick="movies.style.display='block';music.style.display='none'">🎬 Xem phim</button>
+        <button class="sub-btn" onclick="music.style.display='block';movies.style.display='none'">🎧 Nghe nhạc</button>
+
+        <div id="movies" style="display:none;">
+            <div class="section"><b>Your Name:</b> Nhẹ nhàng, tinh tế về sự kết nối.</div>
+            <div class="section"><b>Forrest Gump:</b> Giản dị nhưng sâu sắc.</div>
+            <div class="section"><b>Me Before You:</b> Buồn và đầy cảm xúc.</div>
+            <div class="section"><b>Ấn tượng nhất:</b> Forrest Gump.</div>
+        </div>
+
+        <!-- MUSIC -->
+        <div id="music" style="display:none;">
+            <div class="player">
+                <div class="song-title" id="title">🎵 Chưa chọn bài hát</div>
+
+                <div class="controls">
+                    <button onclick="togglePlay()">⏯ Phát / Tạm dừng</button>
+                </div>
+
+                <input type="range" id="progress" class="progress" value="0" onchange="seek()">
+                <div class="time" id="time">0:00 / 0:00</div>
+
+                <div class="controls">
+                    <button onclick="playSong(
+                    'https://raw.githubusercontent.com/nhom3tinhoc12/trangwebnhom3.github.io/main/Brand%20New%20Man.mp3',
+                    'On The Town Road')">
+                        ▶ On The Town Road
+                    </button>
+
+                    <button onclick="playSong(
+                    'https://raw.githubusercontent.com/nhom3tinhoc12/trangwebnhom3.github.io/main/Die%20With%20A%20Smile.mp3',
+                    'Die With A Smile')">
+                        ▶ Die With A Smile
+                    </button>
+
+                    <button onclick="playSong(
+                    'https://raw.githubusercontent.com/nhom3tinhoc12/trangwebnhom3.github.io/main/We%20Don%27t%20Talk%20Anymore.mp3',
+                    'We Don’t Talk Anymore')">
+                        ▶ We Don’t Talk Anymore
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIÊN LẠC -->
+    <div id="contact" class="box">
+        <div class="section"><b>SĐT:</b> 0366404073</div>
+        <div class="section"><b>Email:</b> nguyenthimyanhbt1@gmail.com</div>
+        <div class="section">
+            <b>Facebook:</b>
+            <a href="https://www.facebook.com/share/16XrSoa2Ei/?mibextid=wwXIfr" target="_blank">
+                Trang Facebook của Mỹ Anh
+            </a>
+        </div>
+    </div>
+
 </div>
 
 </body>
